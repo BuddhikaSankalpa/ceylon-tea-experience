@@ -17,10 +17,10 @@ export default function Nav({ navigate, currentPage }) {
         className="text-2xl font-serif font-bold text-[#1b3b22] cursor-pointer"
         onClick={() => navigate('home')}
       >
-        <img 
-          src="/logo.webp" 
-          alt="Ceylon Heritage Logo" 
-          className="h-44 w-auto object-contain -my-16" 
+        <img
+          src={`${import.meta.env.BASE_URL}logo.webp`}
+          alt="Ceylon Heritage Logo"
+          className="h-44 w-auto object-contain -my-16"
         />
       </div>
 
