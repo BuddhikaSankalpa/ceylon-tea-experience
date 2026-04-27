@@ -1,168 +1,216 @@
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 
-const values = [
-  {
-    icon: "🌿",
-    title: "Sustainability",
-    desc: "We nurture the soil that nurtures our tea, employing regenerative practices to ensure the land thrives for generations to come."
-  },
-  {
-    icon: "⚱️",
-    title: "Authenticity",
-    desc: "Unblended and true to origin. We protect the unique character of our estates with no artificial flavoring or mass-market blending."
-  },
-  {
-    icon: "✦",
-    title: "Excellence",
-    desc: "From the precise plucking standard of two leaves and a bud to the final liquoring, our commitment to quality is uncompromising."
-  }
-]
-
-const team = [
-  {
-    name: "Rohan de Silva",
-    role: "Master Tea Maker, 3rd Generation",
-    img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80"
-  },
-  {
-    name: "Priya Jayawardena",
-    role: "Head of Experiences & Hospitality",
-    img: "https://images.unsplash.com/photo-1494790108755-2616b6b63e5a?w=400&q=80"
-  },
-  {
-    name: "Sanjay Perera",
-    role: "Estate Manager & Agronomist",
-    img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80"
-  }
-]
-
 export default function AboutPage({ navigate }) {
   return (
-    <div className="min-h-screen font-sans text-gray-800">
+    <div className="min-h-screen bg-[#fcfbf8] font-sans text-gray-800 selection:bg-[#1b3b22] selection:text-white">
       <Nav navigate={navigate} currentPage="about" />
 
-      {/* Hero */}
-      <section className="py-20 px-8 bg-[#fdfaf5] text-center">
-        <p className="text-xs uppercase tracking-[0.3em] text-[#a67c00] mb-4">Our Story</p>
-        <h1 className="text-5xl md:text-6xl font-serif font-bold text-[#1b3b22] mb-6">Our Heritage</h1>
-        <p className="text-gray-600 max-w-xl mx-auto text-sm leading-relaxed">
-          A legacy woven into the misty hills of Sri Lanka, where every leaf tells a story of artisanal perfection and deep-rooted tradition.
-        </p>
+      {/* Hero Section */}
+      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://i.pinimg.com/1200x/a1/99/91/a199917610b2ff6fcec525d67f64817d.jpg" 
+            alt="Ceylon Tea Garden" 
+            className="w-full h-full object-cover scale-105"
+          />
+          <div className="absolute inset-0 bg-black/40"></div>
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto text-center px-6">
+          <p className="text-xs uppercase tracking-[0.4em] text-[#a67c00] mb-4 font-bold drop-shadow-md">
+            Discover
+          </p>
+          <h1 className="text-5xl md:text-8xl font-serif text-white mb-10 drop-shadow-lg">
+            About TCTE
+          </h1>
+          <div className="max-w-3xl mx-auto text-white/90 text-lg md:text-xl leading-relaxed font-light drop-shadow-md">
+            <p>
+              The Ceylon Tea Experience (TCTE) is a flagship experiential cafe concept designed to showcase the heritage, craftsmanship, and diversity of Sri Lanka's tea culture.
+            </p>
+          </div>
+        </div>
       </section>
 
-      {/* Full-width landscape image */}
-      <div className="w-full h-[60vh] overflow-hidden">
-        <img
-          src="https://images.unsplash.com/photo-1582793988951-9aed5509eb97?q=80&w=2000&auto=format&fit=crop"
-          alt="Tea Estate Landscape"
-          className="w-full h-full object-cover"
-        />
-      </div>
-
-      {/* The Artisan's Journey */}
-      <section className="py-24 px-8 bg-[#fdfaf5]">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-          <div>
-            <p className="text-xs uppercase tracking-[0.3em] text-[#a67c00] mb-4">Since 1887</p>
-            <h2 className="text-4xl font-serif font-bold text-[#1b3b22] mb-6">The Artisan's Journey</h2>
-            <p className="text-gray-600 text-sm leading-relaxed mb-4">
-              For over a century, our family has cultivated the finest high-grown teas in the Nuwara Eliya region. We believe that true luxury lies in patience — allowing the unique terroir to express itself in every steep.
+      {/* Story Section */}
+      <section className="py-24 px-6 md:px-12 lg:px-24">
+        <div className="max-w-7xl mx-auto">
+          <div className="max-w-3xl mx-auto text-center text-[#4a5d4e] text-base md:text-lg leading-relaxed space-y-6 mb-16">
+            <p>
+              Located in Galle - one of the country's most visited tourist cities - TCTE brings together interactive learning, artisanal tea-making, and modern cafe hospitality in one beautifully curated space.
             </p>
-            <p className="text-gray-600 text-sm leading-relaxed mb-6">
-              Our process remains largely unchanged from our ancestors. Hand-plucked leaves are gently withered, rolled, and oxidized under the watchful eyes of our Master Makers, ensuring that the golden liquor in your cup is a pure reflection of its origin.
-            </p>
-            <button
-              onClick={() => navigate('services')}
-              className="text-[#a67c00] text-xs font-bold uppercase tracking-wider flex items-center gap-2 hover:gap-4 transition-all"
-            >
-              Discover the Process →
-            </button>
           </div>
-          <div className="relative">
-            <img
-              src="https://images.unsplash.com/photo-1594631252845-29fc4cc8cbf9?w=600&q=80"
-              alt="Artisan hands"
-              className="w-full rounded shadow-xl"
-            />
-            <div className="absolute -bottom-6 -left-6 bg-[#1b3b22] text-white p-6 rounded shadow-lg hidden md:block">
-              <div className="text-3xl font-serif font-bold text-[#a67c00]">136</div>
-              <div className="text-xs uppercase tracking-wider mt-1">Years of Craft</div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 max-w-5xl mx-auto ">
+            <div className="mt-0 md:mt-12">
+              <img
+                src="https://images.pexels.com/photos/5007546/pexels-photo-5007546.jpeg"
+                alt="Tea Estate"
+                className="w-full h-[400px] object-cover rounded-sm shadow-lg hover:scale-[1.02] transition-transform duration-500 "
+              />
+            </div>
+            <div>
+              <img
+                src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?q=80&w=600"
+                alt="Tea Making"
+                className="w-full h-[400px] object-cover rounded-sm shadow-lg hover:scale-[1.02] transition-transform duration-500"
+              />
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* Handcrafting image + text */}
-      <section className="py-16 px-8 bg-white">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-          <div className="order-2 md:order-1">
-            <img
-              src="https://images.unsplash.com/photo-1576092762791-dd9e2220cad1?w=600&q=80"
-              alt="Tea cup"
-              className="w-full rounded shadow-xl"
-            />
-          </div>
-          <div className="order-1 md:order-2">
-            <p className="text-xs uppercase tracking-[0.3em] text-[#a67c00] mb-4">The Cup</p>
-            <h2 className="text-3xl font-serif font-bold text-[#1b3b22] mb-4">Where Every Sip Tells a Story</h2>
-            <p className="text-gray-600 text-sm leading-relaxed mb-4">
-              The altitude of Nuwara Eliya — over 6,000 feet above sea level — creates a natural cool that slows the growth of tea leaves, concentrating their complexity and giving Ceylon tea its signature brightness and delicate muscatel notes.
-            </p>
-            <p className="text-gray-600 text-sm leading-relaxed">
-              When you hold a cup of Ceylon Heritage tea, you hold 136 years of a family's devotion, a mountain's patience, and a culture's pride.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Core Values */}
-      <section className="py-24 px-8 bg-[#f9f8f3]">
-        <div className="max-w-6xl mx-auto text-center mb-16">
-          <p className="text-xs uppercase tracking-[0.3em] text-[#a67c00] mb-3">What We Stand For</p>
-          <h2 className="text-4xl font-serif font-bold text-[#1b3b22]">Our Core Tenets</h2>
-          <p className="text-sm text-gray-500 mt-3">The principles that guide every harvest and every blend.</p>
-        </div>
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-          {values.map((v, i) => (
-            <div key={i} className="bg-white rounded p-8 shadow-sm border border-gray-100 text-center">
-              <div className="text-3xl mb-4">{v.icon}</div>
-              <h3 className="text-xl font-serif font-bold text-[#1b3b22] mb-3">{v.title}</h3>
-              <p className="text-sm text-gray-600 leading-relaxed">{v.desc}</p>
+          <div className="max-w-4xl mx-auto mt-20 p-10 md:p-16 bg-white border border-[#eae0d5] shadow-sm relative text-center">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#fcfbf8] px-4">
+              <p className="text-xs uppercase tracking-[0.3em] text-[#a67c00] font-semibold">Our Purpose Is Simple</p>
             </div>
-          ))}
+            <p className="font-serif text-[#1b3b22] text-2xl md:text-4xl leading-tight italic">
+              "To give every traveler the chance to truly experience Ceylon Tea - not just taste it."
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Team */}
-      <section className="py-24 px-8 bg-white">
-        <div className="max-w-6xl mx-auto text-center mb-16">
-          <p className="text-xs uppercase tracking-[0.3em] text-[#a67c00] mb-3">The People</p>
-          <h2 className="text-4xl font-serif font-bold text-[#1b3b22]">Meet Our Team</h2>
+      {/* Philosophy Section - Updated with Glassmorphism & New Image */}
+      <section className="relative py-28 px-6 md:px-12 lg:px-24 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://i.pinimg.com/1200x/d7/47/53/d74753cca27863e2d01b423f83e1f4a0.jpg" 
+            alt="Tea Leaves Philosophy" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-[#1b3b22]/85 backdrop-blur-[1px]"></div> 
         </div>
-        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-          {team.map((m, i) => (
-            <div key={i} className="text-center group">
-              <div className="relative overflow-hidden rounded-full w-40 h-40 mx-auto mb-4">
-                <img src={m.img} alt={m.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+
+        <div className="relative z-10 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
+            
+            {/* Title Column */}
+            <div className="lg:sticky lg:top-32">
+              <h2 className="text-4xl md:text-6xl font-serif text-white mb-6 leading-tight">
+                The TCTE<br/>
+                <span className="text-[#a67c00]">Philosophy</span>
+              </h2>
+              <div className="w-20 h-[2px] bg-[#a67c00] mb-6"></div>
+              <p className="text-xs text-gray-300 tracking-[0.3em] uppercase font-bold">
+                Guiding Our Journey
+              </p>
+            </div>
+
+            {/* Mission & Vision Cards */}
+            <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8">
+              
+              {/* Vision Card */}
+              <div className="bg-white/5 backdrop-blur-md border border-white/10 p-10 rounded-2xl hover:bg-white/10 transition-all duration-500 group shadow-2xl">
+                <div className="w-16 h-16 rounded-full bg-[#a67c00]/20 border border-[#a67c00] flex items-center justify-center text-[#a67c00] text-3xl mb-8 group-hover:scale-110 transition-transform">
+                  👁️
+                </div>
+                <h3 className="text-3xl font-serif text-white mb-6">Our Vision</h3>
+                <p className="text-gray-200 text-lg leading-relaxed font-light">
+                  To become Sri Lanka's most <span className="text-[#a67c00] font-medium underline underline-offset-4 decoration-1">iconic tea experience brand</span>  connecting global travelers to the story, soul, and flavours of Ceylon Tea.
+                </p>
               </div>
-              <h3 className="text-lg font-serif font-bold text-[#1b3b22]">{m.name}</h3>
-              <p className="text-xs text-[#a67c00] uppercase tracking-wider mt-1">{m.role}</p>
+
+              {/* Mission Card */}
+              <div className="bg-white/5 backdrop-blur-md border border-white/10 p-10 rounded-2xl hover:bg-white/10 transition-all duration-500 group shadow-2xl">
+                <div className="w-16 h-16 rounded-full bg-[#a67c00]/20 border border-[#a67c00] flex items-center justify-center text-[#a67c00] text-3xl mb-8 group-hover:scale-110 transition-transform">
+                  🎯
+                </div>
+                <h3 className="text-3xl font-serif text-white mb-6">Our Mission</h3>
+                <ul className="space-y-6 text-gray-200 font-light">
+                  <li className="flex items-start gap-4">
+                    <span className="text-[#a67c00] text-xl mt-1">🌿</span> 
+                    <span className="text-lg">Redefine tea tourism through <span className="text-white font-medium">immersive, hands-on</span> experiences.</span>
+                  </li>
+                  <li className="flex items-start gap-4">
+                    <span className="text-[#a67c00] text-xl mt-1">📍</span> 
+                    <span className="text-lg">Showcase regional diversity in one <span className="text-white font-medium">accessible destination</span>.</span>
+                  </li>
+                  <li className="flex items-start gap-4">
+                    <span className="text-[#a67c00] text-xl mt-1">☕</span> 
+                    <span className="text-lg">Elevate global perception through <span className="text-white font-medium">storytelling</span>.</span>
+                  </li>
+                </ul>
+              </div>
+
             </div>
-          ))}
+          </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 px-8 bg-[#1b3b22] text-center">
-        <p className="text-xs uppercase tracking-[0.3em] text-[#a67c00] mb-4">Come See For Yourself</p>
-        <h2 className="text-4xl font-serif font-bold text-white mb-6">Experience the Heritage</h2>
-        <button
-          onClick={() => navigate('services')}
-          className="bg-[#a67c00] text-white px-10 py-4 text-xs font-bold uppercase tracking-wider hover:bg-[#856300] transition"
-        >
-          Explore Our Experiences
-        </button>
+      {/* Who We Are */}
+      <section className="py-24 px-6 md:px-12 lg:px-24 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+          <div className="w-full lg:w-1/2 relative">
+            <img
+              src="https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=600&q=80"
+              alt="Tea Artisan"
+              className="w-full h-[500px] object-cover rounded-sm"
+            />
+            <div className="hidden md:block absolute -bottom-10 -right-10 bg-[#fcfbf8] p-8 shadow-xl border border-[#eae0d5] max-w-sm">
+              <p className="text-xs uppercase tracking-wider text-[#a67c00] mb-3">Our Core Belief</p>
+              <p className="text-xl font-serif italic text-[#1b3b22]">
+                "Don't just drink Ceylon Tea — experience it."
+              </p>
+            </div>
+          </div>
+
+          <div className="w-full lg:w-1/2">
+            <p className="text-xs uppercase tracking-[0.3em] text-[#a67c00] mb-4 font-semibold">The Team</p>
+            <h2 className="text-4xl md:text-5xl font-serif text-[#1b3b22] mb-8">Who We Are</h2>
+            <p className="text-[#4a5d4e] text-lg leading-relaxed mb-8">
+              A team of tea experts, storytellers, artisans, and hospitality professionals dedicated to preserving and celebrating Sri Lanka's tea legacy.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Location Section */}
+      <section className="py-24 px-6 md:px-12 lg:px-24 bg-[#fcfbf8] border-t border-[#eae0d5]">
+        <div className="max-w-7xl mx-auto text-center mb-16">
+           <p className="text-xs uppercase tracking-[0.3em] text-[#a67c00] mb-4 font-semibold">Visit Us</p>
+           <h2 className="text-4xl md:text-5xl font-serif text-[#1b3b22] mb-6">Our Location</h2>
+        </div>
+
+        <div className="max-w-5xl mx-auto relative h-[450px]">
+          <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-white px-8 py-4 shadow-md border border-[#eae0d5] z-10 flex items-center gap-4">
+            <span className="text-[#a67c00] text-2xl">📍</span>
+            <div>
+              <p className="font-serif text-[#1b3b22] text-xl">Galle, Southern Sri Lanka</p>
+              <p className="text-[10px] text-gray-500 uppercase tracking-[0.2em] mt-1">Heart of the Southern Coast</p>
+            </div>
+          </div>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126932.123456789!2d80.21!3d6.03!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae173bb6932f3fd%3A0x7f1515bf361092c!2sGalle!5e0!3m2!1sen!2slk!4v1620000000000!5m2!1sen!2slk" 
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen=""
+            loading="lazy"
+            title="TCTE Location Map"
+            className="grayscale contrast-125 opacity-90 rounded-sm shadow-inner"
+          ></iframe>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="relative py-24 px-6 text-center bg-[#1b3b22] overflow-hidden">
+        <div className="absolute inset-0 opacity-30">
+          <img 
+            src="https://images.pexels.com/photos/34704515/pexels-photo-34704515.jpeg" 
+            alt="Texture" 
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="relative z-10 max-w-3xl mx-auto">
+          <p className="text-xs uppercase tracking-[0.3em] text-[#a67c00] mb-4 font-semibold">Come See For Yourself</p>
+          <h2 className="text-4xl md:text-6xl font-serif text-white mb-10 text-center">Experience the Heritage</h2>
+          <button
+            onClick={() => navigate('services')}
+            className="bg-[#a67c00] text-white px-10 py-4 text-sm font-semibold uppercase tracking-[0.2em] hover:bg-[#856300] transition-colors duration-300 rounded-sm"
+          >
+            Explore Our Experiences
+          </button>
+        </div>
       </section>
 
       <Footer navigate={navigate} />

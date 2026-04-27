@@ -41,7 +41,7 @@ export default function Nav({ navigate, currentPage }) {
 
       <button
         onClick={() => navigate('contact')}
-        className="hidden md:block bg-[#1b3b22] text-white px-6 py-2 text-xs font-bold uppercase tracking-wider hover:bg-[#122917] transition rounded-sm cursor-pointer"
+        className="hidden md:block bg-[#1b3b22] text-white px-6 py-2 text-xs font-bold uppercase tracking-wider hover:bg-[#122917] transition cursor-pointer rounded-sm"
       >
         Book Experience
       </button>
