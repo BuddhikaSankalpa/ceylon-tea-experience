@@ -1,3 +1,5 @@
+import React from 'react';
+
 export default function Footer({ navigate }) {
   return (
     <footer className="bg-[#0a180e] text-gray-400 py-16 px-8 text-sm">
@@ -19,28 +21,40 @@ export default function Footer({ navigate }) {
         <div>
           <h4 className="text-white font-bold mb-4 uppercase text-xs tracking-wider">Policies</h4>
           <ul className="space-y-2 text-xs">
-            <li><a href="#" className="hover:text-white transition">Privacy Policy</a></li>
-            <li><a href="#" className="hover:text-white transition">Refund Policy</a></li>
-            <li><a href="#" className="hover:text-white transition">Terms & Conditions</a></li>
-            <li><a href="#" className="hover:text-white transition">Sustainability</a></li>
+            {[
+              { path: 'privacy', label: 'Privacy Policy' },
+              { path: 'refund', label: 'Refund Policy' },
+              { path: 'terms', label: 'Terms & Conditions' }
+            ].map((policy) => (
+              <li key={policy.path}>
+                <button 
+                  onClick={() => navigate(policy.path)} 
+                  className="hover:text-white transition cursor-pointer text-left"
+                >
+                  {policy.label}
+                </button>
+              </li>
+            ))}
           </ul>
         </div>
         <div>
           <h4 className="text-white font-bold mb-4 uppercase text-xs tracking-wider">Contact</h4>
           <ul className="space-y-2 text-xs mb-6">
-            <li>(+94) 71 123 4567</li>
-            <li>info@ceylonheritage.com</li>
-            <li>123, Highland Estate, Nuwara Eliya, Sri Lanka</li>
+            <li>(+94) 70 290 0500</li>
+            <li>info@ceylonteaexperience.com</li>
+            <li>reservations@theceylonteaexperience.com</li>
+            <li>www.theceylonteaexperience.com</li>
           </ul>
           <h4 className="text-white font-bold mb-2 uppercase text-xs tracking-wider">Follow Us</h4>
           <div className="flex gap-4">
-            <a href="#" className="hover:text-[#a67c00] transition">Instagram</a>
-            <a href="#" className="hover:text-[#a67c00] transition">Facebook</a>
+            <a href="https://www.instagram.com/theceylonteaexperience?igsh=dDhtdXIwbzM0OGRh" target="_blank" rel="noreferrer" className="hover:text-[#a67c00] transition">Instagram</a>
+            <a href="https://www.facebook.com/theceylonteaexperience?rdid=CssqTtbequqvomYQ&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1C8jGDQwgq%2F#" target="_blank" rel="noreferrer" className="hover:text-[#a67c00] transition">Facebook</a>
+            <a href="https://www.tiktok.com/@theceylonteaexper?_r=1&_t=ZS-92jKpR4JwXa" target="_blank" rel="noreferrer" className="hover:text-[#a67c00] transition">Tiktok</a>
           </div>
         </div>
       </div>
       <div className="max-w-6xl mx-auto text-center mt-12 pt-8 border-t border-gray-800 text-xs">
-        © 2024 Ceylon Heritage. Artisanal Tea Excellence.
+        © 2026 THE CEYLON TEA. All rights reserved
       </div>
     </footer>
   )
