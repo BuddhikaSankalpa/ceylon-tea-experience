@@ -85,7 +85,7 @@ export default function ServicesPage({ navigate }) {
 
             {/* Footer Info */}
             <div className="flex flex-col sm:flex-row gap-6 sm:items-center text-xs font-semibold tracking-widest uppercase text-gray-500 border-t border-gray-200 pt-6">
-              <p><span className="text-[#a67c00]">Duration:</span> 120-150 Mins</p>
+              <p><span className="text-[#a67c00]">Duration:</span> 60 Mins</p>
               <div className="hidden sm:block w-1 h-1 bg-gray-300 rounded-full"></div>
               <p><span className="text-[#a67c00]">Output:</span> Custom Tea & Tasting</p>
             </div>
