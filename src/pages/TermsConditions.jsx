@@ -87,14 +87,15 @@ export default function TermsConditions({ navigate }) {
     <div className="min-h-screen bg-[#fcfcf9] font-sans selection:bg-[#8d8b4e] selection:text-white">
       <Nav navigate={navigate} />
 
-      {/* Premium Hero Section - Updated Colors */}
-      <div className="relative pt-32 pb-24 px-8 overflow-hidden bg-gradient-to-r from-[#7a7b42] via-[#918f50] to-[#7a7b42]">
+      {/* Premium Hero Section - Updated to matched balanced Olive Green theme */}
+      <div className="relative pt-32 pb-24 px-8 overflow-hidden bg-gradient-to-r from-[#5c5d31] via-[#6e6f3b] to-[#5c5d31]">
         <div className="absolute inset-0">
             <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/natural-paper.png')] opacity-10 pointer-events-none" />
-            <div className="absolute -top-[30%] -right-[10%] w-[60%] h-[100%] rounded-full bg-[#a4a25c] blur-[120px] opacity-30" />
+            <div className="absolute -top-[20%] -left-[10%] w-[50%] h-[80%] rounded-full bg-[#828045] blur-[120px] opacity-30" />
+            <div className="absolute -bottom-[20%] -right-[10%] w-[40%] h-[70%] rounded-full bg-[#464724] blur-[100px] opacity-20" />
         </div>
 
-        <div className="relative z-10 max-w-4xl mx-auto text-center">
+        <div className="relative z-10 max-w-4xl mx-auto text-center h-[280px]">
           <div className="inline-flex items-center gap-2 py-2 px-4 rounded-full bg-white/10 border border-white/20 text-white/90 text-[10px] font-bold tracking-[0.2em] uppercase mb-8 backdrop-blur-sm">
             <ShieldCheck size={14} /> Legal Documentation
           </div>
@@ -110,7 +111,7 @@ export default function TermsConditions({ navigate }) {
 
       <div className="max-w-6xl mx-auto px-6 -mt-12 pb-24 relative z-20">
         
-        {/* Intro Banner - Re-styled to match glassmorphism card with icon */}
+        {/* Intro Banner */}
         <div className="bg-white/80 backdrop-blur-md border border-white rounded-3xl p-8 md:p-12 shadow-[0_8px_30px_rgb(0,0,0,0.04)] mb-16 flex flex-col md:flex-row items-center gap-8 relative">
             <div className="w-20 h-20 rounded-2xl bg-[#f4f4ee] flex items-center justify-center text-[#8d8b4e] shrink-0 shadow-inner">
                 <ShieldCheck size={40} />

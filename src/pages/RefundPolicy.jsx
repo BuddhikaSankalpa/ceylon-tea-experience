@@ -37,15 +37,15 @@ export default function RefundPolicy({ navigate }) {
     <div className="min-h-screen bg-[#fcfcf9] font-sans selection:bg-[#8d8b4e] selection:text-white">
       <Nav navigate={navigate} />
 
-      {/* Modern Hero Section - Updated Colors */}
-      <div className="relative pt-32 pb-20 px-8 overflow-hidden bg-gradient-to-r from-[#7a7b42] via-[#918f50] to-[#7a7b42]">
+      {/* Modern Hero Section - Updated Darker Colors */}
+      <div className="relative pt-32 pb-20 px-8 overflow-hidden bg-gradient-to-r from-[#5c5d31] via-[#6e6f3b] to-[#5c5d31]">
         {/* Animated Background Gradients */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-          <div className="absolute -top-[20%] -left-[10%] w-[50%] h-[80%] rounded-full bg-[#a4a25c] blur-[120px] opacity-30" />
-          <div className="absolute -bottom-[20%] -right-[10%] w-[40%] h-[70%] rounded-full bg-[#595a30] blur-[100px] opacity-20" />
+          <div className="absolute -top-[20%] -left-[10%] w-[50%] h-[80%] rounded-full bg-[#828045] blur-[120px] opacity-30" />
+          <div className="absolute -bottom-[20%] -right-[10%] w-[40%] h-[70%] rounded-full bg-[#464724] blur-[100px] opacity-20" />
         </div>
 
-        <div className="relative z-10 max-w-5xl mx-auto text-center">
+        <div className="relative z-10 max-w-5xl mx-auto text-center h-[300px]">
           <span className="inline-block py-1 px-3 rounded-full bg-white/10 border border-white/20 text-white/90 text-xs font-bold tracking-widest uppercase mb-6 backdrop-blur-sm">
             Customer Care
           </span>
@@ -117,7 +117,12 @@ export default function RefundPolicy({ navigate }) {
                 <Mail size={20} />
                 <span>Contact Support</span>
               </a>
-              <p className="mt-4 text-gray-300 text-sm">reservations@theceylonteaexperience.com</p>
+                <a 
+                href="mailto:reservations@theceylonteaexperience.com" 
+                className="mt-4 text-gray-300 text-sm hover:text-white transition-colors block"
+                >
+                reservations@theceylonteaexperience.com
+                </a>
             </div>
           </div>
         </div>

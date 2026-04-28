@@ -68,10 +68,11 @@ export default function PrivacyPolicy({ navigate }) {
     <div className="min-h-screen bg-[#fcfcf9] font-sans selection:bg-[#8d8b4e] selection:text-white">
       <Nav navigate={navigate} />
 
-      {/* Hero Section - Updated to match the uploaded image colors */}
-      <div className="relative pt-32 pb-24 px-8 overflow-hidden bg-gradient-to-r from-[#7a7b42] via-[#918f50] to-[#7a7b42]">
-        <div className="absolute inset-0">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.15)_0%,transparent_60%)]" />
+      {/* Hero Section - Updated to match the Refund Policy colors */}
+      <div className="relative pt-32 pb-24 px-8 overflow-hidden bg-gradient-to-r from-[#5c5d31] via-[#6e6f3b] to-[#5c5d31]">
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+          <div className="absolute -top-[20%] -left-[10%] w-[50%] h-[80%] rounded-full bg-[#828045] blur-[120px] opacity-30" />
+          <div className="absolute -bottom-[20%] -right-[10%] w-[40%] h-[70%] rounded-full bg-[#464724] blur-[100px] opacity-20" />
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto text-center mt-8">
@@ -107,17 +108,17 @@ export default function PrivacyPolicy({ navigate }) {
           {sections.map((section) => (
             <div 
               key={section.title} 
-              className="break-inside-avoid bg-white border border-gray-100 rounded-[2rem] p-8 shadow-sm hover:shadow-xl transition-all duration-300 group"
+              className="break-inside-avoid bg-white border border-gray-100 rounded-[2rem] p-8 shadow-sm hover:shadow-xl hover:shadow-[#8d8b4e]/10 transition-all duration-300 group"
             >
               <div className="w-12 h-12 rounded-2xl bg-[#f4f4ee] group-hover:bg-[#8d8b4e] text-[#8d8b4e] group-hover:text-white flex items-center justify-center mb-6 transition-all shadow-inner">
                 {section.icon}
               </div>
-              <h2 className="text-xl font-bold text-gray-900 mb-6 font-serif underline decoration-[#8d8b4e]/30 decoration-4 underline-offset-4">
+              <h2 className="text-xl font-bold text-gray-900 mb-6 font-serif underline decoration-[#8d8b4e]/30 decoration-4 underline-offset-4 group-hover:text-[#595a30] transition-colors">
                 {section.title}
               </h2>
               <ul className="space-y-4">
                 {section.items.map((item, i) => (
-                  <li key={i} className="text-sm text-gray-500 leading-relaxed list-disc list-inside marker:text-[#8d8b4e]">
+                  <li key={i} className="text-sm text-gray-500 leading-relaxed list-disc list-inside marker:text-[#8d8b4e] group-hover:text-gray-700 transition-colors">
                     {item}
                   </li>
                 ))}
@@ -128,7 +129,9 @@ export default function PrivacyPolicy({ navigate }) {
 
         {/* Secure Contact Footer */}
         <div className="mt-20 bg-[#595a30] rounded-[3rem] p-10 md:p-16 text-center relative overflow-hidden shadow-2xl">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-64 bg-[#a4a25c] rounded-full blur-[100px] opacity-20" />
+            <div className="absolute right-0 bottom-0 opacity-10 pointer-events-none">
+              <Mail size={200} className="text-[#a4a25c]" />
+            </div>
             
             <div className="relative z-10">
                 <h2 className="text-3xl font-serif font-bold text-white mb-4">Privacy Concerns?</h2>
@@ -145,7 +148,6 @@ export default function PrivacyPolicy({ navigate }) {
                 </a>
                 <span className="text-gray-300 hidden md:block">or</span>
                 
-                {/* <p> වෙනුවට මෙතන <a> tag එක දාලා තියෙනවා */}
                 <a 
                     href="mailto:info@ceylonteaexperience.com"
                     className="text-white font-medium hover:text-gray-200 transition-colors hover:underline underline-offset-4"
@@ -154,7 +156,7 @@ export default function PrivacyPolicy({ navigate }) {
                 </a>
                 </div>
             </div>
-            </div>
+        </div>
       </div>
 
       <Footer navigate={navigate} />

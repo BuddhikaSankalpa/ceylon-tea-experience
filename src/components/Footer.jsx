@@ -41,9 +41,26 @@ export default function Footer({ navigate }) {
           <h4 className="text-white font-bold mb-4 uppercase text-xs tracking-wider">Contact</h4>
           <ul className="space-y-2 text-xs mb-6">
             <li>(+94) 70 290 0500</li>
-            <li>info@ceylonteaexperience.com</li>
-            <li>reservations@theceylonteaexperience.com</li>
-            <li>www.theceylonteaexperience.com</li>
+            <li>
+              <a href="mailto:info@ceylonteaexperience.com" className="hover:text-[#8d8b4e] transition-colors">
+                info@ceylonteaexperience.com
+              </a>
+            </li>
+            <li>
+              <a href="mailto:reservations@theceylonteaexperience.com" className="hover:text-[#8d8b4e] transition-colors">
+                reservations@theceylonteaexperience.com
+              </a>
+            </li>
+            <li>
+              <a 
+                href="https://www.theceylonteaexperience.com" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="hover:text-[#8d8b4e] transition-colors"
+              >
+                www.theceylonteaexperience.com
+              </a>
+            </li>
           </ul>
           <h4 className="text-white font-bold mb-2 uppercase text-xs tracking-wider">Follow Us</h4>
           <div className="flex gap-4">
