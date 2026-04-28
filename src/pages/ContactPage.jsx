@@ -28,18 +28,24 @@ export default function ContactPage({ navigate }) {
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto text-center px-6">
-          <p className="text-xs uppercase tracking-[0.4em] text-[#a67c00] mb-4 font-bold drop-shadow-md">
-            Discover
-          </p>
+          <span className="inline-block text-[#c8a951] text-xs font-semibold tracking-[0.4em] uppercase mb-9 relative drop-shadow-md">
+            <span className="absolute -left-12 top-1/2 w-8 h-[1px] bg-[#c8a951]"></span>
+            BEGIN YOUR JOURNEY
+            <span className="absolute -right-12 top-1/2 w-8 h-[1px] bg-[#c8a951]"></span>
+          </span>
+          
           <h1 className="text-5xl md:text-8xl font-serif text-white mb-10 drop-shadow-lg">
             Contact Us
           </h1>
+          
           <div className="max-w-3xl mx-auto text-white/90 text-lg md:text-xl leading-relaxed font-light drop-shadow-md">
             <p>
-              Connect with us for bespoke bookings, immersive group experiences, creative collaborations, or to begin your tea journey
+              Connect with us for bespoke bookings, immersive group experiences, 
+              creative collaborations, or to begin your tea journey.
             </p>
           </div>
         </div>
+
       </section>
 
       {/* Beautiful Info Cards Section */}

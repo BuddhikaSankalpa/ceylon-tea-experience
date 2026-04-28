@@ -35,28 +35,28 @@ const heroBgImages = [
 const heroCards = [
   {
     img: "https://images.unsplash.com/photo-1582793988951-9aed5509eb97?w=600&q=80",
-    label: "NUWARA ELIYA",
-    sub: "champagne of Ceylon teas..."
+    label: "Hand Made Tea",
+    sub: "Craft the champagne of teas..."
   },
   {
     img: "https://images.unsplash.com/photo-1576092768241-dec231879fc3?q=80&w=600",
-    label: "DIMBULA",
-    sub: "Western highlands, full-bodied with bright golden liquor..."
+    label: "The Tea Library",
+    sub: "Explore full-bodied, golden blends..."
   },
   {
     img: "https://images.pexels.com/photos/5007546/pexels-photo-5007546.jpeg",
-    label: "UVA",
-    sub: "Eastern slopes producing aromatic, mellow single-estate teas..."
+    label: "Build Your Own Tea",
+    sub: "Robust teas, shipped worldwide..."
   },
   {
     img: "https://images.unsplash.com/photo-1597481499750-3e6b22637e12?w=600&q=80",
-    label: "KANDY",
-    sub: "Mid-elevation gardens — robust, well-balanced exports..."
+    label: "Global Delivery",
+    sub: "Taste rich, dark teas together..."
   },
   {
     img: "https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=600&q=80",
-    label: "RUHUNA",
-    sub: "Low-country southern estates — rich, dark, full-flavoured..."
+    label: "Workshops & Groups",
+    sub: "Taste rich southern teas together..."
   },
 ]
 
@@ -211,7 +211,7 @@ export default function HomePage({ navigate }) {
               "DISCOVER<br />THE SOUL OF<br />PURE CEYLON<br />TEA"
             </h1>
             <p className="text-sm md:text-base leading-relaxed mb-8 max-w-md text-gray-300">
-              From misty highland estates to your cup — a journey through Sri Lanka's most revered tea traditions. 100% single-estate, hand-plucked, artisanal.
+              The Ceylon Tea Experience is an immersive, hands-on tea discovery attraction designed for international visitors who want to experience Ceylon Tea beyond plantations and factories. Guests dont just drink tea - they pluck, make, blend, taste, and understand it, guided by trained tea professionals in an elegant, boutique setting.
             </p>
             <div className="flex gap-4 flex-wrap">
               <button
@@ -308,6 +308,30 @@ export default function HomePage({ navigate }) {
                 title: "Quick & Curated",
                 desc: "Quick, curated, high-value experience — no full-day travel required."
               },
+              {
+                img: "https://i.pinimg.com/736x/55/85/09/558509d09299d71496cbc6569f821a4a.jpg",
+                tag: "TIME-SAVING",
+                title: "One-Hour Experience",
+                desc: "A must-do hour long tea experience without travelling to tea factories."
+              },
+              {
+                img: "https://i.pinimg.com/1200x/79/85/b5/7985b57a8f5a966fb166bf5c2caba07a.jpg",
+                tag: "ARTISANAL",
+                title: "Handcrafted Tea",
+                desc: "Every individual guest to manufacture their own tea - by hand."
+              },
+              {
+                img: "https://i.pinimg.com/1200x/ae/e0/ae/aee0aeba8cca8dff2ec4a700c3c142d1.jpg",
+                tag: "SOUVENIR",
+                title: "Take-Home Blends",
+                desc: "Guests to blend and take home tea, to their own taste buds."
+              },
+              {
+                img: "https://i.pinimg.com/736x/ab/a9/01/aba901164ad7d92c1bbbbc62081797a9.jpg",
+                tag: "INNOVATION",
+                title: "Modern Tea Journey",
+                desc: "Guests to explore a re-invented tea experience."
+              }
             ].map((item, i) => (
               <div key={i} className="rounded-xl overflow-hidden shadow-md bg-white group cursor-pointer transition-transform hover:-translate-y-1">
                 <div className="relative aspect-[4/3] overflow-hidden">

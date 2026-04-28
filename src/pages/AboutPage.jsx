@@ -18,18 +18,24 @@ export default function AboutPage({ navigate }) {
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto text-center px-6">
-          <p className="text-xs uppercase tracking-[0.4em] text-[#a67c00] mb-4 font-bold drop-shadow-md">
-            Discover
-          </p>
+          <span className="inline-block text-[#c8a951] text-xs font-semibold tracking-[0.4em] uppercase mb-9 relative drop-shadow-md">
+            <span className="absolute -left-12 top-1/2 w-8 h-[1px] bg-[#c8a951]"></span>
+            BRAND HERITAGE
+            <span className="absolute -right-12 top-1/2 w-8 h-[1px] bg-[#c8a951]"></span>
+          </span>
+          
           <h1 className="text-5xl md:text-8xl font-serif text-white mb-10 drop-shadow-lg">
             About TCTE
           </h1>
+          
           <div className="max-w-3xl mx-auto text-white/90 text-lg md:text-xl leading-relaxed font-light drop-shadow-md">
             <p>
-              The Ceylon Tea Experience (TCTE) is a flagship experiential cafe concept designed to showcase the heritage, craftsmanship, and diversity of Sri Lanka's tea culture.
+              The Ceylon Tea Experience (TCTE) is a flagship experiential cafe concept designed to showcase the heritage, 
+              craftsmanship, and diversity of Sri Lanka's tea culture.
             </p>
           </div>
         </div>
+
       </section>
 
       {/* Story Section */}
