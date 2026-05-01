@@ -64,7 +64,7 @@ export default function GalleryPage({ navigate }) {
         <div className="absolute inset-0 z-0">
           {/* Hero Image updated with one of your new links */}
           <img 
-            src="https://res.cloudinary.com/dkdthpgux/image/upload/v1777619470/2_s0fr9u.jpg" 
+            src="https://res.cloudinary.com/dkdthpgux/image/upload/q_auto/f_auto/v1777625643/my_11_xn9pen.jpg" 
             alt="Gallery Hero Background" 
             className="w-full h-full object-cover scale-105"
           />

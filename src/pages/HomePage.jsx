@@ -274,13 +274,13 @@ export default function HomePage({ navigate }) {
               </button>
             </div>
             
-            <div className="flex flex-wrap items-center gap-3 text-white/80 text-xs font-sans font-semibold tracking-wide uppercase mt-4">
+            {/* <div className="flex flex-wrap items-center gap-3 text-white/80 text-xs font-sans font-semibold tracking-wide uppercase mt-4">
               <span>⭐ 5-Star Rated</span>
               <span className="hidden sm:inline">|</span>
               <span>👥 1,000+ Happy Guests</span>
               <span className="hidden sm:inline">|</span>
               <span>🌿 100% Organic</span>
-            </div>
+            </div> */}
           </div>
 
           {/* Rotating / scrolling image cards */}
@@ -326,7 +326,7 @@ export default function HomePage({ navigate }) {
             </div>
 
             {/* Icon Cards Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 cursor-pointer">
               {[
                 {
                   icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />,
@@ -397,7 +397,7 @@ export default function HomePage({ navigate }) {
           {/* Right Column: Supporting Image / Video Clip */}
           {/* VIDEO */}
           <div className="lg:w-2/5 order-1 lg:order-2 lg:sticky lg:top-58 mt-10 lg:mt-16">
-          <div className="relative aspect-[3/4] w-full rounded-2xl overflow-hidden shadow-2xl border-4 border-white group cursor-pointer">
+          <div className="relative aspect-[3/4] w-full rounded-2xl overflow-hidden shadow-2xl border-4 border-white group">
             
             {/* Updated to Video Tag instead of Img */}
             <video 
@@ -460,7 +460,7 @@ export default function HomePage({ navigate }) {
 
               <button
                 onClick={() => navigate('services')}
-                className="inline-block bg-[#2D6A2D] text-white px-10 py-4 text-xs font-sans font-bold uppercase tracking-[0.15em] hover:bg-[#1A3D1A] transition-all rounded-sm shadow-md"
+                className="inline-block bg-[#2D6A2D] text-white px-10 py-4 text-xs font-sans font-bold uppercase tracking-[0.15em] hover:bg-[#1A3D1A] transition-all rounded-sm shadow-md cursor-pointer"
               >
                 Explore Experiences
               </button>
@@ -485,7 +485,7 @@ export default function HomePage({ navigate }) {
               ))}
             </div>
             <p className="text-base font-sans font-bold text-[#1A3D1A]">
-              5.0 Rating based on <span className="underline decoration-[#B8960C] cursor-pointer">1,000+ reviews</span>
+              5.0 Rating based on <span className="underline decoration-[#B8960C] cursor-pointer p-1.5">1000+ reviews</span>
             </p>
             <div className="flex gap-3 ml-2">
               <span className="text-xs font-bold bg-white text-gray-700 px-3 py-1.5 rounded-full shadow-sm border border-gray-200 flex items-center gap-1.5">

@@ -7,6 +7,7 @@ import ContactPage from './pages/ContactPage'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import RefundPolicy from './pages/RefundPolicy'
 import TermsConditions from './pages/TermsConditions'
+import Loading from './components/Loading'
 import './App.css'
 
 const validPages = ['home', 'about', 'services', 'gallery', 'contact', 'privacy', 'refund', 'terms']
@@ -18,21 +19,48 @@ function getPageFromHash() {
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState(getPageFromHash)
+  
+  const [isLoading, setIsLoading] = useState(true)
 
   const navigate = (page) => {
+    setIsLoading(true)
+    
     window.location.hash = page
     setCurrentPage(page)
     window.scrollTo({ top: 0, behavior: 'smooth' })
+
+    setTimeout(() => {
+      setIsLoading(false)
+    }, 1500) 
   }
 
   useEffect(() => {
+
+    const initialTimer = setTimeout(() => {
+      setIsLoading(false)
+    }, 2500)
+
     const handleHashChange = () => {
-      setCurrentPage(getPageFromHash())
-      window.scrollTo({ top: 0, behavior: 'smooth' })
+      const newPage = getPageFromHash()
+     
+      if (newPage !== currentPage) {
+        setIsLoading(true)
+        setCurrentPage(newPage)
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+        
+        setTimeout(() => {
+          setIsLoading(false)
+        }, 1500)
+      }
     }
+    
     window.addEventListener('hashchange', handleHashChange)
-    return () => window.removeEventListener('hashchange', handleHashChange)
-  }, [])
+    
+    return () => {
+      clearTimeout(initialTimer)
+      window.removeEventListener('hashchange', handleHashChange)
+    }
+  }, [currentPage])
 
   const pages = {
     home: <HomePage navigate={navigate} />,
@@ -45,8 +73,14 @@ export default function App() {
     terms: <TermsConditions navigate={navigate} />,
   }
 
+  if (isLoading) {
+    return <Loading />
+  }
+
   return pages[currentPage] || pages.home
 }
+
+
 // import { useState, useEffect } from 'react'
 // import HomePage from './pages/HomePage'
 // import AboutPage from './pages/AboutPage'

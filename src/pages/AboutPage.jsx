@@ -238,7 +238,7 @@ export default function AboutPage({ navigate }) {
         <div className="max-w-5xl mx-auto relative">
           <div className="relative h-[450px] shadow-lg border border-[#eae0d5] rounded-sm overflow-hidden z-0">
             <iframe
-              src="https://maps.google.com/maps?q=Sea%20Street,%20Galle,%20Sri%20Lanka&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+              src="https://maps.google.com/maps?q=The+Ceylon+Tea+Experience+-+Galle,+146A+Sea+Street,+Galle&t=&z=15&ie=UTF8&iwloc=&output=embed" 
               width="100%"
               height="100%"
               style={{ border: 0 }}

@@ -11,7 +11,7 @@ export default function ServicesPage({ navigate }) {
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://res.cloudinary.com/dkdthpgux/image/upload/q_auto/f_auto/v1777622829/my_09_hqclvz.jpg" 
+            src="https://res.cloudinary.com/dkdthpgux/image/upload/q_auto/f_auto/v1777651837/14_xjv0li.jpg" 
             alt="Ceylon Tea Garden" 
             className="w-full h-full object-cover scale-105"
           />
