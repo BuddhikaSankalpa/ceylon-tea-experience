@@ -10,7 +10,7 @@ export default function AboutPage({ navigate }) {
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://i.pinimg.com/1200x/a1/99/91/a199917610b2ff6fcec525d67f64817d.jpg" 
+            src="https://res.cloudinary.com/dkdthpgux/image/upload/q_auto/f_auto/v1777621117/my_07_mx0ws6.jpg" 
             alt="Ceylon Tea Garden" 
             className="w-full h-full object-cover scale-105"
           />
@@ -24,7 +24,7 @@ export default function AboutPage({ navigate }) {
             <span className="absolute -right-12 top-1/2 w-8 h-[1px] bg-[#c8a951]"></span>
           </span>
           
-          <h1 className="text-5xl md:text-8xl font-serif text-white mb-10 drop-shadow-lg">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-black text-white mb-10 drop-shadow-2xl tracking-wide">
             About TCTE
           </h1>
           
@@ -35,29 +35,34 @@ export default function AboutPage({ navigate }) {
             </p>
           </div>
         </div>
-
       </section>
 
-      {/* Story Section */}
+      {/* Story Section - Updated with Narrative */}
       <section className="py-24 px-6 md:px-12 lg:px-24">
         <div className="max-w-7xl mx-auto">
-          <div className="max-w-3xl mx-auto text-center text-[#4a5d4e] text-base md:text-lg leading-relaxed space-y-6 mb-16">
+          <div className="max-w-4xl mx-auto text-center text-[#4a5d4e] text-base md:text-lg leading-relaxed space-y-6 mb-16">
+            <h2 className="text-3xl md:text-4xl font-serif text-[#1b3b22] mb-6 font-bold">
+              Bringing the Highlands <span className="text-[#a67c00]">to the Coast</span>
+            </h2>
             <p>
-              Located in Galle - one of the country's most visited tourist cities - TCTE brings together interactive learning, artisanal tea-making, and modern cafe hospitality in one beautifully curated space.
+              For over a century, the complete story of Ceylon Tea has been hidden away in the central highlands. The Ceylon Tea Experience (TCTE) was born from a simple yet ambitious vision: to bring the authentic, artisanal tea-making process directly to the cultural heart of the South.
+            </p>
+            <p>
+              Located in Galle - one of the country's most visited tourist cities - TCTE brings together interactive learning, artisanal tea-making, and modern cafe hospitality in one beautifully curated space. It is not just about drinking tea; it is about experiencing the soul of Sri Lanka.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 max-w-5xl mx-auto ">
             <div className="mt-0 md:mt-12">
               <img
-                src="https://images.pexels.com/photos/5007546/pexels-photo-5007546.jpeg"
+                src="https://res.cloudinary.com/dkdthpgux/image/upload/q_auto/f_auto/v1777619465/11_q2nvkh.jpg"
                 alt="Tea Estate"
                 className="w-full h-[400px] object-cover rounded-sm shadow-lg hover:scale-[1.02] transition-transform duration-500 "
               />
             </div>
             <div>
               <img
-                src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?q=80&w=600"
+                src="https://res.cloudinary.com/dkdthpgux/image/upload/q_auto/f_auto/v1777619468/21_jqbilc.webp"
                 alt="Tea Making"
                 className="w-full h-[400px] object-cover rounded-sm shadow-lg hover:scale-[1.02] transition-transform duration-500"
               />
@@ -75,12 +80,11 @@ export default function AboutPage({ navigate }) {
         </div>
       </section>
 
-      {/* Philosophy Section - Updated with Glassmorphism & New Image */}
+      {/* Philosophy Section */}
       <section className="relative py-28 px-6 md:px-12 lg:px-24 overflow-hidden">
-        {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://i.pinimg.com/1200x/d7/47/53/d74753cca27863e2d01b423f83e1f4a0.jpg" 
+            src="https://res.cloudinary.com/dkdthpgux/image/upload/q_auto/f_auto/v1777621641/my_08_v7o614.jpg" 
             alt="Tea Leaves Philosophy" 
             className="w-full h-full object-cover"
           />
@@ -143,16 +147,63 @@ export default function AboutPage({ navigate }) {
         </div>
       </section>
 
-      {/* Who We Are */}
-      <section className="py-24 px-6 md:px-12 lg:px-24 bg-white overflow-hidden">
+      {/* Awards & Certifications Strip (NEW) */}
+      <section className="py-10 px-8 bg-white border-b border-[#eae0d5]">
+        <div className="max-w-6xl mx-auto flex flex-wrap justify-center items-center gap-10 md:gap-20 text-[#1b3b22] text-center">
+          
+          {/* ICON 1: Organic Certified */}
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 bg-[#fcfbf8] rounded-full flex items-center justify-center shadow border border-[#eae0d5] text-[#a67c00]">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" />
+                <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
+              </svg>
+            </div>
+            <div className="text-left">
+              <span className="block text-xs font-bold tracking-widest uppercase">Organic</span>
+              <span className="block text-[10px] text-gray-500 uppercase">Certified</span>
+            </div>
+          </div>
+
+          {/* ICON 2: TripAdvisor Recognized */}
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 bg-[#00aa6c] rounded-full flex items-center justify-center shadow">
+              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+              </svg>
+            </div>
+            <div className="text-left">
+              <span className="block text-xs font-bold tracking-widest uppercase">TripAdvisor</span>
+              <span className="block text-[10px] text-gray-500 uppercase">Recognized</span>
+            </div>
+          </div>
+
+          {/* ICON 3: 5-Star Rated Experience */}
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 bg-[#fcfbf8] rounded-full flex items-center justify-center shadow border border-[#eae0d5] text-[#a67c00]">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              </svg>
+            </div>
+            <div className="text-left">
+              <span className="block text-xs font-bold tracking-widest uppercase">5-Star Rated</span>
+              <span className="block text-[10px] text-gray-500 uppercase">Experience</span>
+            </div>
+          </div>
+          
+        </div>
+      </section>
+
+      {/* Who We Are (Updated with Team/Founder Info) */}
+      <section className="py-24 px-6 md:px-12 lg:px-24 bg-[#fcfbf8] overflow-hidden">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
           <div className="w-full lg:w-1/2 relative">
             <img
-              src="https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=600&q=80"
-              alt="Tea Artisan"
-              className="w-full h-[500px] object-cover rounded-sm"
+              src="https://res.cloudinary.com/dkdthpgux/image/upload/q_auto/f_auto/v1777619467/9_bhmh1t.jpg"
+              alt="Tea Artisan & Founder"
+              className="w-full h-[500px] object-cover rounded-sm shadow-lg"
             />
-            <div className="hidden md:block absolute -bottom-10 -right-10 bg-[#fcfbf8] p-8 shadow-xl border border-[#eae0d5] max-w-sm">
+            <div className="hidden md:block absolute -bottom-10 -right-10 bg-white p-8 shadow-xl border border-[#eae0d5] max-w-sm">
               <p className="text-xs uppercase tracking-wider text-[#a67c00] mb-3">Our Core Belief</p>
               <p className="text-xl font-serif italic text-[#1b3b22]">
                 "Don't just drink Ceylon Tea — experience it."
@@ -161,48 +212,70 @@ export default function AboutPage({ navigate }) {
           </div>
 
           <div className="w-full lg:w-1/2">
-            <p className="text-xs uppercase tracking-[0.3em] text-[#a67c00] mb-4 font-semibold">The Team</p>
-            <h2 className="text-4xl md:text-5xl font-serif text-[#1b3b22] mb-8">Who We Are</h2>
+            <p className="text-xs uppercase tracking-[0.3em] text-[#a67c00] mb-4 font-semibold">The Curators</p>
+            <h2 className="text-4xl md:text-5xl font-serif text-[#1b3b22] mb-6">Meet The Team</h2>
+            <h3 className="text-xl font-bold text-[#1b3b22] mb-4">Pasindu & Our Master Sommeliers</h3>
             <p className="text-[#4a5d4e] text-lg leading-relaxed mb-8">
-              A team of tea experts, storytellers, artisans, and hospitality professionals dedicated to preserving and celebrating Sri Lanka's tea legacy.
+              With a deep-rooted passion for Sri Lankan heritage, our team consists of certified tea planters, tasters, and cultural storytellers. We believe that tea is personal. 
+            </p>
+            <p className="text-[#4a5d4e] text-lg leading-relaxed mb-8">
+              That's why our curators are dedicated to guiding you individually, sharing generations of knowledge, and helping you craft a blend that resonates with your own palate. A team dedicated to preserving and celebrating Sri Lanka's tea legacy.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Location Section */}
-      <section className="py-24 px-6 md:px-12 lg:px-24 bg-[#fcfbf8] border-t border-[#eae0d5]">
+      {/* Location Section - Updated with Map & Directions */}
+      <section className="py-24 px-6 md:px-12 lg:px-24 bg-white border-t border-[#eae0d5]">
         <div className="max-w-7xl mx-auto text-center mb-16">
            <p className="text-xs uppercase tracking-[0.3em] text-[#a67c00] mb-4 font-semibold">Visit Us</p>
            <h2 className="text-4xl md:text-5xl font-serif text-[#1b3b22] mb-6">Our Location</h2>
+           <p className="max-w-2xl mx-auto text-[#4a5d4e] text-lg leading-relaxed">
+             Situated just minutes away from the historic UNESCO World Heritage site of Galle Fort and the beautiful beaches of Unawatuna, our experience center is easily accessible for anyone traveling the Southern Coast.
+           </p>
         </div>
 
-        <div className="max-w-5xl mx-auto relative h-[450px]">
-          <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-white px-8 py-4 shadow-md border border-[#eae0d5] z-10 flex items-center gap-4">
-            <span className="text-[#a67c00] text-2xl">📍</span>
-            <div>
-              <p className="font-serif text-[#1b3b22] text-xl">Galle, Southern Sri Lanka</p>
-              <p className="text-[10px] text-gray-500 uppercase tracking-[0.2em] mt-1">Heart of the Southern Coast</p>
-            </div>
+        <div className="max-w-5xl mx-auto relative">
+          <div className="relative h-[450px] shadow-lg border border-[#eae0d5] rounded-sm overflow-hidden z-0">
+            <iframe
+              src="https://maps.google.com/maps?q=Sea%20Street,%20Galle,%20Sri%20Lanka&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              title="TCTE Location Map"
+              className="grayscale contrast-125 opacity-90"
+            ></iframe>
           </div>
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126932.123456789!2d80.21!3d6.03!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae173bb6932f3fd%3A0x7f1515bf361092c!2sGalle!5e0!3m2!1sen!2slk!4v1620000000000!5m2!1sen!2slk" 
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            allowFullScreen=""
-            loading="lazy"
-            title="TCTE Location Map"
-            className="grayscale contrast-125 opacity-90 rounded-sm shadow-inner"
-          ></iframe>
+          
+          {/* Get Directions Button / Info Box */}
+          <div className="md:absolute -bottom-8 left-1/2 md:-translate-x-1/2 mt-8 md:mt-0 bg-white px-8 py-6 shadow-xl border border-[#eae0d5] z-10 flex flex-col md:flex-row items-center gap-6 rounded-sm">
+            <div className="flex items-center gap-4">
+              <span className="text-[#a67c00] text-2xl">📍</span>
+              <div className="text-left">
+                <p className="font-serif text-[#1b3b22] text-xl font-bold">Sea Street, Galle</p>
+                <p className="text-[10px] text-gray-500 uppercase tracking-[0.2em] mt-1">Heart of the Southern Coast</p>
+              </div>
+            </div>
+            <div className="hidden md:block w-[1px] h-10 bg-gray-200"></div>
+            <a 
+              href="https://www.google.com/maps/dir/6.9828608,79.9309824/The+Ceylon+Tea+Experience+-+Galle,+146A+Sea+Street,+Galle+80000/@6.5205877,79.7683967,10z/data=!4m10!4m9!1m1!4e1!1m5!1m1!1s0x3ae1736b35262d13:0x993881923260c1bd!2m2!1d80.2245868!2d6.0371747!3e0?entry=ttu&g_ep=EgoyMDI2MDQyOC4wIKXMDSoASAFQAw%3D%3D" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="bg-[#1b3b22] text-white px-8 py-3 text-xs font-bold uppercase tracking-widest hover:bg-[#a67c00] transition-colors rounded-sm whitespace-nowrap"
+            >
+              Get Directions
+            </a>
+          </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="relative py-24 px-6 text-center bg-[#1b3b22] overflow-hidden">
+      <section className="relative py-32 px-6 text-center bg-[#1b3b22] overflow-hidden mt-12 md:mt-0">
         <div className="absolute inset-0 opacity-30">
           <img 
-            src="https://images.pexels.com/photos/34704515/pexels-photo-34704515.jpeg" 
+            src="https://res.cloudinary.com/dkdthpgux/image/upload/q_auto/f_auto/v1777622487/my_09_dkbw2y.jpg" 
             alt="Texture" 
             className="w-full h-full object-cover"
           />
@@ -212,7 +285,7 @@ export default function AboutPage({ navigate }) {
           <h2 className="text-4xl md:text-6xl font-serif text-white mb-10 text-center">Experience the Heritage</h2>
           <button
             onClick={() => navigate('services')}
-            className="bg-[#a67c00] text-white px-10 py-4 text-sm font-semibold uppercase tracking-[0.2em] hover:bg-[#856300] transition-colors duration-300 rounded-sm"
+            className="bg-[#a67c00] text-white px-10 py-4 text-sm font-semibold uppercase tracking-[0.2em] hover:bg-[#856300] transition-colors duration-300 rounded-sm shadow-lg"
           >
             Explore Our Experiences
           </button>
