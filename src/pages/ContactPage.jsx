@@ -20,7 +20,7 @@ export default function ContactPage({ navigate }) {
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://res.cloudinary.com/dkdthpgux/image/upload/v1777650616/13_w2pu3w.jpg" 
+            src="https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/my_images/13.jpg" 
             alt="Ceylon Tea Garden" 
             className="w-full h-full object-cover scale-105"
           />
@@ -307,7 +307,7 @@ export default function ContactPage({ navigate }) {
       <section className="py-24 px-8 bg-[#1a2318] text-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-60">
           <img 
-            src="https://res.cloudinary.com/dkdthpgux/image/upload/v1777625643/my_11_xn9pen.jpg" 
+            src="https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/my_images/my+11.jpg" 
             alt="Texture" 
             className="w-full h-full object-cover"
           />

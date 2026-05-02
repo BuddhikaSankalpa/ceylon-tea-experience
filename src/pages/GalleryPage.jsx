@@ -6,32 +6,32 @@ const categories = ["All Collections", "Tea Making Experience", "Tea Library", "
 
 const allPhotos = [
   // --- FEATURED PHOTOS (Slider) ---
-  { id: 1, category: "Café", src: "https://res.cloudinary.com/dkdthpgux/image/upload/v1777619470/2_s0fr9u.jpg", title: "Serene Valleys", sub: "Café · Ambient Environment", featured: true },
-  { id: 2, category: "Tea Making Experience", src: "https://res.cloudinary.com/dkdthpgux/image/upload/v1777619466/5_jotxlh.jpg", title: "Traditional Craft", sub: "Tea Making Experience · Hands-on", featured: true },
-  { id: 3, category: "Tea Library", src: "https://res.cloudinary.com/dkdthpgux/image/upload/v1777619471/1_iltqcg.jpg", title: "Premium Harvest", sub: "Tea Library · Curated Collection", featured: true },
-  { id: 4, category: "Events/Groups", src: "https://res.cloudinary.com/dkdthpgux/image/upload/v1777619472/3_uhbci5.jpg", title: "Local Devotion", sub: "Events/Groups · Together", featured: true },
+  { id: 1, category: "Café", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/2.jpeg", title: "Serene Valleys", sub: "Café · Ambient Environment", featured: true },
+  { id: 2, category: "Tea Making Experience", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/5.jpeg", title: "Traditional Craft", sub: "Tea Making Experience · Hands-on", featured: true },
+  { id: 3, category: "Tea Library", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/1.jpeg", title: "Premium Harvest", sub: "Tea Library · Curated Collection", featured: true },
+  { id: 4, category: "Events/Groups", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/3.jpeg", title: "Local Devotion", sub: "Events/Groups · Together", featured: true },
 
   // --- GRID PHOTOS ---
-  { id: 5, category: "Café", src: "https://res.cloudinary.com/dkdthpgux/image/upload/v1777619470/26_pgcj9g.jpg", title: "Highland Beauty", sub: "Café", span: "col-span-1 row-span-2" },
-  { id: 6, category: "Tea Making Experience", src: "https://res.cloudinary.com/dkdthpgux/image/upload/v1777619469/25_fbec1r.jpg", title: "Natural Drying", sub: "Process", span: "col-span-1 md:col-span-2 row-span-1" },
-  { id: 7, category: "Tea Library", src: "https://res.cloudinary.com/dkdthpgux/image/upload/v1777619469/24_npmmyz.webp", title: "Silver Tips", sub: "Blends", span: "col-span-1 row-span-1" },
-  { id: 8, category: "Events/Groups", src: "https://res.cloudinary.com/dkdthpgux/image/upload/v1777619468/21_jqbilc.webp", title: "Morning Joy", sub: "Community", span: "col-span-1 row-span-1" },
-  { id: 9, category: "Café", src: "https://res.cloudinary.com/dkdthpgux/image/upload/v1777619468/20_rozb4h.webp", title: "Endless Green", sub: "Scenic", span: "col-span-1 md:col-span-2 row-span-2" },
-  { id: 10, category: "Tea Making Experience", src: "https://res.cloudinary.com/dkdthpgux/image/upload/v1777619468/22_x8l5vn.webp", title: "Quality Check", sub: "Artisan", span: "col-span-1 row-span-1" },
-  { id: 11, category: "Tea Library", src: "https://res.cloudinary.com/dkdthpgux/image/upload/v1777619468/23_cqsyqo.webp", title: "Rich Black Tea", sub: "Tasting", span: "col-span-1 row-span-1" },
-  { id: 12, category: "Events/Groups", src: "https://res.cloudinary.com/dkdthpgux/image/upload/v1777619467/18_g61odj.webp", title: "Community Spirit", sub: "Workshops", span: "col-span-1 md:col-span-2 row-span-1" },
-  { id: 13, category: "Café", src: "https://res.cloudinary.com/dkdthpgux/image/upload/v1777619467/19_lqeh2q.webp", title: "Modern Cafe", sub: "Relax", span: "col-span-1 row-span-1" },
-  { id: 14, category: "Tea Making Experience", src: "https://res.cloudinary.com/dkdthpgux/image/upload/v1777619467/15_gqorwk.webp", title: "Hand-Picking", sub: "Harvest", span: "col-span-1 row-span-1" },
-  { id: 15, category: "Tea Library", src: "https://res.cloudinary.com/dkdthpgux/image/upload/v1777619467/17_c5mscm.webp", title: "Golden Brew", sub: "Collection", span: "col-span-1 row-span-1" },
-  { id: 16, category: "Events/Groups", src: "https://res.cloudinary.com/dkdthpgux/image/upload/v1777619467/9_bhmh1t.jpg", title: "Group Sessions", sub: "Experience", span: "col-span-1 row-span-1" },
-  { id: 17, category: "Café", src: "https://res.cloudinary.com/dkdthpgux/image/upload/v1777619467/13_yjkals.webp", title: "Warm Ambience", sub: "Cafe", span: "col-span-1 md:col-span-2 row-span-2" },
-  { id: 18, category: "Tea Making Experience", src: "https://res.cloudinary.com/dkdthpgux/image/upload/v1777619466/12_y4gyv1.webp", title: "Artisanal Sorting", sub: "Process", span: "col-span-1 row-span-1" },
-  { id: 19, category: "Tea Library", src: "https://res.cloudinary.com/dkdthpgux/image/upload/v1777619466/5_jotxlh.jpg", title: "Finest Selection", sub: "Library", span: "col-span-1 row-span-1" },
-  { id: 20, category: "Events/Groups", src: "https://res.cloudinary.com/dkdthpgux/image/upload/v1777619466/10_qq3iek.jpg", title: "Shared Harmony", sub: "Groups", span: "col-span-1 md:col-span-2 row-span-1" },
-  { id: 21, category: "Café", src: "https://res.cloudinary.com/dkdthpgux/image/upload/v1777619465/8_nwovia.jpg", title: "Cozy Corners", sub: "Dining", span: "col-span-1 row-span-1" },
-  { id: 22, category: "Tea Making Experience", src: "https://res.cloudinary.com/dkdthpgux/image/upload/v1777619465/6_n5ngkj.jpg", title: "Leaf Rolling", sub: "Craft", span: "col-span-1 row-span-1" },
-  { id: 23, category: "Tea Library", src: "https://res.cloudinary.com/dkdthpgux/image/upload/v1777619465/11_q2nvkh.jpg", title: "Vintage Blends", sub: "History", span: "col-span-1 row-span-1" },
-  { id: 24, category: "Events/Groups", src: "https://res.cloudinary.com/dkdthpgux/image/upload/v1777619465/7_fgve2k.jpg", title: "Tour Highlights", sub: "Memories", span: "col-span-1 row-span-1" },
+  { id: 5, category: "Café", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/26.jpeg", title: "Highland Beauty", sub: "Café", span: "col-span-1 row-span-2" },
+  { id: 6, category: "Tea Making Experience", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/25.jpeg", title: "Natural Drying", sub: "Process", span: "col-span-1 md:col-span-2 row-span-1" },
+  { id: 7, category: "Tea Library", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/24.webp", title: "Silver Tips", sub: "Blends", span: "col-span-1 row-span-1" },
+  { id: 8, category: "Events/Groups", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/21.webp", title: "Morning Joy", sub: "Community", span: "col-span-1 row-span-1" },
+  { id: 9, category: "Café", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/20.webp", title: "Endless Green", sub: "Scenic", span: "col-span-1 md:col-span-2 row-span-2" },
+  { id: 10, category: "Tea Making Experience", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/22.webp", title: "Quality Check", sub: "Artisan", span: "col-span-1 row-span-1" },
+  { id: 11, category: "Tea Library", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/23.webp", title: "Rich Black Tea", sub: "Tasting", span: "col-span-1 row-span-1" },
+  { id: 12, category: "Events/Groups", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/18.webp", title: "Community Spirit", sub: "Workshops", span: "col-span-1 md:col-span-2 row-span-1" },
+  { id: 13, category: "Café", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/19.webp", title: "Modern Cafe", sub: "Relax", span: "col-span-1 row-span-1" },
+  { id: 14, category: "Tea Making Experience", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/15.webp", title: "Hand-Picking", sub: "Harvest", span: "col-span-1 row-span-1" },
+  { id: 15, category: "Tea Library", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/17.webp", title: "Golden Brew", sub: "Collection", span: "col-span-1 row-span-1" },
+  { id: 16, category: "Events/Groups", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/9.jpeg", title: "Group Sessions", sub: "Experience", span: "col-span-1 row-span-1" },
+  { id: 17, category: "Café", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/13.webp", title: "Warm Ambience", sub: "Cafe", span: "col-span-1 md:col-span-2 row-span-2" },
+  { id: 18, category: "Tea Making Experience", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/12.webp", title: "Artisanal Sorting", sub: "Process", span: "col-span-1 row-span-1" },
+  { id: 19, category: "Tea Library", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/5.jpeg", title: "Finest Selection", sub: "Library", span: "col-span-1 row-span-1" },
+  { id: 20, category: "Events/Groups", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/10.jpeg", title: "Shared Harmony", sub: "Groups", span: "col-span-1 md:col-span-2 row-span-1" },
+  { id: 21, category: "Café", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/8.jpeg", title: "Cozy Corners", sub: "Dining", span: "col-span-1 row-span-1" },
+  { id: 22, category: "Tea Making Experience", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/6.jpeg", title: "Leaf Rolling", sub: "Craft", span: "col-span-1 row-span-1" },
+  { id: 23, category: "Tea Library", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/11.jpeg", title: "Vintage Blends", sub: "History", span: "col-span-1 row-span-1" },
+  { id: 24, category: "Events/Groups", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/7.jpeg", title: "Tour Highlights", sub: "Memories", span: "col-span-1 row-span-1" },
 ];
 
 export default function GalleryPage({ navigate }) {
@@ -64,7 +64,7 @@ export default function GalleryPage({ navigate }) {
         <div className="absolute inset-0 z-0">
           {/* Hero Image updated with one of your new links */}
           <img 
-            src="https://res.cloudinary.com/dkdthpgux/image/upload/q_auto/f_auto/v1777625643/my_11_xn9pen.jpg" 
+            src="https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/my_images/my+11.jpg" 
             alt="Gallery Hero Background" 
             className="w-full h-full object-cover scale-105"
           />
@@ -134,21 +134,26 @@ export default function GalleryPage({ navigate }) {
       <section className="py-16 px-4 md:px-8 max-w-[1400px] mx-auto">
         <div className="relative w-full h-[400px] md:h-[600px] rounded-2xl overflow-hidden shadow-2xl group cursor-pointer border border-[#e8e4d9]">
           {/* Video Placeholder Image updated */}
-          <img 
-            src="https://res.cloudinary.com/dkdthpgux/image/upload/v1777619471/1_iltqcg.jpg" 
-            alt="The TCTE Experience Video" 
-            className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 grayscale-[20%]"
-          />
+          <video 
+              autoPlay 
+              loop 
+              muted 
+              playsInline
+              className="w-full h-full object-cover transition-transform duration-700 "
+            >
+              <source src="https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/ceylon-tea-experience-videos.MP4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           <div className="absolute inset-0 bg-[#1A3D1A]/40 group-hover:bg-[#1A3D1A]/30 transition-colors duration-500"></div>
           
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
-            <div className="w-20 h-20 md:w-24 md:h-24 bg-[#c8a951]/90 rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(200,169,81,0.4)] mb-6 group-hover:scale-110 transition-transform duration-300 backdrop-blur-sm">
+            {/* <div className="w-20 h-20 md:w-24 md:h-24 bg-[#c8a951]/90 rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(200,169,81,0.4)] mb-6 group-hover:scale-110 transition-transform duration-300 backdrop-blur-sm">
               <svg className="w-8 h-8 md:w-10 md:h-10 text-white ml-2" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M8 5v14l11-7z" />
               </svg>
-            </div>
-            <h3 className="text-3xl md:text-5xl font-serif font-bold text-white drop-shadow-lg mb-4">Watch The Experience</h3>
-            <p className="text-white/90 text-sm md:text-base font-light tracking-wide max-w-lg drop-shadow-md">Step into our world. A 60-second glimpse into artisanal tea making at the Southern Coast.</p>
+            </div> */}
+            <h3 className="text-3xl md:text-5xl font-serif font-bold text-white drop-shadow-lg mb-4">A Glimpse of the Journey</h3>
+            <p className="text-white/90 text-sm md:text-base font-light tracking-wide max-w-lg drop-shadow-md">Immerse yourself in the art of Ceylon tea. Watch how we bring centuries of heritage to life in the heart of Galle.</p>
           </div>
         </div>
       </section>
@@ -267,7 +272,7 @@ export default function GalleryPage({ navigate }) {
       <section className="py-24 px-8 bg-[#1a2318] text-center relative overflow-hidden">
          <div className="absolute inset-0 opacity-30">
           <img 
-            src="https://res.cloudinary.com/dkdthpgux/image/upload/v1777626750/my_12_ukpvsl.jpg" 
+            src="https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/my_images/my+12.jpg" 
             alt="Texture" 
             className="w-full h-full object-cover"
           />

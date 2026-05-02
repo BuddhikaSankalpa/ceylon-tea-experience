@@ -31,36 +31,36 @@ const testimonials = [
 
 // Hero background slideshow images
 const heroBgImages = [
-  "https://res.cloudinary.com/dkdthpgux/image/upload/v1777620053/my_02_gzjxlh.avif",
-  "https://res.cloudinary.com/dkdthpgux/image/upload/q_auto/f_auto/v1777619467/16_ollpge.webp",
-  "https://res.cloudinary.com/dkdthpgux/image/upload/v1777620054/my_03_ffvxby.webp",
-  "https://res.cloudinary.com/dkdthpgux/image/upload/q_auto/f_auto/v1777620053/my_01_qlaenn.jpg",
+  "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/my_images/my+02.avif",
+  "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/16.webp",
+  "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/my_images/my+03.webp",
+  "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/my_images/my+01.jpeg",
 ]
 
 // Rotating image cards — 5 Sri Lankan tea regions
 const heroCards = [
   {
-    img: "https://res.cloudinary.com/dkdthpgux/image/upload/q_auto/f_auto/v1777620468/my_06_xx9hd1.jpg",
+    img: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/my_images/my+06.jpeg",
     label: "Hand Made Tea",
     sub: "Craft the champagne of teas..."
   },
   {
-    img: "https://res.cloudinary.com/dkdthpgux/image/upload/q_auto/f_auto/v1777620468/my_05_dfdwvg.jpg",
+    img: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/my_images/my+05.jpeg",
     label: "The Tea Library",
     sub: "Explore full-bodied, golden blends..."
   },
   {
-    img: "https://res.cloudinary.com/dkdthpgux/image/upload/v1777620471/my_04_zu83kb.jpg",
+    img: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/my_images/my+04.jpeg",
     label: "Build Your Own Tea",
     sub: "Robust teas, shipped worldwide..."
   },
   {
-    img: "https://res.cloudinary.com/dkdthpgux/image/upload/v1777619471/1_iltqcg.jpg",
+    img: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/1.jpeg",
     label: "Global Delivery",
     sub: "Taste rich, dark teas together..."
   },
   {
-    img: "https://res.cloudinary.com/dkdthpgux/image/upload/v1777620053/my_01_qlaenn.jpg",
+    img: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/my_images/my+01.jpeg",
     label: "Workshops & Groups",
     sub: "Taste rich southern teas together..."
   },
@@ -95,31 +95,31 @@ const experienceImages = [
   
 
   {
-    src: "https://res.cloudinary.com/dkdthpgux/image/upload/v1777619469/25_fbec1r.jpg",
+    src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/25.jpeg",
     caption: "Hand-plucking fresh two-leaves-and-a-bud"
   },
   {
-    src: "https://res.cloudinary.com/dkdthpgux/image/upload/v1777619471/1_iltqcg.jpg",
+    src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/1.jpeg",
     caption: "The artisanal hand-rolling process"
   },
   {
-    src: "https://res.cloudinary.com/dkdthpgux/image/upload/v1777619467/19_lqeh2q.webp",
+    src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/19.webp",
     caption: "Tasting unique regional blends"
   },
   {
-    src: "https://res.cloudinary.com/dkdthpgux/image/upload/v1777619467/17_c5mscm.webp",
+    src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/17.webp",
     caption: "Guided walks through the lush estates"
   },
   {
-    src: "https://res.cloudinary.com/dkdthpgux/image/upload/v1777619466/12_y4gyv1.webp",
+    src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/12.webp",
     caption: "Building your custom tea library"
   },
   {
-    src: "https://res.cloudinary.com/dkdthpgux/image/upload/v1777619466/5_jotxlh.jpg",
+    src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/5.jpeg",
     caption: "Crafting the perfect golden brew"
   },
   {
-    src: "https://res.cloudinary.com/dkdthpgux/image/upload/v1777619467/19_lqeh2q.webp",
+    src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/4.jpeg",
     caption: "Crafting the perfect golden brew"
   }
 
@@ -180,7 +180,7 @@ export default function HomePage({ navigate }) {
           transition: all 0.3s;
         }
         .cta-bg {
-          background-image: url('https://res.cloudinary.com/dkdthpgux/image/upload/q_auto/f_auto/v1777620053/my_02_gzjxlh.avif');
+          background-image: url('https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/my_images/my+02.avif');
           background-size: cover;
           background-position: center;
           background-attachment: fixed;
@@ -313,10 +313,10 @@ export default function HomePage({ navigate }) {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(184,150,12,0.1),transparent_60%)]"></div>
         <div className="absolute inset-0 opacity-[0.03] bg-[repeating-linear-gradient(135deg,#1A3D1A_0px,#1A3D1A_1px,transparent_1px,transparent_40px)]"></div>
 
-        <div className="relative z-10 max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-start">
+        <div className="relative z-10 max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 items-start">
           
           {/* Left Column: Text & Icon Grid */}
-          <div className="lg:w-3/5 order-2 lg:order-1">
+          <div className="lg:w-[55%] order-2 lg:order-1">
             <div className="mb-12">
               <h2 className="text-4xl md:text-5xl font-serif text-[#2D6A2D] font-bold mb-4">Why Choose Us</h2>
               <h3 className="text-[#1A3D1A] text-lg font-sans font-bold mb-4">Discover Sri Lanka's Tea Story - in the Heart of Galle</h3>
@@ -336,12 +336,12 @@ export default function HomePage({ navigate }) {
                 {
                   icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20 8h-2.81a5.986 5.986 0 00-1.39-2H4a2 2 0 00-2 2v6a2 2 0 002 2h1v4a2 2 0 002 2h6a2 2 0 002-2v-4h1a2 2 0 002-2V8zm-6 10H7v-4h7v4zm-9-8h11v4H5V10z" />,
                   title: "Tasting Sessions",
-                  desc: "Hands-on tea making & tasting sessions."
+                  desc: "Hands on tea making & tasting sessions."
                 },
                 {
                   icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />,
                   title: "Tea Library",
-                  desc: "Build-Your-Own Tea Library — personalised blends."
+                  desc: "Build Your Own Tea Library personalised blends."
                 },
                 {
                   icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />,
@@ -356,12 +356,12 @@ export default function HomePage({ navigate }) {
                 {
                   icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />,
                   title: "Quick & Curated",
-                  desc: "Quick, curated, high-value experience — no full-day travel required."
+                  desc: "Quick, curated, high value experience no full day travel required."
                 },
                 {
                   icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />,
-                  title: "One-Hour Experience",
-                  desc: "A must-do hour long tea experience without travelling to tea factories."
+                  title: "One Hour Experience",
+                  desc: "A must do hour long tea experience without travelling to tea factories."
                 },
                 {
                   icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />,
@@ -370,13 +370,13 @@ export default function HomePage({ navigate }) {
                 },
                 {
                   icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />,
-                  title: "Take-Home Blends",
+                  title: "Take Home Blends",
                   desc: "Guests to blend and take home tea, to their own taste buds."
                 },
                 {
                   icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />,
                   title: "Modern Tea Journey",
-                  desc: "Guests to explore a re-invented tea experience."
+                  desc: "Guests to explore a re invented tea experience."
                 }
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-4 p-5 bg-white rounded-xl border border-gray-100 hover:shadow-lg transition-shadow duration-300">
@@ -396,22 +396,21 @@ export default function HomePage({ navigate }) {
 
           {/* Right Column: Supporting Image / Video Clip */}
           {/* VIDEO */}
-          <div className="lg:w-2/5 order-1 lg:order-2 lg:sticky lg:top-58 mt-10 lg:mt-16">
-          <div className="relative aspect-[3/4] w-full rounded-2xl overflow-hidden shadow-2xl border-4 border-white group">
-            
-            {/* Updated to Video Tag instead of Img */}
-            <video 
-              autoPlay 
-              loop 
-              muted 
-              playsInline
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-            >
-              <source src="https://res.cloudinary.com/dkdthpgux/video/upload/v1777629583/video_qbztag.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+          <div className="lg:w-[45%] order-1 lg:order-2 lg:sticky lg:top-54 mt-10 lg:mt-16">
+            {/* Aspect ratio changed to 4/5 to make it wider/longer, gap reduced in parent flex container */}
+            <div className="relative aspect-[4/5] w-full rounded-2xl overflow-hidden shadow-2xl border-2 border-white group">
+              <video 
+                autoPlay 
+                loop 
+                muted 
+                playsInline
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              >
+                <source src="https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/ceylon-tea-experience-videos.MP4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
           </div>
-        </div>
 
         </div>
       </section>
@@ -453,9 +452,9 @@ export default function HomePage({ navigate }) {
               </div>
 
               <div className="space-y-6 text-base font-sans text-gray-700 leading-relaxed mb-10">
-                <p>At TCTE, every visitor becomes part of the tea-making process.</p>
+                <p>At TCTE, every visitor becomes part of the tea making process.</p>
                 <p>From plucking leaves and rolling your own tea, to crafting a personalised blend with herbs and flavours, the experience is designed to be immersive, educational, and unforgettable.</p>
-                <p>Whether you have 30 minutes or two hours, you walk away with a deeper appreciation of the craftsmanship behind Ceylon Tea — and a blend you can call your own.</p>
+                <p>Whether you have 30 minutes or two hours, you walk away with a deeper appreciation of the craftsmanship behind Ceylon Tea and a blend you can call your own.</p>
               </div>
 
               <button

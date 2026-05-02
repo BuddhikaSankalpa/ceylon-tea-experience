@@ -11,7 +11,7 @@ export default function ServicesPage({ navigate }) {
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://res.cloudinary.com/dkdthpgux/image/upload/q_auto/f_auto/v1777651837/14_xjv0li.jpg" 
+            src="https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/my_images/14.jpg" 
             alt="Ceylon Tea Garden" 
             className="w-full h-full object-cover scale-105"
           />
@@ -45,7 +45,7 @@ export default function ServicesPage({ navigate }) {
         <div className="relative flex flex-col lg:flex-row items-center group">
           <div className="w-full lg:w-7/12 relative z-0 overflow-hidden rounded-sm">
             <img 
-              src="https://res.cloudinary.com/dkdthpgux/image/upload/q_auto/f_auto/v1777619466/10_qq3iek.jpg"
+              src="https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/10.jpeg"
               alt="Hand-Made Tea Experience" 
               className="w-full h-[600px] md:h-[750px] lg:h-[700px] object-cover transition-transform duration-1000 group-hover:scale-105"
             />
@@ -106,7 +106,7 @@ export default function ServicesPage({ navigate }) {
           <div className="w-full lg:w-7/12 relative z-0 overflow-hidden rounded-sm">
             {/* Note: Recommend updating with actual Tea Library photo */}
             <img 
-              src="https://res.cloudinary.com/dkdthpgux/image/upload/v1777619469/25_fbec1r.jpg" 
+              src="https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/25.jpeg" 
               alt="The Tea Library" 
               className="w-full h-[700px] md:h-[850px] lg:h-[800px] object-cover transition-transform duration-1000 group-hover:scale-105"
             />
@@ -179,7 +179,7 @@ export default function ServicesPage({ navigate }) {
         <div className="relative flex flex-col lg:flex-row items-center group">
           <div className="w-full lg:w-7/12 relative z-0 overflow-hidden rounded-sm">
             <img 
-              src="https://res.cloudinary.com/dkdthpgux/image/upload/q_auto/f_auto/v1777619465/11_q2nvkh.jpg" 
+              src="https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/11.jpeg" 
               alt="The Tea Library Display" 
               className="w-full h-[400px] md:h-[500px] lg:h-[550px] object-cover transition-transform duration-1000 group-hover:scale-105"
             />
@@ -225,7 +225,7 @@ export default function ServicesPage({ navigate }) {
         <div className="relative flex flex-col lg:flex-row-reverse items-center group">
           <div className="w-full lg:w-7/12 relative z-0 overflow-hidden rounded-sm">
             <img 
-              src="https://res.cloudinary.com/dkdthpgux/image/upload/v1777619468/23_cqsyqo.webp" 
+              src="https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/23.webp" 
               alt="E-Commerce & Delivery" 
               className="w-full h-[400px] md:h-[550px] object-cover transition-transform duration-1000 group-hover:scale-105"
             />
@@ -291,7 +291,7 @@ export default function ServicesPage({ navigate }) {
         <div className="relative flex flex-col lg:flex-row items-center group pb-10">
           <div className="w-full lg:w-7/12 relative z-0 overflow-hidden rounded-sm">
             <img 
-              src="https://res.cloudinary.com/dkdthpgux/image/upload/q_auto/f_auto/v1777619468/20_rozb4h.webp" 
+              src="https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/20.webp" 
               alt="Workshops and Groups" 
               className="w-full h-[400px] md:h-[550px] object-cover transition-transform duration-1000 group-hover:scale-105"
             />
@@ -339,7 +339,7 @@ export default function ServicesPage({ navigate }) {
       <section className="py-24 px-8 bg-[#1A3D1A] text-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-40">
           <img 
-            src="https://res.cloudinary.com/dkdthpgux/image/upload/v1777624499/my_10_hgbbia.jpg" 
+            src="https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/my_images/my+10.jpg" 
             alt="Texture" 
             className="w-full h-full object-cover"
           />

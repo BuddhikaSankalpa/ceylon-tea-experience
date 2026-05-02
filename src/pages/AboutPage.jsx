@@ -10,7 +10,7 @@ export default function AboutPage({ navigate }) {
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://res.cloudinary.com/dkdthpgux/image/upload/q_auto/f_auto/v1777621117/my_07_mx0ws6.jpg" 
+            src="https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/my_images/my+07.jpg" 
             alt="Ceylon Tea Garden" 
             className="w-full h-full object-cover scale-105"
           />
@@ -55,14 +55,14 @@ export default function AboutPage({ navigate }) {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 max-w-5xl mx-auto ">
             <div className="mt-0 md:mt-12">
               <img
-                src="https://res.cloudinary.com/dkdthpgux/image/upload/q_auto/f_auto/v1777619465/11_q2nvkh.jpg"
+                src="https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/11.jpeg"
                 alt="Tea Estate"
                 className="w-full h-[400px] object-cover rounded-sm shadow-lg hover:scale-[1.02] transition-transform duration-500 "
               />
             </div>
             <div>
               <img
-                src="https://res.cloudinary.com/dkdthpgux/image/upload/q_auto/f_auto/v1777619468/21_jqbilc.webp"
+                src="https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/21.webp"
                 alt="Tea Making"
                 className="w-full h-[400px] object-cover rounded-sm shadow-lg hover:scale-[1.02] transition-transform duration-500"
               />
@@ -84,7 +84,7 @@ export default function AboutPage({ navigate }) {
       <section className="relative py-28 px-6 md:px-12 lg:px-24 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://res.cloudinary.com/dkdthpgux/image/upload/q_auto/f_auto/v1777621641/my_08_v7o614.jpg" 
+            src="https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/my_images/my+08.jpg" 
             alt="Tea Leaves Philosophy" 
             className="w-full h-full object-cover"
           />
@@ -199,7 +199,7 @@ export default function AboutPage({ navigate }) {
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
           <div className="w-full lg:w-1/2 relative">
             <img
-              src="https://res.cloudinary.com/dkdthpgux/image/upload/q_auto/f_auto/v1777619467/9_bhmh1t.jpg"
+              src="https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/9.jpeg"
               alt="Tea Artisan & Founder"
               className="w-full h-[500px] object-cover rounded-sm shadow-lg"
             />
@@ -275,7 +275,7 @@ export default function AboutPage({ navigate }) {
       <section className="relative py-32 px-6 text-center bg-[#1b3b22] overflow-hidden mt-12 md:mt-0">
         <div className="absolute inset-0 opacity-30">
           <img 
-            src="https://res.cloudinary.com/dkdthpgux/image/upload/q_auto/f_auto/v1777622487/my_09_dkbw2y.jpg" 
+            src="https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/my_images/my+09.jpeg" 
             alt="Texture" 
             className="w-full h-full object-cover"
           />
