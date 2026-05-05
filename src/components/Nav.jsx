@@ -41,7 +41,7 @@ export default function Nav({ navigate, currentPage }) {
 
       {/* Prominent Book Now CTA */}
       <button
-        onClick={() => navigate('contact')}
+        onClick={() => window.open('https://wa.me/94702900500', '_blank')}
         className="hidden md:block bg-[#2D6A2D] text-white px-6 py-3 text-xs font-bold uppercase tracking-wider hover:bg-[#1A3D1A] transition cursor-pointer rounded-sm shadow-md"
       >
         Book Now

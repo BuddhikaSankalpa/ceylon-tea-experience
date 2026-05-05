@@ -52,37 +52,48 @@ export default function ContactPage({ navigate }) {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 -mt-32">
             {[
-              { icon: FiMapPin, title: 'Location', detail: '146A, Sea Street Galle, Sri Lanka' },
-              { icon: FiPhone, title: 'Phone', detail: '(+94) 70 290 0500' },
-              { icon: FiMail, title: 'Email', detail: 'reservations@theceylonteaexperience.com' },
+              { icon: FiMapPin, title: 'Location', detail: '146A, Sea Street Galle, Sri Lanka', link: 'https://www.google.com/maps?ll=6.031208,80.221283&z=15&t=m&hl=en-US&gl=US&mapclient=embed&q=The+Ceylon+Tea+Experience+-+Galle,+146A+Sea+Street,+Galle', isLongText: false },
+              { icon: FiPhone, title: 'Phone', detail: '(+94) 70 290 0500', link: 'https://wa.me/94702900500', isLongText: false },
+              { icon: FiMail, title: 'Email', detail: 'info@ceylonteaexperience.com', link: 'mailto:info@ceylonteaexperience.com', isLongText: true },
               // Corrected Website URL
-              { icon: FiGlobe, title: 'Website', detail: 'www.theceylonteaexperience.com' },
-              { icon: FiClock, title: 'Opening Hours', detail: 'Daily – 9.00 AM to 7.00 PM' }
-            ].map((item, idx) => (
-              <div 
-                key={idx} 
-                className="group relative backdrop-blur-xl bg-white/70 border border-white/60 rounded-[2rem] p-8 flex flex-col items-center text-center shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(27,59,34,0.08)] hover:-translate-y-3 transition-all duration-500 overflow-hidden"
-              >
-                {/* Top Accent Line */}
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#c8a951] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+              { icon: FiGlobe, title: 'Website', detail: 'www.theceylonteaexperience.com', link: 'https://www.theceylonteaexperience.com', isLongText: true },
+              { icon: FiClock, title: 'Opening Hours', detail: 'Daily – 9.00 AM to 7.00 PM', link: null, isLongText: false }
+            ].map((item, idx) => {
+              // ලින්ක් එකක් ඇත්නම් <a> ටැග් එකද, නැත්නම් <div> ටැග් එකද භාවිතා කරන්න
+              const CardWrapper = item.link ? 'a' : 'div';
 
-                {/* Icon Circle */}
-                <div className="w-16 h-16 bg-gradient-to-br from-white to-gray-50 rounded-full flex items-center justify-center mb-6 shadow-[inset_0_-2px_6px_rgba(0,0,0,0.03)] border border-gray-100 group-hover:border-[#c8a951]/30 group-hover:shadow-[0_0_20px_rgba(200,169,81,0.15)] group-hover:scale-110 transition-all duration-500 z-10">
-                  <item.icon className="text-[26px] text-[#1a3020] group-hover:text-[#c8a951] transition-colors duration-300 drop-shadow-sm" />
-                </div>
+              return (
+                <CardWrapper 
+                  key={idx} 
+                  href={item.link || undefined}
+                  target={item.link ? "_blank" : undefined}
+                  rel={item.link ? "noopener noreferrer" : undefined}
+                  className={`group relative backdrop-blur-xl bg-white/70 border border-white/60 rounded-[2rem] p-8 flex flex-col items-center text-center shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(27,59,34,0.08)] hover:-translate-y-3 transition-all duration-500 overflow-hidden ${item.link ? 'cursor-pointer block' : ''}`}
+                >
+                  {/* Top Accent Line */}
+                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#c8a951] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
 
-                {/* Text Content */}
-                <h3 className="text-[#1a3020] font-serif font-bold text-xl mb-3 tracking-wide z-10">{item.title}</h3>
-                
-                {/* Animated Divider */}
-                <div className="w-6 h-[2px] bg-[#c8a951]/40 mb-4 group-hover:w-16 transition-all duration-500 z-10"></div>
-                
-                <p className="text-sm text-gray-600 leading-relaxed font-light break-words w-full z-10">{item.detail}</p>
+                  {/* Icon Circle */}
+                  <div className="w-16 h-16 bg-gradient-to-br from-white to-gray-50 rounded-full flex items-center justify-center mb-6 shadow-[inset_0_-2px_6px_rgba(0,0,0,0.03)] border border-gray-100 group-hover:border-[#c8a951]/30 group-hover:shadow-[0_0_20px_rgba(200,169,81,0.15)] group-hover:scale-110 transition-all duration-500 z-10">
+                    <item.icon className="text-[26px] text-[#1a3020] group-hover:text-[#c8a951] transition-colors duration-300 drop-shadow-sm" />
+                  </div>
 
-                {/* Background Hover Glow */}
-                <div className="absolute inset-0 bg-gradient-to-b from-[#c8a951]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-              </div>
-            ))}
+                  {/* Text Content */}
+                  <h3 className="text-[#1a3020] font-serif font-bold text-xl mb-3 tracking-wide z-10">{item.title}</h3>
+                  
+                  {/* Animated Divider */}
+                  <div className="w-6 h-[2px] bg-[#c8a951]/40 mb-4 group-hover:w-16 transition-all duration-500 z-10"></div>
+                  
+                  {/* Detail Text */}
+                  <p className={`text-gray-600 leading-relaxed font-light z-10 transition-colors ${item.link ? 'group-hover:text-[#c8a951]' : ''} ${item.isLongText ? 'text-[11px] sm:text-[10px] md:text-xs whitespace-nowrap' : 'text-sm break-words w-full'}`}>
+                    {item.detail}
+                  </p>
+
+                  {/* Background Hover Glow */}
+                  <div className="absolute inset-0 bg-gradient-to-b from-[#c8a951]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                </CardWrapper>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -98,7 +109,7 @@ export default function ContactPage({ navigate }) {
               <div className="space-y-10">
                 {[
                   { icon: '📍', label: 'Address', value: '146A, Sea Street, Galle 80000, Sri Lanka' },
-                  { icon: '✉️', label: 'Email', value: 'reservations@theceylonteaexperience.com' },
+                  { icon: '✉️', label: 'Email', value: 'info@ceylonteaexperience.com' },
                   { icon: '📞', label: 'Phone', value: '(+94) 70 290 0500' }
                 ].map((item, idx) => (
                   <div key={idx} className="flex gap-6 items-start">
@@ -305,7 +316,7 @@ export default function ContactPage({ navigate }) {
 
       {/* High-End Bottom CTA */}
       <section className="py-24 px-8 bg-[#1a2318] text-center relative overflow-hidden">
-        <div className="absolute inset-0 opacity-60">
+        <div className="absolute inset-0 opacity-30">
           <img 
             src="https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/my_images/my+11.jpg" 
             alt="Texture" 
@@ -348,3 +359,5 @@ export default function ContactPage({ navigate }) {
     </div>
   )
 }
+
+//info@ceylonteaexperience.com mekata yawanna form ekesubmition eka

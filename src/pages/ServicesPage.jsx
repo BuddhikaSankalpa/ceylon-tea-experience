@@ -41,59 +41,42 @@ export default function ServicesPage({ navigate }) {
       {/* Modern Editorial Services Container */}
       <section className="py-24 px-4 md:px-8 max-w-7xl mx-auto space-y-32">
         
-        {/* Service 1: Hand-Made Tea & Tasting */}
+        {/* Service 1: The Tea Library */}
         <div className="relative flex flex-col lg:flex-row items-center group">
           <div className="w-full lg:w-7/12 relative z-0 overflow-hidden rounded-sm">
             <img 
-              src="https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/10.jpeg"
-              alt="Hand-Made Tea Experience" 
-              className="w-full h-[600px] md:h-[750px] lg:h-[700px] object-cover transition-transform duration-1000 group-hover:scale-105"
+              src="https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/25.jpeg" 
+              alt="The Tea Library Display" 
+              className="w-full h-[400px] md:h-[500px] lg:h-[550px] object-cover transition-transform duration-1000 group-hover:scale-105"
             />
           </div>
           <div className="w-full lg:w-6/12 lg:-ml-24 mt-[-40px] lg:mt-0 relative z-10 px-4 lg:px-0 py-8">
-            <div className="bg-white/95 backdrop-blur-sm p-8 md:p-12 shadow-xl border border-gray-100">
+            <div className="bg-white/95 backdrop-blur-sm p-8 md:p-14 shadow-xl border border-gray-100">
               <span className="text-[#B8960C] font-serif italic text-2xl mb-4 block">01.</span>
-              <h2 className="text-3xl md:text-4xl font-serif text-[#2D6A2D] font-bold mb-2">Hand-Made Tea & Tasting</h2>
-              <p className="text-[#B8960C] font-bold mb-6">A hands-on journey through the art of Ceylon Tea.</p>
+              <h2 className="text-3xl md:text-4xl font-serif text-[#2D6A2D] font-bold mb-6">The Tea Library</h2>
               
-              <p className="text-gray-600 mb-4 text-sm md:text-base">In this guided experience, guests are invited to step into the role of a tea maker:</p>
+              <p className="text-gray-700 mb-4 text-sm md:text-base leading-relaxed">
+                The Tea Library is a dedicated display of a wide range of premium tea brands available in Sri Lanka.
+              </p>
               
-              <ul className="space-y-3 mb-8 text-sm md:text-base text-gray-700">
-                <li className="flex gap-4 items-start"><span className="text-[#B8960C] font-bold">✓</span> Hand-pluck fresh tea leaves</li>
-                <li className="flex gap-4 items-start"><span className="text-[#B8960C] font-bold">✓</span> Roll and craft your own green or black tea</li>
-                <li className="flex gap-4 items-start"><span className="text-[#B8960C] font-bold">✓</span> Learn how leaf grade, region, and climate influence taste</li>
-                <li className="flex gap-4 items-start"><span className="text-[#B8960C] font-bold">✓</span> Compare teas from different terroirs through a curated tasting</li>
-                <li className="flex gap-4 items-start"><span className="text-[#B8960C] font-bold">✓</span> Take home a sample of the tea you made</li>
-              </ul>
-
-              <div className="bg-[#F9F6F0] border-l-4 border-[#B8960C] p-5 rounded-r-lg mb-8">
-                <h4 className="text-[#2D6A2D] font-bold mb-3 text-sm md:text-base">This session is perfect for:</h4>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-gray-700">
-                  <ul className="space-y-2">
-                    <li className="flex gap-2 items-start"><span className="text-[#2D6A2D] font-bold">•</span> Cultural travellers</li>
-                    <li className="flex gap-2 items-start"><span className="text-[#2D6A2D] font-bold">•</span> Families</li>
-                  </ul>
-                  <ul className="space-y-2">
-                    <li className="flex gap-2 items-start"><span className="text-[#2D6A2D] font-bold">•</span> Tea enthusiasts</li>
-                    <li className="flex gap-2 items-start"><span className="text-[#2D6A2D] font-bold">•</span> Schools and groups</li>
-                  </ul>
-                </div>
-              </div>
+              <p className="text-gray-700 mb-6 text-sm md:text-base leading-relaxed">
+                Guests can explore different types of Ceylon tea, compare brands, and purchase teas based on their preference. With several different brands available in one place, guests have the advantage of finding exactly what suits their taste. It’s a convenient way to discover and take home a variety of teas all in one place.
+              </p>
 
               {/* Pricing & Booking CTA */}
               <div className="pt-6 border-t border-gray-200">
-                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                   <div>
-                    <p className="text-2xl font-serif text-[#2D6A2D] font-bold">From $45 USD</p>
-                    <p className="text-xs font-bold tracking-widest uppercase text-gray-500 mt-1">Per Person (60 Mins)</p>
+                    <p className="text-xl font-serif text-[#2D6A2D] font-bold">Free Entry</p>
+                    <p className="text-xs font-bold tracking-widest uppercase text-gray-500 mt-1">Retail prices vary by selection</p>
                   </div>
                   <a 
                     href="https://wa.me/94702900500" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="w-full sm:w-auto bg-[#2D6A2D] text-white px-8 py-3 text-xs font-bold uppercase tracking-widest hover:bg-[#1A3D1A] transition shadow-md rounded-sm inline-block text-center"
+                    className="w-full sm:w-auto border-2 border-[#2D6A2D] text-[#2D6A2D] px-8 py-3 text-xs font-bold uppercase tracking-widest hover:bg-[#2D6A2D] hover:text-white transition shadow-sm rounded-sm"
                   >
-                    Book This Experience
+                    Inquire Now
                   </a>
                 </div>
               </div>
@@ -101,19 +84,81 @@ export default function ServicesPage({ navigate }) {
           </div>
         </div>
 
-        {/* Service 2: BYOT */}
+        {/* Service 2: E-Commerce & Delivery */}
         <div className="relative flex flex-col lg:flex-row-reverse items-center group">
+          <div className="w-full lg:w-7/12 relative z-0 overflow-hidden rounded-sm">
+            <img 
+              src="https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/10.jpeg  " 
+              alt="E-Commerce & Delivery" 
+              className="w-full h-[400px] md:h-[550px] object-cover transition-transform duration-1000 group-hover:scale-105"
+            />
+          </div>
+          <div className="w-full lg:w-6/12 lg:-mr-24 mt-[-40px] lg:mt-0 relative z-10 px-4 lg:px-0">
+            <div className="bg-white/95 backdrop-blur-sm p-8 md:p-14 shadow-xl border border-gray-100">
+              {/* Coming Soon Badge */}
+              <div className="inline-block bg-[#F9F6F0] border border-[#B8960C] text-[#B8960C] px-4 py-1.5 rounded-sm text-[10px] font-bold uppercase tracking-widest mb-6 shadow-sm">
+                Online Store Coming Soon
+              </div>
+
+              <span className="text-[#B8960C] font-serif italic text-2xl mb-4 block">02.</span>
+              <h2 className="text-3xl md:text-4xl font-serif text-[#2D6A2D] font-bold mb-4">E-Commerce & Delivery</h2>
+              <p className="text-gray-500 font-bold mb-6">Take Ceylon Tea home with you.</p>
+              <p className="text-sm text-gray-600 mb-8 leading-relaxed">
+                Guests will soon be able to reorder their personalised blends or choose from our catalog of teas through our seamless online store.
+              </p>
+              
+              {/* Highlighted Logistics */}
+              <div className="bg-[#1A3D1A] text-white p-6 rounded-lg mb-8 shadow-md">
+                <h4 className="text-[#B8960C] font-bold uppercase tracking-widest text-xs mb-4">Premium Logistics Options</h4>
+                <ul className="space-y-4 text-sm font-light">
+                  <li className="flex items-center gap-3">
+                    <span className="bg-white/10 p-2 rounded text-[#B8960C]">🏨</span>
+                    <span><strong className="font-bold">Hotel Delivery:</strong> Delivered directly to your stay in Galle/South Coast.</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <span className="bg-white/10 p-2 rounded text-[#B8960C]">✈️</span>
+                    <span><strong className="font-bold">Airport Pickup:</strong> Collect your packaged teas securely at the airport before departure.</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <span className="bg-white/10 p-2 rounded text-[#B8960C]">🌍</span>
+                    <span><strong className="font-bold">Global Shipping:</strong> Worldwide doorstep delivery.</span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Pricing & Booking CTA */}
+              <div className="pt-2 border-t border-gray-200">
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mt-4">
+                  <div>
+                    <p className="text-xs font-bold tracking-widest uppercase text-gray-500">Shipping rates vary by destination</p>
+                  </div>
+                   <a 
+                    href="https://wa.me/94702900500" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="w-full sm:w-auto inline-block text-center whitespace-nowrap border-2 border-[#2D6A2D] text-[#2D6A2D] px-8 py-3 text-xs font-bold uppercase tracking-widest hover:bg-[#2D6A2D] hover:text-white transition shadow-sm rounded-sm"
+                  >
+                    Contact For Orders
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Service 3: Build Your Own Tea – BYOT */}
+        <div className="relative flex flex-col lg:flex-row items-center group">
           <div className="w-full lg:w-7/12 relative z-0 overflow-hidden rounded-sm">
             {/* Note: Recommend updating with actual Tea Library photo */}
             <img 
-              src="https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/25.jpeg" 
+              src="https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/11.jpeg" 
               alt="The Tea Library" 
               className="w-full h-[700px] md:h-[850px] lg:h-[800px] object-cover transition-transform duration-1000 group-hover:scale-105"
             />
           </div>
-          <div className="w-full lg:w-6/12 lg:-mr-24 mt-[-40px] lg:mt-0 relative z-10 px-4 lg:px-0 py-8">
+          <div className="w-full lg:w-6/12 lg:-ml-24 mt-[-40px] lg:mt-0 relative z-10 px-4 lg:px-0 py-8">
             <div className="bg-white/95 backdrop-blur-sm p-8 md:p-12 shadow-xl border border-gray-100">
-              <span className="text-[#B8960C] font-serif italic text-2xl mb-4 block">02.</span>
+              <span className="text-[#B8960C] font-serif italic text-2xl mb-4 block">03.</span>
               <h2 className="text-3xl md:text-4xl font-serif text-[#2D6A2D] font-bold mb-2">Build Your Own Tea – BYOT</h2>
               <p className="text-[#B8960C] font-bold mb-6">Sri Lanka's first curated tea-blending experience</p>
               
@@ -127,9 +172,6 @@ export default function ServicesPage({ navigate }) {
                 <li className="flex gap-4 items-start"><span className="text-[#B8960C] font-bold">✓</span> Creating personalised custom labels</li>
               </ul>
 
-              {/* <p className="text-gray-600 mb-6 text-sm md:text-base leading-relaxed">
-                Guided by our tea experts, you can experiment, adjust, and refine your blend until it is just right. Your final creation is recorded and packed for you to take home — a unique tea crafted by you, for you.
-              </p> */}
               <h4 className="text-[#8c6b00] font-semibold mb-3 text-sm md:text-base">You can also:</h4>
                 <ul className="space-y-3 mb-6 text-sm md:text-base text-gray-700">
                   <li className="flex gap-4 items-start"><span className="text-[#a67c00] font-bold">✓</span> Name your tea or pack it as a gift</li>
@@ -175,111 +217,59 @@ export default function ServicesPage({ navigate }) {
           </div>
         </div>
 
-        {/* Service 3: The Tea Library */}
-        <div className="relative flex flex-col lg:flex-row items-center group">
+        {/* Service 4: Hand-Made Tea & Tasting */}
+        <div className="relative flex flex-col lg:flex-row-reverse items-center group">
           <div className="w-full lg:w-7/12 relative z-0 overflow-hidden rounded-sm">
             <img 
-              src="https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/11.jpeg" 
-              alt="The Tea Library Display" 
-              className="w-full h-[400px] md:h-[500px] lg:h-[550px] object-cover transition-transform duration-1000 group-hover:scale-105"
+              src="https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/9.jpeg"
+              alt="Hand-Made Tea Experience" 
+              className="w-full h-[600px] md:h-[750px] lg:h-[700px] object-cover transition-transform duration-1000 group-hover:scale-105"
             />
           </div>
-          <div className="w-full lg:w-6/12 lg:-ml-24 mt-[-40px] lg:mt-0 relative z-10 px-4 lg:px-0 py-8">
-            <div className="bg-white/95 backdrop-blur-sm p-8 md:p-14 shadow-xl border border-gray-100">
-              <span className="text-[#B8960C] font-serif italic text-2xl mb-4 block">03.</span>
-              <h2 className="text-3xl md:text-4xl font-serif text-[#2D6A2D] font-bold mb-6">The Tea Library</h2>
+          <div className="w-full lg:w-6/12 lg:-mr-24 mt-[-40px] lg:mt-0 relative z-10 px-4 lg:px-0 py-8">
+            <div className="bg-white/95 backdrop-blur-sm p-8 md:p-12 shadow-xl border border-gray-100">
+              <span className="text-[#B8960C] font-serif italic text-2xl mb-4 block">04.</span>
+              <h2 className="text-3xl md:text-4xl font-serif text-[#2D6A2D] font-bold mb-2">Hand-Made Tea & Tasting</h2>
+              <p className="text-[#B8960C] font-bold mb-6">A hands-on journey through the art of Ceylon Tea.</p>
               
-              <p className="text-gray-700 mb-4 text-sm md:text-base leading-relaxed">
-                The Tea Library is a dedicated display of a wide range of premium tea brands available in Sri Lanka.
-              </p>
+              <p className="text-gray-600 mb-4 text-sm md:text-base">In this guided experience, guests are invited to step into the role of a tea maker:</p>
               
-              <p className="text-gray-700 mb-6 text-sm md:text-base leading-relaxed">
-                Guests can explore different types of Ceylon tea, compare brands, and purchase teas based on their preference. With several different brands available in one place, guests have the advantage of finding exactly what suits their taste. It’s a convenient way to discover and take home a variety of teas all in one place.
-              </p>
+              <ul className="space-y-3 mb-8 text-sm md:text-base text-gray-700">
+                <li className="flex gap-4 items-start"><span className="text-[#B8960C] font-bold">✓</span> Hand-pluck fresh tea leaves</li>
+                <li className="flex gap-4 items-start"><span className="text-[#B8960C] font-bold">✓</span> Roll and craft your own green or black tea</li>
+                <li className="flex gap-4 items-start"><span className="text-[#B8960C] font-bold">✓</span> Learn how leaf grade, region, and climate influence taste</li>
+                <li className="flex gap-4 items-start"><span className="text-[#B8960C] font-bold">✓</span> Compare teas from different terroirs through a curated tasting</li>
+                <li className="flex gap-4 items-start"><span className="text-[#B8960C] font-bold">✓</span> Take home a sample of the tea you made</li>
+              </ul>
+
+              <div className="bg-[#F9F6F0] border-l-4 border-[#B8960C] p-5 rounded-r-lg mb-8">
+                <h4 className="text-[#2D6A2D] font-bold mb-3 text-sm md:text-base">This session is perfect for:</h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-gray-700">
+                  <ul className="space-y-2">
+                    <li className="flex gap-2 items-start"><span className="text-[#2D6A2D] font-bold">•</span> Cultural travellers</li>
+                    <li className="flex gap-2 items-start"><span className="text-[#2D6A2D] font-bold">•</span> Families</li>
+                  </ul>
+                  <ul className="space-y-2">
+                    <li className="flex gap-2 items-start"><span className="text-[#2D6A2D] font-bold">•</span> Tea enthusiasts</li>
+                    <li className="flex gap-2 items-start"><span className="text-[#2D6A2D] font-bold">•</span> Schools and groups</li>
+                  </ul>
+                </div>
+              </div>
 
               {/* Pricing & Booking CTA */}
               <div className="pt-6 border-t border-gray-200">
-                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
                   <div>
-                    <p className="text-xl font-serif text-[#2D6A2D] font-bold">Free Entry</p>
-                    <p className="text-xs font-bold tracking-widest uppercase text-gray-500 mt-1">Retail prices vary by selection</p>
+                    <p className="text-2xl font-serif text-[#2D6A2D] font-bold">From $45 USD</p>
+                    <p className="text-xs font-bold tracking-widest uppercase text-gray-500 mt-1">Per Person (60 Mins)</p>
                   </div>
-                  {/* <button onClick={() => navigate('contact')} className="w-full sm:w-auto border-2 border-[#2D6A2D] text-[#2D6A2D] px-8 py-3 text-xs font-bold uppercase tracking-widest hover:bg-[#2D6A2D] hover:text-white transition shadow-sm rounded-sm">
-                    Inquire Now
-                  </button> */}
                   <a 
                     href="https://wa.me/94702900500" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="w-full sm:w-auto border-2 border-[#2D6A2D] text-[#2D6A2D] px-8 py-3 text-xs font-bold uppercase tracking-widest hover:bg-[#2D6A2D] hover:text-white transition shadow-sm rounded-sm"
+                    className="w-full sm:w-auto bg-[#2D6A2D] text-white px-8 py-3 text-xs font-bold uppercase tracking-widest hover:bg-[#1A3D1A] transition shadow-md rounded-sm inline-block text-center"
                   >
-                    Inquire Now
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Service 4: Global Delivery */}
-        <div className="relative flex flex-col lg:flex-row-reverse items-center group">
-          <div className="w-full lg:w-7/12 relative z-0 overflow-hidden rounded-sm">
-            <img 
-              src="https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/23.webp" 
-              alt="E-Commerce & Delivery" 
-              className="w-full h-[400px] md:h-[550px] object-cover transition-transform duration-1000 group-hover:scale-105"
-            />
-          </div>
-          <div className="w-full lg:w-6/12 lg:-mr-24 mt-[-40px] lg:mt-0 relative z-10 px-4 lg:px-0">
-            <div className="bg-white/95 backdrop-blur-sm p-8 md:p-14 shadow-xl border border-gray-100">
-              {/* Coming Soon Badge */}
-              <div className="inline-block bg-[#F9F6F0] border border-[#B8960C] text-[#B8960C] px-4 py-1.5 rounded-sm text-[10px] font-bold uppercase tracking-widest mb-6 shadow-sm">
-                Online Store Coming Soon
-              </div>
-
-              <span className="text-[#B8960C] font-serif italic text-2xl mb-4 block">04.</span>
-              <h2 className="text-3xl md:text-4xl font-serif text-[#2D6A2D] font-bold mb-4">E-Commerce & Delivery</h2>
-              <p className="text-gray-500 font-bold mb-6">Take Ceylon Tea home with you.</p>
-              <p className="text-sm text-gray-600 mb-8 leading-relaxed">
-                Guests will soon be able to reorder their personalised blends or choose from our catalog of teas through our seamless online store.
-              </p>
-              
-              {/* Highlighted Logistics */}
-              <div className="bg-[#1A3D1A] text-white p-6 rounded-lg mb-8 shadow-md">
-                <h4 className="text-[#B8960C] font-bold uppercase tracking-widest text-xs mb-4">Premium Logistics Options</h4>
-                <ul className="space-y-4 text-sm font-light">
-                  <li className="flex items-center gap-3">
-                    <span className="bg-white/10 p-2 rounded text-[#B8960C]">🏨</span>
-                    <span><strong className="font-bold">Hotel Delivery:</strong> Delivered directly to your stay in Galle/South Coast.</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="bg-white/10 p-2 rounded text-[#B8960C]">✈️</span>
-                    <span><strong className="font-bold">Airport Pickup:</strong> Collect your packaged teas securely at the airport before departure.</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="bg-white/10 p-2 rounded text-[#B8960C]">🌍</span>
-                    <span><strong className="font-bold">Global Shipping:</strong> Worldwide doorstep delivery.</span>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Pricing & Booking CTA */}
-              <div className="pt-2 border-t border-gray-200">
-                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mt-4">
-                  <div>
-                    <p className="text-xs font-bold tracking-widest uppercase text-gray-500">Shipping rates vary by destination</p>
-                  </div>
-                  {/* <button onClick={() => navigate('contact')} className="w-full sm:w-auto border-2 border-[#2D6A2D] text-[#2D6A2D] px-8 py-3 text-xs font-bold uppercase tracking-widest hover:bg-[#2D6A2D] hover:text-white transition shadow-sm rounded-sm whitespace-nowrap">
-                    Contact For Orders
-                  </button>
-                   */}
-                   <a 
-                    href="https://wa.me/94702900500" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="w-full sm:w-auto inline-block text-center whitespace-nowrap border-2 border-[#2D6A2D] text-[#2D6A2D] px-8 py-3 text-xs font-bold uppercase tracking-widest hover:bg-[#2D6A2D] hover:text-white transition shadow-sm rounded-sm"
-                  >
-                    Contact For Orders
+                    Book This Experience
                   </a>
                 </div>
               </div>
@@ -374,6 +364,19 @@ export default function ServicesPage({ navigate }) {
           </div>
         </div>
       </section>
+      <div className="fixed bottom-8 right-8 z-50">
+        <a 
+          href="https://wa.me/94702900500" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="group flex items-center gap-3 bg-[#25D366] text-white px-5 py-4 rounded-full shadow-[0_10px_25px_rgba(37,211,102,0.4)] hover:shadow-[0_15px_35px_rgba(37,211,102,0.5)] transition-all duration-300 hover:-translate-y-1 cursor-pointer"
+        >
+          <span className="font-bold text-sm tracking-wide hidden sm:block">Chat on WhatsApp</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+          </svg>
+        </a>
+      </div>
 
       <Footer navigate={navigate} />
     </div>

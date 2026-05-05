@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Footer({ navigate }) {
   return (
-    <footer className="bg-[#1A3D1A] text-gray-300 py-16 px-8 text-sm font-sans">
+    <footer className="bg-[#1A3D1A] text-gray-300 pt-16 pb-4 px-8 text-sm font-sans">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
         
         {/* Brand & Location Info */}
@@ -128,8 +128,8 @@ export default function Footer({ navigate }) {
       </div>
       
       {/* Copyright */}
-      <div className="max-w-6xl mx-auto text-center mt-12 pt-8 border-t border-gray-700/50 text-[10px] tracking-widest uppercase text-gray-500">
-        © {new Date().getFullYear()} THE CEYLON TEA EXPERIENCE. All rights reserved.
+      <div className="max-w-md mx-auto text-center mt-4 pt-4 border-t border-gray-700/50 text-[10px] tracking-widest uppercase text-gray-500">
+        © {new Date().getFullYear()} EXPACE PVT LTD. All rights reserved. 
       </div>
     </footer>
   )
