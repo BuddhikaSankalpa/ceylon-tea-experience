@@ -166,7 +166,7 @@ export default function HomePage({ navigate }) {
           playsInline
           className="hero-bg-video"
         >
-          <source src={`${import.meta.env.BASE_URL}Galle.mp4`} type="video/mp4" />
+          <source src="https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/Galle.mp4" type="video/mp4" />
           Your browser does not support the video tag.                                                                                                                  {/*----------------------*/}    
         </video>
 {/*----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/}
@@ -715,6 +715,7 @@ function RotatingCards({ cards }) {
     </div>
   )
 }
+
 // import { useState, useEffect } from "react"
 // import Nav from '../components/Nav'
 // import Footer from '../components/Footer'
