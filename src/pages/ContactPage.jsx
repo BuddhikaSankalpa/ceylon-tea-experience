@@ -53,7 +53,7 @@ export default function ContactPage({ navigate }) {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 -mt-32">
             {[
               { icon: FiMapPin, title: 'Location', detail: '146A, Sea Street Galle, Sri Lanka', link: 'https://www.google.com/maps?ll=6.031208,80.221283&z=15&t=m&hl=en-US&gl=US&mapclient=embed&q=The+Ceylon+Tea+Experience+-+Galle,+146A+Sea+Street,+Galle', isLongText: false },
-              { icon: FiPhone, title: 'Phone', detail: '(+94) 70 290 0500', link: 'https://wa.me/94702900500', isLongText: false },
+              { icon: FiPhone, title: 'Phone', detail: '(+94) 70 290 0500', link: 'https://wa.me/94702900500?text=Hi%20TCTE!%20I\'d%20like%20to%20know%20more%20about%20the%20Ceylon%20Tea%20Experience.', isLongText: false },
               { icon: FiMail, title: 'Email', detail: 'info@ceylonteaexperience.com', link: 'mailto:info@ceylonteaexperience.com', isLongText: true },
               // Corrected Website URL
               { icon: FiGlobe, title: 'Website', detail: 'www.theceylonteaexperience.com', link: 'https://www.theceylonteaexperience.com', isLongText: true },
@@ -344,7 +344,7 @@ export default function ContactPage({ navigate }) {
       {/* Floating WhatsApp Button (Updated with href and correct number) */}
       <div className="fixed bottom-8 right-8 z-50">
         <a 
-          href="https://wa.me/94702900500" 
+          href="https://wa.me/94702900500?text=Hi%20TCTE!%20I'd%20like%20to%20know%20more%20about%20the%20Ceylon%20Tea%20Experience." 
           target="_blank" 
           rel="noopener noreferrer" 
           className="group flex items-center gap-3 bg-[#25D366] text-white px-5 py-4 rounded-full shadow-[0_10px_25px_rgba(37,211,102,0.4)] hover:shadow-[0_15px_35px_rgba(37,211,102,0.5)] transition-all duration-300 hover:-translate-y-1 cursor-pointer"

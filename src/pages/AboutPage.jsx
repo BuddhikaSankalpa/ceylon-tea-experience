@@ -23,10 +23,12 @@ export default function AboutPage({ navigate }) {
             BRAND HERITAGE
             <span className="absolute -right-12 top-1/2 w-8 h-[1px] bg-[#c8a951]"></span>
           </span>
-          
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-black text-white mb-10 drop-shadow-2xl tracking-wide">
-            About TCTE
+          <h1 className="text-5xl md:text-7xl font-serif font-bold text-white mb-6 tracking-tight leading-tight drop-shadow-lg">
+            About The Ceylon Tea<br className="hidden md:block"/> Experience
           </h1>
+          {/* <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-black text-white mb-10 drop-shadow-2xl tracking-wide">
+            About The Ceylon Tea Experience
+          </h1> */}
           
           <div className="max-w-3xl mx-auto text-white/90 text-lg md:text-xl leading-relaxed font-light drop-shadow-md">
             <p>
@@ -45,10 +47,10 @@ export default function AboutPage({ navigate }) {
               Bringing the Highlands <span className="text-[#a67c00]">to the Coast</span>
             </h2>
             <p>
-              For over a century, the complete story of Ceylon Tea has been hidden away in the central highlands. The Ceylon Tea Experience (TCTE) was born from a simple yet ambitious vision: to bring the authentic, artisanal tea-making process directly to the cultural heart of the South.
+              For over a century, the complete story of Ceylon Tea has been hidden away in the central highlands. The Ceylon Tea Experience (TCTE) was born from a simple yet ambitious vision to bring the authentic, artisanal tea making process directly to the cultural heart of the South.
             </p>
             <p>
-              Located in Galle - one of the country's most visited tourist cities - TCTE brings together interactive learning, artisanal tea-making, and modern cafe hospitality in one beautifully curated space. It is not just about drinking tea; it is about experiencing the soul of Sri Lanka.
+              Located in Galle one of the country's most visited tourist cities TCTE brings together interactive learning, artisanal tea making, and modern cafe hospitality in one beautifully curated space. It is not just about drinking tea it is about experiencing the soul of Sri Lanka.
             </p>
           </div>
 
@@ -148,7 +150,7 @@ export default function AboutPage({ navigate }) {
         <div className="max-w-6xl mx-auto flex flex-wrap justify-center items-center gap-10 md:gap-20 text-[#1b3b22] text-center">
           
           {/* ICON 1: Organic Certified */}
-          <div className="flex items-center gap-4">
+          {/* <div className="flex items-center gap-4">
             <div className="w-12 h-12 bg-[#fcfbf8] rounded-full flex items-center justify-center shadow border border-[#eae0d5] text-[#a67c00]">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
                 <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" />
@@ -159,7 +161,7 @@ export default function AboutPage({ navigate }) {
               <span className="block text-xs font-bold tracking-widest uppercase">Organic</span>
               <span className="block text-[10px] text-gray-500 uppercase">Certified</span>
             </div>
-          </div>
+          </div> */}
 
           {/* ICON 2: TripAdvisor Recognized */}
           <div className="flex items-center gap-4">
@@ -212,7 +214,7 @@ export default function AboutPage({ navigate }) {
             <h2 className="text-4xl md:text-5xl font-serif text-[#1b3b22] mb-6">Meet The Team</h2>
             <h3 className="text-xl font-bold text-[#1b3b22] mb-4">Pasindu & Our Master Sommeliers</h3>
             <p className="text-[#4a5d4e] text-lg leading-relaxed mb-8">
-              With a deep-rooted passion for Sri Lankan heritage, our team consists of certified tea planters, tasters, and cultural storytellers. We believe that tea is personal. 
+              With a deep rooted passion for Sri Lankan heritage, our team consists of certified tea planters, tasters, and cultural storytellers. We believe that tea is personal. 
             </p>
             <p className="text-[#4a5d4e] text-lg leading-relaxed mb-8">
               That's why our curators are dedicated to guiding you individually, sharing generations of knowledge, and helping you craft a blend that resonates with your own palate. A team dedicated to preserving and celebrating Sri Lanka's tea legacy.
@@ -227,7 +229,7 @@ export default function AboutPage({ navigate }) {
            <p className="text-xs uppercase tracking-[0.3em] text-[#a67c00] mb-4 font-semibold">Visit Us</p>
            <h2 className="text-4xl md:text-5xl font-serif text-[#1b3b22] mb-6">Our Location</h2>
            <p className="max-w-2xl mx-auto text-[#4a5d4e] text-lg leading-relaxed">
-             Situated just minutes away from the historic UNESCO World Heritage site of Galle Fort and the beautiful beaches of Unawatuna, our experience center is easily accessible for anyone traveling the Southern Coast.
+             Perfectly positioned on Sri Lanka's Southern Coast, our experience center sits just minutes from the UNESCO World Heritage site of Galle Fort and within easy reach of the region's most loved beach destinations Unawatuna, Hikkaduwa, and Ahangama making it the ideal stop on your coastal journey.
            </p>
         </div>
 
@@ -289,7 +291,7 @@ export default function AboutPage({ navigate }) {
       </section>
       <div className="fixed bottom-8 right-8 z-50">
         <a 
-          href="https://wa.me/94702900500" 
+          href="https://wa.me/94702900500?text=Hi%20TCTE!%20I'd%20like%20to%20know%20more%20about%20the%20Ceylon%20Tea%20Experience." 
           target="_blank" 
           rel="noopener noreferrer" 
           className="group flex items-center gap-3 bg-[#25D366] text-white px-5 py-4 rounded-full shadow-[0_10px_25px_rgba(37,211,102,0.4)] hover:shadow-[0_15px_35px_rgba(37,211,102,0.5)] transition-all duration-300 hover:-translate-y-1 cursor-pointer"

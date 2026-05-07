@@ -5,33 +5,87 @@ import Footer from '../components/Footer';
 const categories = ["All Collections", "Tea Making Experience", "Tea Library", "Café", "Events/Groups"];
 
 const allPhotos = [
+  //
   // --- FEATURED PHOTOS (Slider) ---
-  { id: 1, category: "Café", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/2.jpeg", title: "Serene Valleys", sub: "Café · Ambient Environment", featured: true },
-  { id: 2, category: "Tea Making Experience", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/5.jpeg", title: "Traditional Craft", sub: "Tea Making Experience · Hands-on", featured: true },
-  { id: 3, category: "Tea Library", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/1.jpeg", title: "Premium Harvest", sub: "Tea Library · Curated Collection", featured: true },
-  { id: 4, category: "Events/Groups", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/3.jpeg", title: "Local Devotion", sub: "Events/Groups · Together", featured: true },
+  //
+  // 1. Iced tea with lime — was "Serene Valleys" (didn't match image)
+  { id: 1, category: "Café", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/13.webp", title: "Sunset Refresh", sub: "Café · Refreshing Pour", featured: true },
+  
+  // 2. Jars + branded teas display — sub category was wrong
+  { id: 2, category: "Tea Library", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/25.jpeg", title: "Curated Display", sub: "Tea Library · Premium Selection", featured: true },
+  
+  // 3. Hands holding rolled tea leaves — sub category was wrong
+  { id: 3, category: "Tea Making Experience", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/1.jpeg", title: "Artisan Hands", sub: "Tea Making Experience · Hand-Rolled Craft", featured: true },
+  
+  // 4. TCTE branded canister with tasting bowls — was "Local Devotion"
+  { id: 4, category: "Events/Groups", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/3.jpeg", title: "Tasting Together", sub: "Events/Groups · Curated Sets", featured: true },
 
+
+  //
   // --- GRID PHOTOS ---
-  { id: 5, category: "Café", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/26.jpeg", title: "Highland Beauty", sub: "Café", span: "col-span-1 row-span-2" },
-  { id: 6, category: "Tea Making Experience", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/25.jpeg", title: "Natural Drying", sub: "Process", span: "col-span-1 md:col-span-2 row-span-1" },
-  { id: 7, category: "Tea Library", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/24.webp", title: "Silver Tips", sub: "Blends", span: "col-span-1 row-span-1" },
-  { id: 8, category: "Events/Groups", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/21.webp", title: "Morning Joy", sub: "Community", span: "col-span-1 row-span-1" },
-  { id: 9, category: "Café", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/20.webp", title: "Endless Green", sub: "Scenic", span: "col-span-1 md:col-span-2 row-span-2" },
-  { id: 10, category: "Tea Making Experience", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/22.webp", title: "Quality Check", sub: "Artisan", span: "col-span-1 row-span-1" },
-  { id: 11, category: "Tea Library", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/23.webp", title: "Rich Black Tea", sub: "Tasting", span: "col-span-1 row-span-1" },
+  //
+  // 5. Person in tea plantation — moved from "All Collections"
+  { id: 5, category: "Tea Making Experience", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/26.jpeg", title: "In the Estate", sub: "Plantation Life", span: "col-span-1 row-span-2" },
+  
+  // 6. Jars on shelves — moved from "All Collections", was "Natural Drying"
+  { id: 6, category: "Tea Library", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/25.jpeg", title: "Premium Shelves", sub: "Curated Range", span: "col-span-1 md:col-span-2 row-span-1" },
+  
+  // 7. Clear cup with tea — KEEP, fits perfectly
+  { id: 7, category: "Tea Library", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/24.webp", title: "Silver Tips", sub: "Premium Blend", span: "col-span-1 row-span-1" },
+  
+  // 8. Cups of brewed tea — moved from "All Collections" to Café
+  { id: 8, category: "Café", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/21.webp", title: "Morning Brew", sub: "Daily Cups", span: "col-span-1 row-span-1" },
+  
+  // 9. Tea cup brewing on stand — was "Endless Green" (didn't match image)
+  { id: 9, category: "Café", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/20.webp", title: "Steaming Cup", sub: "Brewed Fresh", span: "col-span-1 md:col-span-2 row-span-2" },
+  
+  // 10. Hand inspecting tea leaf — KEEP
+  { id: 10, category: "Tea Making Experience", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/22.webp", title: "Quality Check", sub: "Artisan Eye", span: "col-span-1 row-span-1" },
+  
+  // 11. Teapot — KEEP
+  { id: 11, category: "Tea Library", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/23.webp", title: "Rich Black Tea", sub: "Classic Pour", span: "col-span-1 row-span-1" },
+  
+  // 12. Two people in tea field — KEEP
   { id: 12, category: "Events/Groups", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/18.webp", title: "Community Spirit", sub: "Workshops", span: "col-span-1 md:col-span-2 row-span-1" },
-  { id: 13, category: "Café", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/19.webp", title: "Modern Cafe", sub: "Relax", span: "col-span-1 row-span-1" },
-  { id: 14, category: "Tea Making Experience", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/15.webp", title: "Hand-Picking", sub: "Harvest", span: "col-span-1 row-span-1" },
+  
+  // 13. Person tending tea bushes by window — was "Modern Cafe" (didn't match)
+  { id: 13, category: "Tea Making Experience", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/19.webp", title: "Estate Care", sub: "Tending the Bushes", span: "col-span-1 row-span-1" },
+  
+  // 14. Close-up dried black tea leaves — was "Hand-Picking" (didn't match)
+  { id: 14, category: "Tea Making Experience", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/15.webp", title: "Cured Leaves", sub: "Final Stage", span: "col-span-1 row-span-1" },
+  
+  // 15. Tea strainer — KEEP
   { id: 15, category: "Tea Library", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/17.webp", title: "Golden Brew", sub: "Collection", span: "col-span-1 row-span-1" },
-  { id: 16, category: "Events/Groups", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/9.jpeg", title: "Group Sessions", sub: "Experience", span: "col-span-1 row-span-1" },
-  { id: 17, category: "Café", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/13.webp", title: "Warm Ambience", sub: "Cafe", span: "col-span-1 md:col-span-2 row-span-2" },
-  { id: 18, category: "Tea Making Experience", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/12.webp", title: "Artisanal Sorting", sub: "Process", span: "col-span-1 row-span-1" },
-  { id: 19, category: "Tea Library", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/5.jpeg", title: "Finest Selection", sub: "Library", span: "col-span-1 row-span-1" },
-  { id: 20, category: "Events/Groups", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/10.jpeg", title: "Shared Harmony", sub: "Groups", span: "col-span-1 md:col-span-2 row-span-1" },
-  { id: 21, category: "Café", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/8.jpeg", title: "Cozy Corners", sub: "Dining", span: "col-span-1 row-span-1" },
-  { id: 22, category: "Tea Making Experience", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/6.jpeg", title: "Leaf Rolling", sub: "Craft", span: "col-span-1 row-span-1" },
-  { id: 23, category: "Tea Library", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/11.jpeg", title: "Vintage Blends", sub: "History", span: "col-span-1 row-span-1" },
-  { id: 24, category: "Events/Groups", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/7.jpeg", title: "Tour Highlights", sub: "Memories", span: "col-span-1 row-span-1" },
+  
+  // 16. Group activity — moved from "All Collections" to Events/Groups
+  { id: 16, category: "Events/Groups", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/9.jpeg", title: "Group Sessions", sub: "Together", span: "col-span-1 row-span-1" },
+  
+  // 17. Iced tea (same image as id 1) — moved from "All Collections" to Café
+  { id: 17, category: "All Collections", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/13.webp", title: "Cool Refresh", sub: "Iced Pour", span: "col-span-1 md:col-span-2 row-span-2" },
+  
+  // 18. Candles + book + cup ambient setting — was "Artisanal Sorting" (didn't match)
+  { id: 18, category: "Café", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/12.webp", title: "Quiet Moments", sub: "Ambient Setting", span: "col-span-1 row-span-1" },
+  
+  // 19. Tea library item — moved from "All Collections" to Tea Library
+  { id: 19, category: "Tea Library", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/5.jpeg", title: "Finest Selection", sub: "Curated Range", span: "col-span-1 row-span-1" },
+  
+  // 20. TCTE branded canister with cups — sub updated
+  { id: 20, category: "Events/Groups", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/10.jpeg", title: "Shared Harmony", sub: "Tasting Set", span: "col-span-1 md:col-span-2 row-span-1" },
+  
+  // 21. Smiling person with tea leaf — moved from "All Collections" to Tea Making Experience
+  { id: 21, category: "Tea Making Experience", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/8.jpeg", title: "Joyful Pluck", sub: "Hands-on Moments", span: "col-span-1 row-span-1" },
+  
+  // 22. Person at branded tea shelves — was "Leaf Rolling" (didn't match — image shows brand selection)
+  { id: 22, category: "Tea Library", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/6.jpeg", title: "Brand Selection", sub: "Premium Brands", span: "col-span-1 row-span-1" },
+  
+  // 23. Jars of various teas — KEEP
+  { id: 23, category: "Tea Library", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/11.jpeg", title: "Vintage Blends", sub: "Heritage Range", span: "col-span-1 row-span-1" },
+  
+  // 24. Branded products / tour memorabilia — moved from "All Collections" to Events/Groups
+  { id: 24, category: "Events/Groups", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/7.jpeg", title: "Tour Highlights", sub: "Memorable Visits", span: "col-span-1 row-span-1" },
+
+  // 25. Exclusive to All Collections — won't appear in specific category filters
+  { id: 25, category: "All Collections", src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/2.jpeg", title: "Ceylon Heritage", sub: "Featured Moment", span: "col-span-1 row-span-1" },
 ];
 
 export default function GalleryPage({ navigate }) {
@@ -245,7 +299,7 @@ export default function GalleryPage({ navigate }) {
                 className="pointer-events-auto bg-white/5 hover:bg-[#c8a951] border border-white/10 text-white w-14 h-14 rounded-full flex items-center justify-center backdrop-blur-sm transition-all duration-300 hover:scale-110"
                 onClick={e => {
                   e.stopPropagation();
-                  const currentList = activeCategory === "All Collections" ? allPhotos : filtered;
+                  const currentList = filtered;
                   const idx = currentList.findIndex(p => p.id === lightbox.id);
                   setLightbox(currentList[(idx - 1 + currentList.length) % currentList.length]);
                 }}
@@ -300,7 +354,7 @@ export default function GalleryPage({ navigate }) {
       </section>
       <div className="fixed bottom-8 right-8 z-50">
         <a 
-          href="https://wa.me/94702900500" 
+          href="https://wa.me/94702900500?text=Hi%20TCTE!%20I'd%20like%20to%20know%20more%20about%20the%20Ceylon%20Tea%20Experience." 
           target="_blank" 
           rel="noopener noreferrer" 
           className="group flex items-center gap-3 bg-[#25D366] text-white px-5 py-4 rounded-full shadow-[0_10px_25px_rgba(37,211,102,0.4)] hover:shadow-[0_15px_35px_rgba(37,211,102,0.5)] transition-all duration-300 hover:-translate-y-1 cursor-pointer"

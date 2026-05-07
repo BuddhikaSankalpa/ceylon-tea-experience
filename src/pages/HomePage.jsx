@@ -4,28 +4,28 @@ import Footer from '../components/Footer'
 
 const testimonials = [
   {
-    name: "Sarah Mitchell",
-    role: "Travel Writer, UK",
-    date: "2 weeks ago",
-    platform: "TripAdvisor",
-    text: "The most transformative tea experience I've ever had. Standing in those misty highlands, watching the sunrise over endless green — it changed how I understand luxury.",
-    avatar: "https://i.pinimg.com/1200x/23/c3/6b/23c36b997f4facf89386e9674692b445.jpg"
-  },
-  {
-    name: "Kenji Tanaka",
-    role: "Tea Sommelier, Japan",
-    date: "1 month ago",
+    name: "Thanmayi Panguluri",
+    role: "6 Reviews",
+    date: "2 months ago",
     platform: "Google",
-    text: "As someone who has visited tea estates across Asia, Ceylon Heritage stands apart. Their commitment to single-estate authenticity is remarkable.",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80"
+    text: "Loved this place. It was such a fun way to learn about Sri Lankan tea. You get to taste different teas and even make your own blend which was honestly my favorite part. The vibe is relaxed and the team is super friendly. Definitely worth it!",
+    avatar: "https://ui-avatars.com/api/?name=Thanmayi+Panguluri&background=A855F7&color=fff&size=128&bold=true"
   },
   {
-    name: "Amara Osei",
-    role: "Food & Culture Blogger",
-    date: "3 months ago",
-    platform: "TripAdvisor",
-    text: "Book the Artisan experience. Don't think about it. The factory tour, the hand-rolling session, the tasting at dusk — perfection.",
-    avatar: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=100&q=80"
+    name: "Depak Kumar",
+    role: "Local Guide · 8 Reviews",
+    date: "2 months ago",
+    platform: "Google",
+    text: "Best part of Galle. The space is welcoming and the tea is amazing. I loved being able to create my own blend and take it home. It feels like a true Sri Lankan experience. If you enjoy tea even a little, you'll love this spot.",
+    avatar: "https://ui-avatars.com/api/?name=Depak+Kumar&background=DC2626&color=fff&size=128&bold=true"
+  },
+  {
+    name: "Hiruni Malsha",
+    role: "1 Review",
+    date: "2 months ago",
+    platform: "Google",
+    text: "Such a great experience. The interior has a calm and relaxing vibe. We can get an idea about how we make Ceylon tea in a traditional way.",
+    avatar: "https://ui-avatars.com/api/?name=Hiruni+Malsha&background=10B981&color=fff&size=128&bold=true"
   }
 ];
 
@@ -67,18 +67,6 @@ const experienceImages = [
   {
     src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/1.jpeg",
     caption: "The artisanal hand-rolling process"
-  },
-  {
-    src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/19.webp",
-    caption: "Tasting unique regional blends"
-  },
-  {
-    src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/17.webp",
-    caption: "Guided walks through the lush estates"
-  },
-  {
-    src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/12.webp",
-    caption: "Building your custom tea library"
   },
   {
     src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/5.jpeg",
@@ -265,55 +253,65 @@ export default function HomePage({ navigate }) {
             {/* Icon Cards Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 cursor-pointer">
               {[
+                // 1. Interactive Experience
                 {
                   icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />,
                   title: "Interactive Experience",
                   desc: "The only interactive tea experience in Southern Sri Lanka."
                 },
-                {
-                  icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20 8h-2.81a5.986 5.986 0 00-1.39-2H4a2 2 0 00-2 2v6a2 2 0 002 2h1v4a2 2 0 002 2h6a2 2 0 002-2v-4h1a2 2 0 002-2V8zm-6 10H7v-4h7v4zm-9-8h11v4H5V10z" />,
-                  title: "Tasting Sessions",
-                  desc: "Hands on tea making & tasting sessions."
-                },
-                {
-                  icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />,
-                  title: "Tea Library",
-                  desc: "Build Your Own Tea Library personalised blends."
-                },
-                {
-                  icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />,
-                  title: "Tea Café",
-                  desc: "Premium tea café serving curated Ceylon teas."
-                },
-                {
-                  icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />,
-                  title: "Welcoming Environment",
-                  desc: "Perfect for families, couples, and cultural travellers."
-                },
-                {
-                  icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />,
-                  title: "Quick & Curated",
-                  desc: "Quick, curated, high value experience no full day travel required."
-                },
-                {
-                  icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />,
-                  title: "One Hour Experience",
-                  desc: "A must do hour long tea experience without travelling to tea factories."
-                },
+                // 2. Handcrafted Tea (Hand Made Tea)
                 {
                   icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />,
                   title: "Handcrafted Tea",
                   desc: "Every individual guest to manufacture their own tea - by hand."
                 },
+                // 3. Tasting Sessions
+                {
+                  icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20 8h-2.81a5.986 5.986 0 00-1.39-2H4a2 2 0 00-2 2v6a2 2 0 002 2h1v4a2 2 0 002 2h6a2 2 0 002-2v-4h1a2 2 0 002-2V8zm-6 10H7v-4h7v4zm-9-8h11v4H5V10z" />,
+                  title: "Tasting Sessions",
+                  desc: "Hands on tea making & tasting sessions."
+                },
+                // 4. Build Your Own Tea (renamed from Take Home Blends, same description)
                 {
                   icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />,
-                  title: "Take Home Blends",
+                  title: "Build Your Own Tea",
                   desc: "Guests to blend and take home tea, to their own taste buds."
                 },
+                // 5. Tea Café
+                {
+                  icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />,
+                  title: "Tea Café",
+                  desc: "Premium tea café serving curated Ceylon teas."
+                },
+                // 6. Tea Library  ⚠️ description needs update
+                {
+                  icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />,
+                  title: "Tea Library",
+                  desc: "Build Your Own Tea Library personalised blends."
+                },
+                // 7. One Hour Experience
+                {
+                  icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />,
+                  title: "One Hour Experience",
+                  desc: "A must do hour long tea experience without travelling to tea factories."
+                },
+                // 8. Modern Tea Journey (re-invented)
                 {
                   icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />,
                   title: "Modern Tea Journey",
                   desc: "Guests to explore a re invented tea experience."
+                },
+                // 9. Welcoming Environment
+                {
+                  icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />,
+                  title: "Welcoming Environment",
+                  desc: "Perfect for families, couples, and cultural travellers."
+                },
+                // 10. Quick & Curated
+                {
+                  icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />,
+                  title: "Quick & Curated",
+                  desc: "Quick, curated, high value experience no full day travel required."
                 }
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-4 p-5 bg-white rounded-xl border border-gray-100 hover:shadow-lg transition-shadow duration-300">
@@ -424,9 +422,7 @@ export default function HomePage({ navigate }) {
               5.0 Rating based on <span className="underline decoration-[#B8960C] cursor-pointer p-1.5">1000+ reviews</span>
             </p>
             <div className="flex gap-3 ml-2">
-              <span className="text-xs font-bold bg-white text-gray-700 px-3 py-1.5 rounded-full shadow-sm border border-gray-200 flex items-center gap-1.5">
-                <span className="text-blue-500 text-base">🌿</span> 100% Organic
-              </span>
+             
               {/* <span className="text-xs font-bold bg-white text-gray-700 px-3 py-1.5 rounded-full shadow-sm border border-gray-200 flex items-center gap-1.5">
                 <span className="text-green-600 text-base">O</span> TripAdvisor
               </span> */}
@@ -475,12 +471,23 @@ export default function HomePage({ navigate }) {
           ))}
         </div>
 
-        {/* Read More Button */}
-        {/* <div className="text-center mt-12">
-          <button className="border-2 border-[#2D6A2D] text-[#2D6A2D] px-8 py-3 text-xs font-sans font-bold uppercase tracking-wider hover:bg-[#2D6A2D] hover:text-white transition rounded-sm">
-            Read More Reviews
-          </button>
-        </div> */}
+        {/* View All on Google Button */}
+        <div className="text-center mt-12">
+          <a 
+            href="https://www.google.com/maps/place/The+Ceylon+Tea+Experience+-+Galle/@6.0383792,80.2205275,18z/data=!4m6!3m5!1s0x3ae1736b35262d13:0x993881923260c1bd!8m2!3d6.0371585!4d80.2245897!16s%2Fg%2F11ytzjgzgf?entry=ttu&g_ep=EgoyMDI2MDUwMi4wIKXMDSoASAFQAw%3D%3D"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 bg-white border-2 border-[#2D6A2D] text-[#2D6A2D] px-8 py-3 text-xs font-sans font-bold uppercase tracking-wider hover:bg-[#2D6A2D] hover:text-white transition rounded-sm shadow-sm"
+          >
+            <svg className="w-5 h-5" viewBox="0 0 48 48">
+              <path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"/>
+              <path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"/>
+              <path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"/>
+              <path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"/>
+            </svg>
+            Read All Reviews on Google
+          </a>
+        </div>
       </section>
 
       {/* CTA */}
@@ -506,13 +513,13 @@ export default function HomePage({ navigate }) {
           <div className="flex flex-wrap justify-center gap-8 text-white/80 text-xs font-sans font-bold uppercase tracking-wider">
             <span className="flex items-center gap-2">⭐ 5-Star Rated</span>
             <span className="flex items-center gap-2">👥 1000+ Happy Guests</span>
-            <span className="flex items-center gap-2">🌿 100% Organic</span>
           </div>
         </div>
       </section>
       <div className="fixed bottom-8 right-8 z-50">
         <a 
-          href="https://wa.me/94702900500" 
+          href="https://wa.me/94702900500?text=Hi%20TCTE!%20I'd%20like%20to%20know%20more%20about%20the%20Ceylon%20Tea%20Experience."
+          // href="https://wa.me/94702900500" 
           target="_blank" 
           rel="noopener noreferrer" 
           className="group flex items-center gap-3 bg-[#25D366] text-white px-5 py-4 rounded-full shadow-[0_10px_25px_rgba(37,211,102,0.4)] hover:shadow-[0_15px_35px_rgba(37,211,102,0.5)] transition-all duration-300 hover:-translate-y-1 cursor-pointer"
