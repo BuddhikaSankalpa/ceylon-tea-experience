@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
+import WhatsAppFloatingButton from '../components/WhatsAppFloatingButton';
 
 const testimonials = [
   {
@@ -216,19 +217,55 @@ export default function HomePage({ navigate }) {
       </section>
 
       {/* Stats Bar */}
-      <section className="bg-[#1A3D1A] py-8 px-8 border-t-4 border-[#B8960C]">
-        <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center text-white">
-          {[
-            { num: "136+", label: "Years of Heritage" },
-            { num: "11", label: "Estate Varieties" },
-            { num: "100%", label: "Organic Certified" },
-            { num: "50K+", label: "Happy Visitors" },
-          ].map((s, i) => (
-            <div key={i}>
-              <div className="text-3xl font-serif font-bold text-[#B8960C]">{s.num}</div>
-              <div className="text-xs font-sans uppercase tracking-wider text-gray-300 mt-2">{s.label}</div>
+      <section className="bg-[#1A3D1A] py-10 px-8 border-t-4 border-b-4 border-[#B8960C] relative overflow-hidden">
+        {/* Subtle background pattern */}
+        <div className="absolute inset-0 opacity-[0.03] bg-[repeating-linear-gradient(45deg,#B8960C_0px,#B8960C_1px,transparent_1px,transparent_20px)]"></div>
+        
+        <div className="relative max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-16 text-white">
+          
+          {/* Stat 1 — Location */}
+          <div className="flex items-center gap-4 group">
+            <div className="flex-shrink-0 w-14 h-14 rounded-full bg-[#B8960C]/15 border border-[#B8960C]/40 flex items-center justify-center group-hover:bg-[#B8960C]/25 transition-colors">
+              <svg className="w-7 h-7 text-[#B8960C]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
             </div>
-          ))}
+            <div className="text-left">
+              <div className="text-3xl font-serif font-bold text-[#B8960C] leading-none">300m</div>
+              <div className="text-[11px] font-sans uppercase tracking-[0.2em] text-gray-300 mt-1.5">From Galle Fort</div>
+            </div>
+          </div>
+
+          {/* Vertical Divider */}
+          <div className="hidden sm:block w-px h-16 bg-gradient-to-b from-transparent via-[#B8960C]/40 to-transparent"></div>
+
+          {/* Stat 2 — Google Rating */}
+          <div className="flex items-center gap-4 group">
+            <div className="flex-shrink-0 w-14 h-14 rounded-full bg-[#B8960C]/15 border border-[#B8960C]/40 flex items-center justify-center group-hover:bg-[#B8960C]/25 transition-colors">
+              {/* Google G icon */}
+              <svg className="w-7 h-7" viewBox="0 0 48 48">
+                <path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"/>
+                <path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"/>
+                <path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"/>
+                <path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"/>
+              </svg>
+            </div>
+            <div className="text-left">
+              <div className="flex items-center gap-2">
+                <span className="text-3xl font-serif font-bold text-[#B8960C] leading-none">4.6</span>
+                <div className="flex gap-0.5 text-[#B8960C]">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+              </div>
+              <div className="text-[11px] font-sans uppercase tracking-[0.2em] text-gray-300 mt-1.5">Google Reviews</div>
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -517,18 +554,7 @@ export default function HomePage({ navigate }) {
         </div>
       </section>
       <div className="fixed bottom-8 right-8 z-50">
-        <a 
-          href="https://wa.me/94702900500?text=Hi%20TCTE!%20I'd%20like%20to%20know%20more%20about%20the%20Ceylon%20Tea%20Experience."
-          // href="https://wa.me/94702900500" 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          className="group flex items-center gap-3 bg-[#25D366] text-white px-5 py-4 rounded-full shadow-[0_10px_25px_rgba(37,211,102,0.4)] hover:shadow-[0_15px_35px_rgba(37,211,102,0.5)] transition-all duration-300 hover:-translate-y-1 cursor-pointer"
-        >
-          <span className="font-bold text-sm tracking-wide hidden sm:block">Chat on WhatsApp</span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
-            <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
-          </svg>
-        </a>
+        ?<WhatsAppFloatingButton />
       </div>
 
       <Footer navigate={navigate} />
