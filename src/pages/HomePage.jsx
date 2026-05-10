@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import WhatsAppFloatingButton from '../components/WhatsAppFloatingButton';
+import { WhatsAppInquiryModal } from '../components/WhatsAppModal';
 
 const testimonials = [
   {
@@ -21,12 +22,12 @@ const testimonials = [
     avatar: "https://ui-avatars.com/api/?name=Depak+Kumar&background=DC2626&color=fff&size=128&bold=true"
   },
   {
-    name: "Hiruni Malsha",
-    role: "1 Review",
+    name: "Dhinuk Narainan",
+    role: "6 Review",
     date: "2 months ago",
     platform: "Google",
-    text: "Such a great experience. The interior has a calm and relaxing vibe. We can get an idea about how we make Ceylon tea in a traditional way.",
-    avatar: "https://ui-avatars.com/api/?name=Hiruni+Malsha&background=10B981&color=fff&size=128&bold=true"
+    text: "Visited recently and really liked the concept and atmosphere. Wishing the team all the best with the journey ahead.",
+    avatar: "https://ui-avatars.com/api/?name=Dhinuk+Narainan&background=10B981&color=fff&size=128&bold=true"
   }
 ];
 
@@ -82,6 +83,7 @@ const experienceImages = [
 
 export default function HomePage({ navigate }) {
   const [activeCardIndex, setActiveCardIndex] = useState(0)
+  const [waModalOpen, setWaModalOpen] = useState(false)
 
   // Watermark text cycles through destination labels
   useEffect(() => {
@@ -144,9 +146,8 @@ export default function HomePage({ navigate }) {
       <Nav navigate={navigate} currentPage="home" />
 
 
-{/*----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/}
       {/* Hero */}
-      <section className="relative min-h-[92vh] flex items-center px-8 py-20 overflow-hidden">                                                                          {/*----------------------*/}
+      <section className="relative min-h-[92vh] flex items-center px-8 py-20 overflow-hidden">                                                                          
         {/* Background video */}                                                                                                                                        
         <video                                                                                                                                                          
           autoPlay
@@ -156,18 +157,12 @@ export default function HomePage({ navigate }) {
           className="hero-bg-video"
         >
           <source src="https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/GalleHome.mp4" type="video/mp4" />
-          Your browser does not support the video tag.                                                                                                                  {/*----------------------*/}    
+          Your browser does not support the video tag.                                                                                                                     
         </video>
-{/*----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/}
+
         {/* Overlay using new brand dark green */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#1A3D1A]/95 to-[#1A3D1A]/40 z-10"></div>
-
-{/*----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/}
-        {/* Big destination watermark */}
-        {/* <div key={activeCardIndex} className="hero-watermark">
-          {heroCards[activeCardIndex].label}
-        </div> */}
-{/*----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/}        
+        
 
         <div className="relative z-20 w-full max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
           <div className="md:w-1/2 text-white">
@@ -184,35 +179,14 @@ export default function HomePage({ navigate }) {
             
             {/* Added Prominent CTA Button & Trust Indicators */}
             <div className="flex gap-4 flex-wrap mb-5">
-              {/* <button
-                onClick={() => navigate('contact')}
-                className="bg-[#2D6A2D] text-white px-8 py-4 text-xs font-sans font-bold uppercase tracking-wider hover:bg-[#1A3D1A] transition rounded-sm shadow-lg"
-              >
-                Book Your Experience
-              </button> */}
               <button
-                onClick={() => window.open('https://wa.me/94702900500', '_blank')}
+                onClick={() => setWaModalOpen(true)}
                 className="border-2 border-[#B8960C] text-[#B8960C] px-8 py-4 text-xs font-sans font-bold uppercase tracking-wider hover:bg-[#B8960C] hover:text-white transition rounded-sm"
               >
                 Book Your Experience
               </button>
             </div>
-            
-            {/* <div className="flex flex-wrap items-center gap-3 text-white/80 text-xs font-sans font-semibold tracking-wide uppercase mt-4">
-              <span>⭐ 5-Star Rated</span>
-              <span className="hidden sm:inline">|</span>
-              <span>👥 1,000+ Happy Guests</span>
-              <span className="hidden sm:inline">|</span>
-              <span>🌿 100% Organic</span>
-            </div> */}
-          </div>
-
-{/*----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/}
-          {/* Rotating / scrolling image cards */}
-          {/* <div className="md:w-1/2 overflow-hidden relative mt-12 md:mt-0" style={{ maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)' }}>
-            <RotatingCards cards={heroCards} />
-          </div> */}
-{/*----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/}          
+          </div>          
         </div>
       </section>
 
@@ -430,11 +404,11 @@ export default function HomePage({ navigate }) {
               </div>
 
               <button
-                onClick={() => window.open('https://wa.me/94702900500', '_blank')}
+                onClick={() => setWaModalOpen(true)}
                 className="inline-block bg-[#2D6A2D] text-white px-10 py-4 text-xs font-sans font-bold uppercase tracking-[0.15em] hover:bg-[#1A3D1A] transition-all rounded-sm shadow-md cursor-pointer"
               >
                 Explore Experiences
-              </button>
+              </button> 
             </div>
           </div>
         </div>
@@ -460,9 +434,6 @@ export default function HomePage({ navigate }) {
             </p>
             <div className="flex gap-3 ml-2">
              
-              {/* <span className="text-xs font-bold bg-white text-gray-700 px-3 py-1.5 rounded-full shadow-sm border border-gray-200 flex items-center gap-1.5">
-                <span className="text-green-600 text-base">O</span> TripAdvisor
-              </span> */}
             </div>
           </div>
         </div>
@@ -540,7 +511,7 @@ export default function HomePage({ navigate }) {
             Your journey into Sri Lanka's most iconic heritage begins here.
           </p>
           <div className="flex flex-wrap justify-center gap-4 mb-10">
-            <button onClick={() => window.open('https://wa.me/94702900500', '_blank')} className="bg-[#B8960C] text-white px-10 py-4 text-sm font-sans font-bold uppercase tracking-wider hover:bg-[#9a7d0a] transition rounded-sm shadow-lg">
+            <button onClick={() => setWaModalOpen(true)} className="bg-[#B8960C] text-white px-10 py-4 text-sm font-sans font-bold uppercase tracking-wider hover:bg-[#9a7d0a] transition rounded-sm shadow-lg">
               Book Your Experience
             </button>
             <button onClick={() => navigate('contact')} className="border-2 border-white text-white px-10 py-4 text-sm font-sans font-bold uppercase tracking-wider hover:bg-white/10 transition rounded-sm">
@@ -554,8 +525,11 @@ export default function HomePage({ navigate }) {
         </div>
       </section>
       <div className="fixed bottom-8 right-8 z-50">
-        ?<WhatsAppFloatingButton />
+        <WhatsAppFloatingButton />
       </div>
+
+      {/* Shared WhatsApp Inquiry Modal — opens from any "Book"/"Explore" button */}
+      <WhatsAppInquiryModal isOpen={waModalOpen} onClose={() => setWaModalOpen(false)} />
 
       <Footer navigate={navigate} />
     </div>
@@ -748,784 +722,3 @@ function RotatingCards({ cards }) {
     </div>
   )
 }
-
-// import { useState, useEffect } from "react"
-// import Nav from '../components/Nav'
-// import Footer from '../components/Footer'
-
-// const testimonials = [
-//   {
-//     name: "Sarah Mitchell",
-//     role: "Travel Writer, UK",
-//     date: "2 weeks ago",
-//     platform: "TripAdvisor",
-//     text: "The most transformative tea experience I've ever had. Standing in those misty highlands, watching the sunrise over endless green — it changed how I understand luxury.",
-//     avatar: "https://i.pinimg.com/1200x/23/c3/6b/23c36b997f4facf89386e9674692b445.jpg"
-//   },
-//   {
-//     name: "Kenji Tanaka",
-//     role: "Tea Sommelier, Japan",
-//     date: "1 month ago",
-//     platform: "Google",
-//     text: "As someone who has visited tea estates across Asia, Ceylon Heritage stands apart. Their commitment to single-estate authenticity is remarkable.",
-//     avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80"
-//   },
-//   {
-//     name: "Amara Osei",
-//     role: "Food & Culture Blogger",
-//     date: "3 months ago",
-//     platform: "TripAdvisor",
-//     text: "Book the Artisan experience. Don't think about it. The factory tour, the hand-rolling session, the tasting at dusk — perfection.",
-//     avatar: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=100&q=80"
-//   }
-// ];
-
-// // Hero background slideshow images
-// const heroBgImages = [
-//   "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/my_images/my+02.avif",
-//   "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/16.webp",
-//   "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/my_images/my+03.webp",
-//   "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/my_images/my+01.jpeg",
-// ]
-
-// // Rotating image cards — 5 Sri Lankan tea regions
-// const heroCards = [
-//   {
-//     img: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/my_images/my+06.jpeg",
-//     label: "Hand Made Tea",
-//     sub: "Craft the champagne of teas..."
-//   },
-//   {
-//     img: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/my_images/my+05.jpeg",
-//     label: "The Tea Library",
-//     sub: "Explore full-bodied, golden blends..."
-//   },
-//   {
-//     img: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/my_images/my+04.jpeg",
-//     label: "Build Your Own Tea",
-//     sub: "Robust teas, shipped worldwide..."
-//   },
-//   {
-//     img: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/1.jpeg",
-//     label: "Global Delivery",
-//     sub: "Taste rich, dark teas together..."
-//   },
-//   {
-//     img: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/my_images/my+01.jpeg",
-//     label: "Workshops & Groups",
-//     sub: "Taste rich southern teas together..."
-//   },
-// ]
-
-// // Our Experience section images
-// const experienceImages = [
-//   // {
-//   //   src: "https://images.pexels.com/photos/34704515/pexels-photo-34704515.jpeg",
-//   //   caption: "Hand-plucking fresh two-leaves-and-a-bud"
-//   // },
-//   // {
-//   //   src: "https://images.pexels.com/photos/5007546/pexels-photo-5007546.jpeg",
-//   //   caption: "The artisanal hand-rolling process"
-//   // },
-//   // {
-//   //   src: "https://images.pexels.com/photos/322461/pexels-photo-322461.jpeg",
-//   //   caption: "Tasting unique regional blends"
-//   // },
-//   // {
-//   //   src: "https://images.pexels.com/photos/34604766/pexels-photo-34604766.jpeg",
-//   //   caption: "Guided walks through the lush estates"
-//   // },
-//   // {
-//   //   src: "https://images.unsplash.com/photo-1558160074-4d7d8bdf4256?w=600&q=80",
-//   //   caption: "Building your custom tea library"
-//   // },
-//   // {
-//   //   src: "https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=600&q=80",
-//   //   caption: "Crafting the perfect golden brew"
-//   // }
-  
-
-//   {
-//     src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/25.jpeg",
-//     caption: "Hand-plucking fresh two-leaves-and-a-bud"
-//   },
-//   {
-//     src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/1.jpeg",
-//     caption: "The artisanal hand-rolling process"
-//   },
-//   {
-//     src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/19.webp",
-//     caption: "Tasting unique regional blends"
-//   },
-//   {
-//     src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/17.webp",
-//     caption: "Guided walks through the lush estates"
-//   },
-//   {
-//     src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/12.webp",
-//     caption: "Building your custom tea library"
-//   },
-//   {
-//     src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/5.jpeg",
-//     caption: "Crafting the perfect golden brew"
-//   },
-//   {
-//     src: "https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/4.jpeg",
-//     caption: "Crafting the perfect golden brew"
-//   }
-
-// ];
-
-// export default function HomePage({ navigate }) {
-//   const [bgIndex, setBgIndex] = useState(0)
-//   const [prevBgIndex, setPrevBgIndex] = useState(null)
-//   const [activeCardIndex, setActiveCardIndex] = useState(0)
-
-//   // Hero background auto-slide
-//   useEffect(() => {
-//     const interval = setInterval(() => {
-//       setPrevBgIndex(bgIndex)
-//       setBgIndex(prev => (prev + 1) % heroBgImages.length)
-//     }, 5000)
-//     return () => clearInterval(interval)
-//   }, [bgIndex])
-
-//   // Watermark text cycles through destination labels
-//   useEffect(() => {
-//     const interval = setInterval(() => {
-//       setActiveCardIndex(prev => (prev + 1) % heroCards.length)
-//     }, 3500)
-//     return () => clearInterval(interval)
-//   }, [])
-
-//   return (
-//     <div className="min-h-screen font-sans text-gray-800 bg-[#F9F6F0]">
-//       <style>{`
-//         @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap');
-//         .font-serif { font-family: 'Playfair Display', serif; }
-//         .font-sans { font-family: 'Lato', sans-serif; }
-        
-//         @keyframes fadeIn {
-//           from { opacity: 0; }
-//           to { opacity: 1; }
-//         }
-//         @keyframes watermarkSwap {
-//           0% { opacity: 0; transform: translateX(40px); }
-//           15% { opacity: 1; transform: translateX(0); }
-//           85% { opacity: 1; transform: translateX(0); }
-//           100% { opacity: 0; transform: translateX(-40px); }
-//         }
-//         .hero-bg-slide {
-//           position: absolute;
-//           inset: 0;
-//           background-size: cover;
-//           background-position: center;
-//           transition: opacity 1.5s ease-in-out;
-//         }
-//         .dot-btn {
-//           width: 8px;
-//           height: 8px;
-//           border-radius: 50%;
-//           border: none;
-//           cursor: pointer;
-//           transition: all 0.3s;
-//         }
-//         .cta-bg {
-//           background-image: url('https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/my_images/my+02.avif');
-//           background-size: cover;
-//           background-position: center;
-//           background-attachment: fixed;
-//         }
-//         .hero-watermark {
-//           position: absolute;
-//           top: 14%;
-//           right: -2%;
-//           font-family: 'Playfair Display', serif;
-//           font-weight: 900;
-//           font-size: clamp(120px, 18vw, 260px);
-//           line-height: 0.9;
-//           letter-spacing: 0.02em;
-//           color: rgba(255, 255, 255, 0.07);
-//           white-space: nowrap;
-//           pointer-events: none;
-//           z-index: 11;
-//           user-select: none;
-//           text-transform: uppercase;
-//           animation: watermarkSwap 3.5s ease-in-out infinite;
-//         }
-//       `}</style>
-
-//       <Nav navigate={navigate} currentPage="home" />
-
-//       {/* Hero */}
-//       <section className="relative min-h-[92vh] flex items-center px-8 py-20 overflow-hidden">
-//         {/* Slideshow backgrounds */}
-//         {heroBgImages.map((img, i) => (
-//           <div
-//             key={i}
-//             className="hero-bg-slide"
-//             style={{
-//               backgroundImage: `url('${img}')`,
-//               opacity: i === bgIndex ? 1 : 0,
-//               zIndex: 0,
-//             }}
-//           />
-//         ))}
-
-//         {/* Overlay using new brand dark green */}
-//         <div className="absolute inset-0 bg-gradient-to-r from-[#1A3D1A]/95 to-[#1A3D1A]/40 z-10"></div>
-
-//         {/* Big destination watermark */}
-//         <div key={activeCardIndex} className="hero-watermark">
-//           {heroCards[activeCardIndex].label}
-//         </div>
-
-//         {/* Slide dots */}
-//         <div className="absolute bottom-16 left-1/2 -translate-x-1/2 flex gap-2 z-20">
-//           {heroBgImages.map((_, i) => (
-//             <button
-//               key={i}
-//               className="dot-btn"
-//               style={{
-//                 background: i === bgIndex ? '#B8960C' : 'rgba(255,255,255,0.4)',
-//                 width: i === bgIndex ? '24px' : '8px',
-//                 borderRadius: i === bgIndex ? '4px' : '50%',
-//               }}
-//               onClick={() => { setPrevBgIndex(bgIndex); setBgIndex(i) }}
-//             />
-//           ))}
-//         </div>
-
-//         <div className="relative z-20 w-full max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
-//           <div className="md:w-1/2 text-white">
-//             <p className="text-xs font-sans uppercase tracking-[0.3em] text-[#B8960C] mb-4">(TCTE) · Heart of Galle</p>
-            
-//             {/* Updated Hero Headline */}
-//             <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-extrabold leading-tight mb-8 drop-shadow-md">
-//               "Don't Just Drink Ceylon Tea <br/><span className="text-[#B8960C]">Experience It</span>"
-//             </h1>
-            
-//             <p className="text-sm md:text-base font-sans leading-relaxed mb-8 max-w-md text-gray-200">
-//               The Ceylon Tea Experience is an immersive, handson tea discovery attraction designed for international visitors who want to experience Ceylon Tea beyond plantations and factories. Guests don't just drink tea they pluck, make, blend, taste, and understand it.
-//             </p>
-            
-//             {/* Added Prominent CTA Button & Trust Indicators */}
-//             <div className="flex gap-4 flex-wrap mb-5">
-//               {/* <button
-//                 onClick={() => navigate('contact')}
-//                 className="bg-[#2D6A2D] text-white px-8 py-4 text-xs font-sans font-bold uppercase tracking-wider hover:bg-[#1A3D1A] transition rounded-sm shadow-lg"
-//               >
-//                 Book Your Experience
-//               </button> */}
-//               <button
-//                 onClick={() => window.open('https://wa.me/94702900500', '_blank')}
-//                 className="border-2 border-[#B8960C] text-[#B8960C] px-8 py-4 text-xs font-sans font-bold uppercase tracking-wider hover:bg-[#B8960C] hover:text-white transition rounded-sm"
-//               >
-//                 Book Your Experience
-//               </button>
-//             </div>
-            
-//             {/* <div className="flex flex-wrap items-center gap-3 text-white/80 text-xs font-sans font-semibold tracking-wide uppercase mt-4">
-//               <span>⭐ 5-Star Rated</span>
-//               <span className="hidden sm:inline">|</span>
-//               <span>👥 1,000+ Happy Guests</span>
-//               <span className="hidden sm:inline">|</span>
-//               <span>🌿 100% Organic</span>
-//             </div> */}
-//           </div>
-
-//           {/* Rotating / scrolling image cards */}
-//           <div className="md:w-1/2 overflow-hidden relative mt-12 md:mt-0" style={{ maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)' }}>
-//             <RotatingCards cards={heroCards} />
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* Stats Bar */}
-//       <section className="bg-[#1A3D1A] py-8 px-8 border-t-4 border-[#B8960C]">
-//         <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center text-white">
-//           {[
-//             { num: "136+", label: "Years of Heritage" },
-//             { num: "11", label: "Estate Varieties" },
-//             { num: "100%", label: "Organic Certified" },
-//             { num: "50K+", label: "Happy Visitors" },
-//           ].map((s, i) => (
-//             <div key={i}>
-//               <div className="text-3xl font-serif font-bold text-[#B8960C]">{s.num}</div>
-//               <div className="text-xs font-sans uppercase tracking-wider text-gray-300 mt-2">{s.label}</div>
-//             </div>
-//           ))}
-//         </div>
-//       </section>
-
-//       {/* Why Choose Us */}
-//       <section className="relative py-24 px-8 overflow-hidden bg-[#F9F6F0]">
-//         {/* Background Gradients */}
-//         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(184,150,12,0.1),transparent_60%)]"></div>
-//         <div className="absolute inset-0 opacity-[0.03] bg-[repeating-linear-gradient(135deg,#1A3D1A_0px,#1A3D1A_1px,transparent_1px,transparent_40px)]"></div>
-
-//         <div className="relative z-10 max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 items-start">
-          
-//           {/* Left Column: Text & Icon Grid */}
-//           <div className="lg:w-[55%] order-2 lg:order-1">
-//             <div className="mb-12">
-//               <h2 className="text-4xl md:text-5xl font-serif text-[#2D6A2D] font-bold mb-4">Why Choose Us</h2>
-//               <h3 className="text-[#1A3D1A] text-lg font-sans font-bold mb-4">Discover Sri Lanka's Tea Story - in the Heart of Galle</h3>
-//               <p className="text-base font-sans text-gray-600 leading-relaxed">
-//                 The Ceylon Tea Experience (TCTE) brings the magic of the tea highlands to the Southern Coast. More than a cafe, we are an interactive tea journey where you learn, create, and taste.
-//               </p>
-//             </div>
-
-//             {/* Icon Cards Grid */}
-//             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 cursor-pointer">
-//               {[
-//                 {
-//                   icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />,
-//                   title: "Interactive Experience",
-//                   desc: "The only interactive tea experience in Southern Sri Lanka."
-//                 },
-//                 {
-//                   icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20 8h-2.81a5.986 5.986 0 00-1.39-2H4a2 2 0 00-2 2v6a2 2 0 002 2h1v4a2 2 0 002 2h6a2 2 0 002-2v-4h1a2 2 0 002-2V8zm-6 10H7v-4h7v4zm-9-8h11v4H5V10z" />,
-//                   title: "Tasting Sessions",
-//                   desc: "Hands on tea making & tasting sessions."
-//                 },
-//                 {
-//                   icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />,
-//                   title: "Tea Library",
-//                   desc: "Build Your Own Tea Library personalised blends."
-//                 },
-//                 {
-//                   icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />,
-//                   title: "Tea Café",
-//                   desc: "Premium tea café serving curated Ceylon teas."
-//                 },
-//                 {
-//                   icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />,
-//                   title: "Welcoming Environment",
-//                   desc: "Perfect for families, couples, and cultural travellers."
-//                 },
-//                 {
-//                   icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />,
-//                   title: "Quick & Curated",
-//                   desc: "Quick, curated, high value experience no full day travel required."
-//                 },
-//                 {
-//                   icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />,
-//                   title: "One Hour Experience",
-//                   desc: "A must do hour long tea experience without travelling to tea factories."
-//                 },
-//                 {
-//                   icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />,
-//                   title: "Handcrafted Tea",
-//                   desc: "Every individual guest to manufacture their own tea - by hand."
-//                 },
-//                 {
-//                   icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />,
-//                   title: "Take Home Blends",
-//                   desc: "Guests to blend and take home tea, to their own taste buds."
-//                 },
-//                 {
-//                   icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />,
-//                   title: "Modern Tea Journey",
-//                   desc: "Guests to explore a re invented tea experience."
-//                 }
-//               ].map((item, i) => (
-//                 <div key={i} className="flex items-start gap-4 p-5 bg-white rounded-xl border border-gray-100 hover:shadow-lg transition-shadow duration-300">
-//                   <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#F9F6F0] flex items-center justify-center text-[#B8960C]">
-//                     <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-//                       {item.icon}
-//                     </svg>
-//                   </div>
-//                   <div>
-//                     <h4 className="font-serif font-bold text-[#2D6A2D] text-lg mb-1">{item.title}</h4>
-//                     <p className="text-sm font-sans text-gray-600 leading-relaxed">{item.desc}</p>
-//                   </div>
-//                 </div>
-//               ))}
-//             </div>
-//           </div>
-
-//           {/* Right Column: Supporting Image / Video Clip */}
-//           {/* VIDEO */}
-//           <div className="lg:w-[45%] order-1 lg:order-2 lg:sticky lg:top-54 mt-10 lg:mt-16">
-//             {/* Aspect ratio changed to 4/5 to make it wider/longer, gap reduced in parent flex container */}
-//             <div className="relative aspect-[4/5] w-full rounded-2xl overflow-hidden shadow-2xl border-2 border-white group">
-//               <video 
-//                 autoPlay 
-//                 loop 
-//                 muted 
-//                 playsInline
-//                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-//               >
-//                 <source src="https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/ceylon-tea-experience-videos.MP4" type="video/mp4" />
-//                 Your browser does not support the video tag.
-//               </video>
-//             </div>
-//           </div>
-
-//         </div>
-//       </section>
-
-//       {/* Our Experience Section */}
-//       <section className="relative py-24 px-8 overflow-hidden bg-[#F9F6F0]">
-//         {/* Soft background accents */}
-//         <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full opacity-20" style={{
-//           background: 'radial-gradient(circle, rgba(184,150,12,0.3) 0%, transparent 70%)',
-//           filter: 'blur(60px)'
-//         }}></div>
-//         <div className="absolute -bottom-32 -left-32 w-[500px] h-[500px] rounded-full opacity-15" style={{
-//           background: 'radial-gradient(circle, rgba(45,106,45,0.25) 0%, transparent 70%)',
-//           filter: 'blur(70px)'
-//         }}></div>
-
-//         <div className="relative z-10 max-w-7xl mx-auto">
-//           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-//             {/* LEFT — Image Carousel */}
-//             <div className="relative order-2 lg:order-1">
-//               <ExperienceImageCarousel images={experienceImages} />
-//               {/* Decorative gold corner accents */}
-//               <div className="absolute -top-4 -left-4 w-20 h-20 border-t-4 border-l-4 border-[#B8960C]/60 rounded-tl-xl pointer-events-none"></div>
-//               <div className="absolute -bottom-4 -right-4 w-20 h-20 border-b-4 border-r-4 border-[#B8960C]/60 rounded-br-xl pointer-events-none"></div>
-//             </div>
-
-//             {/* RIGHT — Text Content */}
-//             <div className="order-1 lg:order-2 lg:pl-8">
-//               <p className="text-xs font-sans uppercase tracking-[0.3em] text-[#B8960C] mb-4 font-bold">The Journey</p>
-
-//               <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-[#2D6A2D] font-bold leading-tight mb-6">
-//                 Our <em className="text-[#B8960C] not-italic">Experience</em>
-//               </h2>
-
-//               {/* Gold accent line */}
-//               <div className="flex items-center gap-2 mb-8">
-//                 <div className="w-16 h-1 bg-[#B8960C]"></div>
-//                 <div className="w-2 h-2 rounded-full bg-[#B8960C]"></div>
-//               </div>
-
-//               <div className="space-y-6 text-base font-sans text-gray-700 leading-relaxed mb-10">
-//                 <p>At TCTE, every visitor becomes part of the tea making process.</p>
-//                 <p>From plucking leaves and rolling your own tea, to crafting a personalised blend with herbs and flavours, the experience is designed to be immersive, educational, and unforgettable.</p>
-//                 <p>Whether you have 30 minutes or two hours, you walk away with a deeper appreciation of the craftsmanship behind Ceylon Tea and a blend you can call your own.</p>
-//               </div>
-
-//               <button
-//                 onClick={() => window.open('https://wa.me/94702900500', '_blank')}
-//                 className="inline-block bg-[#2D6A2D] text-white px-10 py-4 text-xs font-sans font-bold uppercase tracking-[0.15em] hover:bg-[#1A3D1A] transition-all rounded-sm shadow-md cursor-pointer"
-//               >
-//                 Explore Experiences
-//               </button>
-//             </div>
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* Social Proof / Reviews Section */}
-//       <section className="py-24 px-8 bg-[#F9F6F0]">
-//         <div className="max-w-6xl mx-auto text-center mb-16">
-//           <p className="text-xs font-sans uppercase tracking-[0.3em] text-[#B8960C] mb-3 font-bold">Guest Experiences</p>
-//           <h2 className="text-4xl md:text-5xl font-serif text-[#2D6A2D] font-bold mb-6">Loved by Visitors Worldwide</h2>
-          
-//           {/* Aggregate Rating Badge */}
-//           <div className="flex flex-col md:flex-row items-center justify-center gap-4 mt-8">
-//             <div className="flex items-center gap-1 text-[#B8960C]">
-//               {[...Array(5)].map((_, i) => (
-//                 <svg key={i} className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-//                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-//                 </svg>
-//               ))}
-//             </div>
-//             <p className="text-base font-sans font-bold text-[#1A3D1A]">
-//               5.0 Rating based on <span className="underline decoration-[#B8960C] cursor-pointer p-1.5">1000+ reviews</span>
-//             </p>
-//             <div className="flex gap-3 ml-2">
-//               <span className="text-xs font-bold bg-white text-gray-700 px-3 py-1.5 rounded-full shadow-sm border border-gray-200 flex items-center gap-1.5">
-//                 <span className="text-blue-500 text-base">🌿</span> 100% Organic
-//               </span>
-//               {/* <span className="text-xs font-bold bg-white text-gray-700 px-3 py-1.5 rounded-full shadow-sm border border-gray-200 flex items-center gap-1.5">
-//                 <span className="text-green-600 text-base">O</span> TripAdvisor
-//               </span> */}
-//             </div>
-//           </div>
-//         </div>
-
-//         {/* Reviews Grid */}
-//         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-//           {testimonials.map((t, i) => (
-//             <div key={i} className="bg-white rounded-2xl p-8 border border-gray-100 shadow-lg hover:-translate-y-1 transition-transform duration-300">
-//               {/* Review Header */}
-//               <div className="flex justify-between items-start mb-6">
-//                 <div className="flex items-center gap-4">
-//                   <img src={t.avatar} alt={t.name} className="w-12 h-12 rounded-full object-cover border-2 border-[#F9F6F0]" />
-//                   <div>
-//                     <div className="text-[#1A3D1A] text-sm font-sans font-bold">{t.name}</div>
-//                     <div className="text-gray-500 text-xs font-sans mt-0.5">{t.date}</div>
-//                   </div>
-//                 </div>
-//                 {/* Platform Icon indicator */}
-//                 {t.platform === 'Google' ? (
-//                   <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold text-xs">G</div>
-//                 ) : (
-//                   <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center text-green-700 font-bold text-xs">O</div>
-//                 )}
-//               </div>
-              
-//               {/* Star Rating */}
-//               <div className="flex gap-1 text-[#B8960C] mb-4">
-//                 {[...Array(5)].map((_, starIndex) => (
-//                   <svg key={starIndex} className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-//                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-//                   </svg>
-//                 ))}
-//               </div>
-
-//               {/* Review Text */}
-//               <p className="text-gray-600 text-sm font-sans leading-relaxed">"{t.text}"</p>
-              
-//               {/* Optional role display */}
-//               <div className="mt-4 pt-4 border-t border-gray-100">
-//                 <span className="text-[#B8960C] text-xs font-bold uppercase tracking-wider">{t.role}</span>
-//               </div>
-//             </div>
-//           ))}
-//         </div>
-
-//         {/* Read More Button */}
-//         {/* <div className="text-center mt-12">
-//           <button className="border-2 border-[#2D6A2D] text-[#2D6A2D] px-8 py-3 text-xs font-sans font-bold uppercase tracking-wider hover:bg-[#2D6A2D] hover:text-white transition rounded-sm">
-//             Read More Reviews
-//           </button>
-//         </div> */}
-//       </section>
-
-//       {/* CTA */}
-//       <section className="py-32 relative cta-bg">
-//         <div className="absolute inset-0 bg-[#1A3D1A]/85"></div>
-//         <div className="relative z-10 max-w-4xl mx-auto text-center px-8">
-//           <p className="text-xs font-sans uppercase tracking-[0.3em] text-[#B8960C] mb-4 font-bold">Begin Your Journey</p>
-//           <h2 className="text-4xl md:text-6xl font-serif font-bold text-white mb-6 leading-tight">
-//             Ready to Discover<br />Ceylon Tea?
-//           </h2>
-//           <p className="text-gray-200 mb-10 text-base font-sans max-w-lg mx-auto leading-relaxed">
-//             CONNECT · TASTE · EXPLORE<br />
-//             Your journey into Sri Lanka's most iconic heritage begins here.
-//           </p>
-//           <div className="flex flex-wrap justify-center gap-4 mb-10">
-//             <button onClick={() => window.open('https://wa.me/94702900500', '_blank')} className="bg-[#B8960C] text-white px-10 py-4 text-sm font-sans font-bold uppercase tracking-wider hover:bg-[#9a7d0a] transition rounded-sm shadow-lg">
-//               Book Your Experience
-//             </button>
-//             <button onClick={() => navigate('contact')} className="border-2 border-white text-white px-10 py-4 text-sm font-sans font-bold uppercase tracking-wider hover:bg-white/10 transition rounded-sm">
-//               Contact Us
-//             </button>
-//           </div>
-//           <div className="flex flex-wrap justify-center gap-8 text-white/80 text-xs font-sans font-bold uppercase tracking-wider">
-//             <span className="flex items-center gap-2">⭐ 5-Star Rated</span>
-//             <span className="flex items-center gap-2">👥 1000+ Happy Guests</span>
-//             <span className="flex items-center gap-2">🌿 100% Organic</span>
-//           </div>
-//         </div>
-//       </section>
-//       <div className="fixed bottom-8 right-8 z-50">
-//         <a 
-//           href="https://wa.me/94702900500" 
-//           target="_blank" 
-//           rel="noopener noreferrer" 
-//           className="group flex items-center gap-3 bg-[#25D366] text-white px-5 py-4 rounded-full shadow-[0_10px_25px_rgba(37,211,102,0.4)] hover:shadow-[0_15px_35px_rgba(37,211,102,0.5)] transition-all duration-300 hover:-translate-y-1 cursor-pointer"
-//         >
-//           <span className="font-bold text-sm tracking-wide hidden sm:block">Chat on WhatsApp</span>
-//           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
-//             <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
-//           </svg>
-//         </a>
-//       </div>
-
-//       <Footer navigate={navigate} />
-//     </div>
-//   )
-// }
-
-// // -------------------------------------------------------------
-// // Side-by-side Image Carousel for "Our Experience" section
-// // -------------------------------------------------------------
-// function ExperienceImageCarousel({ images }) {
-//   const [activeIndex, setActiveIndex] = useState(0);
-
-//   useEffect(() => {
-//     const interval = setInterval(() => {
-//       setActiveIndex(prev => (prev + 1) % images.length);
-//     }, 4000);
-//     return () => clearInterval(interval);
-//   }, [images.length]);
-
-//   return (
-//     <div className="relative w-full">
-//       <div className="relative w-full aspect-[4/5] md:aspect-[5/6] overflow-hidden rounded-2xl shadow-2xl border-4 border-white">
-//         {images.map((item, i) => (
-//           <div
-//             key={i}
-//             className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-//               i === activeIndex ? "opacity-100 z-10" : "opacity-0 z-0"
-//             }`}
-//           >
-//             <img
-//               src={item.src}
-//               className="w-full h-full object-cover"
-//               alt={item.caption || `Experience Slide ${i + 1}`}
-//             />
-//             <div className="absolute inset-0 bg-gradient-to-t from-[#1A3D1A]/90 via-[#1A3D1A]/20 to-transparent"></div>
-            
-//             {/* Image Caption overlay */}
-//             {item.caption && (
-//               <div className="absolute bottom-12 left-6 right-6 text-center z-20">
-//                 <p className="text-white text-lg md:text-xl font-serif font-bold drop-shadow-md tracking-wide">
-//                   {item.caption}
-//                 </p>
-//               </div>
-//             )}
-//           </div>
-//         ))}
-
-//         <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20">
-//           {images.map((_, i) => (
-//             <button
-//               key={i}
-//               onClick={() => setActiveIndex(i)}
-//               className={`transition-all duration-300 rounded-full ${
-//                 i === activeIndex
-//                   ? "w-8 h-2 bg-[#B8960C]"
-//                   : "w-2 h-2 bg-white/70 hover:bg-white"
-//               }`}
-//               aria-label={`Slide ${i + 1}`}
-//             />
-//           ))}
-//         </div>
-
-//         <div className="absolute top-6 right-6 z-20 bg-[#1A3D1A]/60 backdrop-blur-md text-white text-xs font-sans font-bold tracking-wider px-4 py-2 rounded-full border border-white/20 shadow-md">
-//           {String(activeIndex + 1).padStart(2, '0')} / {String(images.length).padStart(2, '0')}
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
-
-
-// // -------------------------------------------------------------
-// // Rotating Cards — Coverflow 3D Carousel
-// // -------------------------------------------------------------
-// function RotatingCards({ cards }) {
-//   const [activeIndex, setActiveIndex] = useState(0)
-//   const [isHovered, setIsHovered] = useState(false)
-
-//   const CARD_W = 180
-//   const CARD_H = 280
-
-//   useEffect(() => {
-//     if (isHovered) return;
-//     const interval = setInterval(() => {
-//       setActiveIndex(prev => (prev + 1) % cards.length);
-//     }, 3000);
-//     return () => clearInterval(interval);
-//   }, [cards.length, isHovered]);
-
-//   return (
-//     <div 
-//       style={{
-//         width: '100%',
-//         height: `${CARD_H + 80}px`,
-//         display: 'flex',
-//         alignItems: 'center',
-//         justifyContent: 'center',
-//         perspective: '1000px',
-//         position: 'relative',
-//       }}
-//       onMouseEnter={() => setIsHovered(true)}
-//       onMouseLeave={() => setIsHovered(false)}
-//     >
-//       {cards.map((card, i) => {
-//         let offset = (i - activeIndex + cards.length) % cards.length;
-//         if (offset > Math.floor(cards.length / 2)) {
-//           offset -= cards.length;
-//         }
-
-//         const absOffset = Math.abs(offset);
-//         const isActive = offset === 0;
-
-//         const translateX = offset * 110; 
-//         const translateZ = absOffset * -150;
-//         const rotateY = isActive ? 0 : offset < 0 ? 45 : -45;
-//         const scale = isActive ? 1.1 : 0.85;
-//         const zIndex = 10 - absOffset;
-//         const opacity = isActive ? 1 : 1 - (absOffset * 0.3);
-
-//         return (
-//           <div
-//             key={i}
-//             onClick={() => setActiveIndex(i)}
-//             style={{
-//               position: 'absolute',
-//               width: `${CARD_W}px`,
-//               height: `${CARD_H}px`,
-//               borderRadius: '20px',
-//               overflow: 'hidden',
-//               border: isActive ? '2px solid #B8960C' : '1px solid rgba(255,255,255,0.18)',
-//               boxShadow: isActive ? '0 25px 50px rgba(0,0,0,0.8)' : '0 10px 30px rgba(0,0,0,0.4)',
-//               transform: `translateX(${translateX}px) translateZ(${translateZ}px) rotateY(${rotateY}deg) scale(${scale})`,
-//               zIndex: zIndex,
-//               opacity: opacity,
-//               cursor: 'pointer',
-//               transition: 'all 0.6s cubic-bezier(0.25, 1, 0.5, 1)',
-//             }}
-//           >
-//             <img
-//               src={card.img}
-//               alt={card.label}
-//               style={{
-//                 width: '100%',
-//                 height: '100%',
-//                 objectFit: 'cover',
-//                 display: 'block'
-//               }}
-//             />
-
-//             <div style={{
-//               position: 'absolute', inset: 0,
-//               background: 'linear-gradient(to top, rgba(26,61,26,0.95) 0%, rgba(26,61,26,0.3) 50%, transparent 100%)',
-//             }} />
-
-//             <div style={{
-//               position: 'absolute', bottom: '18px', left: '18px', right: '18px',
-//             }}>
-//               <div style={{
-//                 color: '#F9F6F0',
-//                 fontSize: '18px',
-//                 fontWeight: '800',
-//                 letterSpacing: '0.06em',
-//                 textTransform: 'uppercase',
-//                 lineHeight: 1.2,
-//                 marginBottom: '8px',
-//                 fontFamily: "'Playfair Display', serif",
-//                 textShadow: '0 2px 8px rgba(0,0,0,0.8)',
-//               }}>
-//                 {card.label}
-//               </div>
-//               <div style={{
-//                 color: '#B8960C',
-//                 fontSize: '11px',
-//                 fontFamily: "'Lato', sans-serif",
-//                 letterSpacing: '0.02em',
-//                 lineHeight: 1.4,
-//                 display: '-webkit-box',
-//                 WebkitLineClamp: 2,
-//                 WebkitBoxOrient: 'vertical',
-//                 overflow: 'hidden',
-//                 fontWeight: 'bold'
-//               }}>
-//                 {card.sub}
-//               </div>
-//             </div>
-//           </div>
-//         )
-//       })}
-//     </div>
-//   )
-// }

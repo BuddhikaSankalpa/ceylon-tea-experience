@@ -1,5 +1,6 @@
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
+import WhatsAppFloatingButton from '../components/WhatsAppFloatingButton';
 
 export default function AboutPage({ navigate }) {
   return (
@@ -10,7 +11,7 @@ export default function AboutPage({ navigate }) {
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/my_images/my+07.jpg" 
+            src="https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/11.jpeg" 
             alt="Ceylon Tea Garden" 
             className="w-full h-full object-cover scale-105"
           />
@@ -148,20 +149,6 @@ export default function AboutPage({ navigate }) {
       {/* Awards & Certifications Strip (NEW) */}
       <section className="py-10 px-8 bg-white border-b border-[#eae0d5]">
         <div className="max-w-6xl mx-auto flex flex-wrap justify-center items-center gap-10 md:gap-20 text-[#1b3b22] text-center">
-          
-          {/* ICON 1: Organic Certified */}
-          {/* <div className="flex items-center gap-4">
-            <div className="w-12 h-12 bg-[#fcfbf8] rounded-full flex items-center justify-center shadow border border-[#eae0d5] text-[#a67c00]">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-                <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" />
-                <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
-              </svg>
-            </div>
-            <div className="text-left">
-              <span className="block text-xs font-bold tracking-widest uppercase">Organic</span>
-              <span className="block text-[10px] text-gray-500 uppercase">Certified</span>
-            </div>
-          </div> */}
 
           {/* ICON 2: TripAdvisor Recognized */}
           <div className="flex items-center gap-4">
@@ -197,27 +184,30 @@ export default function AboutPage({ navigate }) {
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
           <div className="w-full lg:w-1/2 relative">
             <img
-              src="https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/9.jpeg"
+              src="https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/owner.jpeg"
               alt="Tea Artisan & Founder"
-              className="w-full h-[500px] object-cover rounded-sm shadow-lg"
+              className="w-full h-[600px] object-cover rounded-sm shadow-lg"
+              style={{ objectPosition: 'center 25%' }}
             />
-            <div className="hidden md:block absolute -bottom-10 -right-10 bg-white p-8 shadow-xl border border-[#eae0d5] max-w-sm">
+            <div className="hidden md:block absolute -bottom-10 -right-10 bg-white p-6 shadow-xl border border-[#eae0d5] max-w-sm">
               <p className="text-xs uppercase tracking-wider text-[#a67c00] mb-3">Our Core Belief</p>
               <p className="text-xl font-serif italic text-[#1b3b22]">
                 "Don't just drink Ceylon Tea — experience it."
               </p>
             </div>
+            
           </div>
 
           <div className="w-full lg:w-1/2">
-            <p className="text-xs uppercase tracking-[0.3em] text-[#a67c00] mb-4 font-semibold">The Curators</p>
-            <h2 className="text-4xl md:text-5xl font-serif text-[#1b3b22] mb-6">Meet The Team</h2>
-            <h3 className="text-xl font-bold text-[#1b3b22] mb-4">Pasindu & Our Master Sommeliers</h3>
+            <p className="text-xs uppercase tracking-[0.3em] text-[#a67c00] mb-4 font-semibold">The Curator</p>
+            <h2 className="text-4xl md:text-5xl font-serif text-[#1b3b22] mb-6">Meet the Man Behind This</h2>
             <p className="text-[#4a5d4e] text-lg leading-relaxed mb-8">
-              With a deep rooted passion for Sri Lankan heritage, our team consists of certified tea planters, tasters, and cultural storytellers. We believe that tea is personal. 
+              The Ceylon Tea Experience was founded by <b className="font-serif">Pasindu Peiris</b>, a tea manufacturing specialist with over a decade of experience in Sri Lanka’s tea industry. With a background in engineering and strong exposure to tea factory operations, he has worked extensively on 
+              improving quality and processes across different stages of tea manufacturing.
             </p>
             <p className="text-[#4a5d4e] text-lg leading-relaxed mb-8">
-              That's why our curators are dedicated to guiding you individually, sharing generations of knowledge, and helping you craft a blend that resonates with your own palate. A team dedicated to preserving and celebrating Sri Lanka's tea legacy.
+              Through this journey, he developed a deep understanding of how Ceylon tea is crafted and what defines its character. The vision behind TCTE was to give tourists a true taste of Ceylon tea showcasing teas grown in every corner of Sri Lanka within a short span of 
+              time, while allowing guests to make, explore, and create their own tea.
             </p>
           </div>
         </div>
@@ -290,19 +280,9 @@ export default function AboutPage({ navigate }) {
         </div>
       </section>
       <div className="fixed bottom-8 right-8 z-50">
-        <a 
-          href="https://wa.me/94702900500?text=Hi%20TCTE!%20I'd%20like%20to%20know%20more%20about%20the%20Ceylon%20Tea%20Experience." 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          className="group flex items-center gap-3 bg-[#25D366] text-white px-5 py-4 rounded-full shadow-[0_10px_25px_rgba(37,211,102,0.4)] hover:shadow-[0_15px_35px_rgba(37,211,102,0.5)] transition-all duration-300 hover:-translate-y-1 cursor-pointer"
-        >
-          <span className="font-bold text-sm tracking-wide hidden sm:block">Chat on WhatsApp</span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
-            <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
-          </svg>
-        </a>
+        <WhatsAppFloatingButton />
       </div>
-
+              
       <Footer navigate={navigate} />
     </div>
   )

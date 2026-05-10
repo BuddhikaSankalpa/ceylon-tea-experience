@@ -2,14 +2,60 @@ import { useState } from 'react'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import { FiMapPin, FiPhone, FiMail, FiGlobe, FiClock } from 'react-icons/fi';
+import WhatsAppFloatingButton from '../components/WhatsAppFloatingButton';
+import { WhatsAppInquiryModal } from '../components/WhatsAppModal';
 
 export default function ContactPage({ navigate }) {
   const [form, setForm] = useState({ name: '', email: '', date: '', type: 'Private Tasting Event', message: '' })
   const [submitted, setSubmitted] = useState(false)
+  const [waModalOpen, setWaModalOpen] = useState(false);
+
+  // Format date for readable display in WhatsApp message
+  const formatDate = (dateString) => {
+    if (!dateString) return 'Not specified'
+    const date = new Date(dateString)
+    return date.toLocaleDateString('en-US', { 
+      weekday: 'long', 
+      year: 'numeric', 
+      month: 'long', 
+      day: 'numeric' 
+    })
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    
+    // Format the WhatsApp message with all form details
+    const message = `Hi TCTE! 🍃
+
+I'd like to make an inquiry. Here are my details:
+
+*Full Name:* ${form.name}
+*Email:* ${form.email}
+*Date of Visit:* ${formatDate(form.date)}
+*Inquiry Type:* ${form.type}
+
+*Message:*
+${form.message}
+
+Looking forward to your response. Thank you!`
+
+    // Encode the message for URL
+    const encodedMessage = encodeURIComponent(message)
+    
+    // WhatsApp number (no + or spaces)
+    const phoneNumber = '94702900500'
+    
+    // Open WhatsApp with pre-filled message in a new tab
+    window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank')
+    
+    // Show thank-you confirmation
     setSubmitted(true)
+    
+    // Reset form after a brief delay
+    setTimeout(() => {
+      setForm({ name: '', email: '', date: '', type: 'Private Tasting Event', message: '' })
+    }, 1000)
   }
 
   return (
@@ -20,7 +66,7 @@ export default function ContactPage({ navigate }) {
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/my_images/13.jpg" 
+            src="https://ceylon-tea-experience-media.s3.us-east-1.amazonaws.com/images/22.webp" 
             alt="Ceylon Tea Garden" 
             className="w-full h-full object-cover scale-105"
           />
@@ -53,13 +99,11 @@ export default function ContactPage({ navigate }) {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 -mt-32">
             {[
               { icon: FiMapPin, title: 'Location', detail: '146A, Sea Street Galle, Sri Lanka', link: 'https://www.google.com/maps?ll=6.031208,80.221283&z=15&t=m&hl=en-US&gl=US&mapclient=embed&q=The+Ceylon+Tea+Experience+-+Galle,+146A+Sea+Street,+Galle', isLongText: false },
-              { icon: FiPhone, title: 'Phone', detail: '(+94) 70 290 0500', link: 'https://wa.me/94702900500?text=Hi%20TCTE!%20I\'d%20like%20to%20know%20more%20about%20the%20Ceylon%20Tea%20Experience.', isLongText: false },
+              { icon: FiPhone, title: 'Phone', detail: '(+94) 70 290 0500', link: 'tel:+94702900500', isLongText: false },
               { icon: FiMail, title: 'Email', detail: 'info@ceylonteaexperience.com', link: 'mailto:info@ceylonteaexperience.com', isLongText: true },
-              // Corrected Website URL
               { icon: FiGlobe, title: 'Website', detail: 'www.theceylonteaexperience.com', link: 'https://www.theceylonteaexperience.com', isLongText: true },
               { icon: FiClock, title: 'Opening Hours', detail: 'Daily – 9.00 AM to 7.00 PM', link: null, isLongText: false }
             ].map((item, idx) => {
-              // ලින්ක් එකක් ඇත්නම් <a> ටැග් එකද, නැත්නම් <div> ටැග් එකද භාවිතා කරන්න
               const CardWrapper = item.link ? 'a' : 'div';
 
               return (
@@ -177,16 +221,22 @@ export default function ContactPage({ navigate }) {
               </div>
             </div>
 
-            {/* Right: Modern Form (Updated with Date of Visit) */}
+            {/* Right: Modern Form (Updated with WhatsApp Submission) */}
             <div className="p-12 lg:p-20">
               <h2 className="text-4xl font-serif font-bold text-[#1b3b22] mb-3">Send an Inquiry</h2>
-              <p className="text-gray-500 mb-10 leading-relaxed">Allow us to curate your perfect tea journey. Our specialists will respond within 24 hours.</p>
+              <p className="text-gray-500 mb-10 leading-relaxed">Allow us to curate your perfect tea journey. Click "Send via WhatsApp" and your details will be sent directly to our team.</p>
 
               {submitted ? (
                 <div className="bg-[#1b3b22]/5 p-12 rounded-3xl text-center border border-[#1b3b22]/10 animate-fade-in">
                   <div className="text-5xl mb-6">🍃</div>
-                  <h3 className="text-2xl font-serif font-bold text-[#1b3b22] mb-3">Thank You</h3>
-                  <p className="text-gray-600">Your message has been received. Our tea specialists will reach out to you shortly.</p>
+                  <h3 className="text-2xl font-serif font-bold text-[#1b3b22] mb-3">Redirecting to WhatsApp...</h3>
+                  <p className="text-gray-600 mb-6">Your details have been prepared. Please tap "Send" in WhatsApp to complete your inquiry.</p>
+                  <button
+                    onClick={() => setSubmitted(false)}
+                    className="text-[#1b3b22] underline text-sm font-bold uppercase tracking-wider hover:text-[#c8a951] transition-colors"
+                  >
+                    Send Another Inquiry
+                  </button>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -199,6 +249,8 @@ export default function ContactPage({ navigate }) {
                         type="text"
                         placeholder="Augustina Pereira"
                         required
+                        value={form.name}
+                        onChange={(e) => setForm({ ...form, name: e.target.value })}
                         className="w-full bg-gray-50 border-none px-6 py-4 rounded-xl focus:ring-2 focus:ring-[#1b3b22]/20 transition-all outline-none text-sm"
                       />
                     </div>
@@ -208,6 +260,8 @@ export default function ContactPage({ navigate }) {
                         type="email"
                         placeholder="you@example.com"
                         required
+                        value={form.email}
+                        onChange={(e) => setForm({ ...form, email: e.target.value })}
                         className="w-full bg-gray-50 border-none px-6 py-4 rounded-xl focus:ring-2 focus:ring-[#1b3b22]/20 transition-all outline-none text-sm"
                       />
                     </div>
@@ -220,18 +274,24 @@ export default function ContactPage({ navigate }) {
                       <input
                         type="date"
                         required
+                        value={form.date}
+                        onChange={(e) => setForm({ ...form, date: e.target.value })}
                         className="w-full bg-gray-50 border-none px-6 py-4 rounded-xl focus:ring-2 focus:ring-[#1b3b22]/20 transition-all outline-none text-sm text-gray-600"
                       />
                     </div>
                     <div className="group">
                       <label className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400 mb-2 block transition-colors group-focus-within:text-[#1b3b22]">Inquiry Type</label>
-                      <select className="w-full bg-gray-50 border-none px-6 py-4 rounded-xl focus:ring-2 focus:ring-[#1b3b22]/20 transition-all outline-none text-sm appearance-none text-gray-600">
-                        <option>Private Tasting Event</option>
-                        <option>The Leaf Experience ($45)</option>
-                        <option>The Artisan Experience ($120)</option>
-                        <option>The Planter Stay ($450)</option>
-                        <option>Corporate / Group Booking</option>
-                        <option>General Inquiry</option>
+                      <select 
+                        value={form.type}
+                        onChange={(e) => setForm({ ...form, type: e.target.value })}
+                        className="w-full bg-gray-50 border-none px-6 py-4 rounded-xl focus:ring-2 focus:ring-[#1b3b22]/20 transition-all outline-none text-sm appearance-none text-gray-600"
+                      >
+                        <option>Hand-Made Tea & Tasting</option>
+                        <option>Plantation Tour</option>
+                        <option>Build Your Own Tea</option>
+                        <option>The Tea Library</option>
+                        <option>E-Commerce & Delivery</option>
+                        <option>Workshops & Groups</option>
                       </select>
                     </div>
                   </div>
@@ -243,16 +303,25 @@ export default function ContactPage({ navigate }) {
                       rows={5}
                       placeholder="How may we assist you today?"
                       required
+                      value={form.message}
+                      onChange={(e) => setForm({ ...form, message: e.target.value })}
                       className="w-full bg-gray-50 border-none px-6 py-4 rounded-xl focus:ring-2 focus:ring-[#1b3b22]/20 transition-all outline-none text-sm resize-none"
                     />
                   </div>
                   
+                  {/* WhatsApp Submit Button */}
                   <button
                     type="submit"
-                    className="w-full bg-[#1b3b22] text-white py-5 rounded-xl font-bold uppercase tracking-widest hover:bg-[#122917] hover:shadow-xl transition-all duration-300"
+                    className="w-full bg-[#1b3b22] text-white py-5 rounded-xl font-bold uppercase tracking-widest hover:bg-[#122917] hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-3 cursor-pointer"
                   >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+                      <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+                    </svg>
                     Send Message
                   </button>
+
+
+                  
                 </form>
               )}
             </div>
@@ -270,9 +339,7 @@ export default function ContactPage({ navigate }) {
             <div className="absolute -inset-4 bg-[#1b3b22]/5 rounded-[2.5rem] blur-xl opacity-50 group-hover:opacity-100 transition duration-1000"></div>
             <div className="relative h-[500px] rounded-[2rem] overflow-hidden shadow-2xl border border-white">
               
-              {/* Corrected Iframe Link */}
               <div className="w-full h-full relative group">
-                {/* Map Iframe - Updated to show the business name accurately */}
                 <iframe
                   src="https://maps.google.com/maps?q=The+Ceylon+Tea+Experience+-+Galle,+146A+Sea+Street,+Galle&t=&z=15&ie=UTF8&iwloc=&output=embed"
                   width="100%"
@@ -284,7 +351,6 @@ export default function ContactPage({ navigate }) {
                   title="The Ceylon Tea Experience Location"
                 ></iframe>
 
-                {/* Get Directions Button - Overlays on the map */}
                 <div className="absolute bottom-6 left-6 z-10">
                   <a
                     href="https://www.google.com/maps/dir/6.9828608,79.9309824/The+Ceylon+Tea+Experience+-+Galle,+146A+Sea+Street,+Galle+80000/@6.5205877,79.7683967,10z/data=!3m1!4b1!4m10!4m9!1m1!4e1!1m5!1m1!1s0x3ae1736b35262d13:0x993881923260c1bd!2m2!1d80.2245868!2d6.0371747!3e0?entry=ttu&g_ep=EgoyMDI2MDQyOC4wIKXMDSoASAFQAw%3D%3D"
@@ -301,7 +367,6 @@ export default function ContactPage({ navigate }) {
               </div>
             </div>
             
-            {/* Corrected Google Maps external link */}
             <a 
               href="https://www.google.com/maps/place/The+Ceylon+Tea+Experience+-+Galle/data=!4m7!3m6!1s0x3ae1736b35262d13:0x993881923260c1bd!8m2!3d6.0371585!4d80.2245897!16s%2Fg%2F11ytzjgzgf!19sChIJEy0mNWtz4ToRvcFgMpKBOJk?authuser=0&hl=en&rclk=1" 
               target="_blank" 
@@ -339,25 +404,18 @@ export default function ContactPage({ navigate }) {
         </div>
       </section>
 
-      <Footer navigate={navigate} />
-
-      {/* Floating WhatsApp Button (Updated with href and correct number) */}
       <div className="fixed bottom-8 right-8 z-50">
-        <a 
-          href="https://wa.me/94702900500?text=Hi%20TCTE!%20I'd%20like%20to%20know%20more%20about%20the%20Ceylon%20Tea%20Experience." 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          className="group flex items-center gap-3 bg-[#25D366] text-white px-5 py-4 rounded-full shadow-[0_10px_25px_rgba(37,211,102,0.4)] hover:shadow-[0_15px_35px_rgba(37,211,102,0.5)] transition-all duration-300 hover:-translate-y-1 cursor-pointer"
-        >
-          <span className="font-bold text-sm tracking-wide hidden sm:block">Chat on WhatsApp</span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
-            <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
-          </svg>
-        </a>
+        {/* Floating WhatsApp Button (component-based) */}
+      <div className="fixed bottom-8 right-8 z-50">
+        <WhatsAppFloatingButton />
       </div>
 
+      {/* Shared WhatsApp Inquiry Modal — opens from any service "Book" button */}
+      <WhatsAppInquiryModal isOpen={waModalOpen} onClose={() => setWaModalOpen(false)} />
+      </div>
+
+      <Footer navigate={navigate} />
     </div>
+
   )
 }
-
-//info@ceylonteaexperience.com mekata yawanna form ekesubmition eka
