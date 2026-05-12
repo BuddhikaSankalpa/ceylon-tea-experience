@@ -7,40 +7,40 @@ function WhatsAppFloatingButton() {
   
   const inquiryOptions = [
     {
-      icon: '🌿',
-      title: 'Build Your Own Tea (BYOT)',
-      desc: 'Create your personalised blend',
-      message: "Hi TCTE! I'd like to book the Build Your Own Tea (BYOT) experience. Please share availability and pricing."
-    },
-    {
       icon: '🍃',
       title: 'Hand-Made Tea & Tasting',
-      desc: '60-min hands-on session',
-      message: "Hi TCTE! I'm interested in the Hand-Made Tea & Tasting experience. Could you share available time slots?"
+      desc: '60-min guided hands-on session',
+      message: "Hi TCTE! I'm interested in the Hand-Made Tea & Tasting experience. Could you please share available time slots, pricing, and what the session includes?"
     },
     {
       icon: '🌱',
       title: 'Plantation Tour',
-      desc: 'Walk through the tea estates',
-      message: "Hi TCTE! I'd like to know more about the Plantation Tour. Please share details and pricing."
+      desc: 'Walk through Ceylon\'s tea heritage',
+      message: "Hi TCTE! I'd love to book a Plantation Tour. Could you share available dates, tour duration, pricing, and what the experience covers?"
+    },
+    {
+      icon: '🌿',
+      title: 'Build Your Own Tea (BYOT)',
+      desc: 'Create your personalised blend',
+      message: "Hi TCTE! I'm interested in the Build Your Own Tea (BYOT) experience. Please share how it works, available slots, and pricing."
+    },
+    {
+      icon: '📚',
+      title: 'The Tea Library',
+      desc: 'Explore & purchase our tea collection',
+      message: "Hi TCTE! I'd like to explore The Tea Library. Could you share what teas are currently available, pricing, and how I can visit or browse the collection?"
+    },
+    {
+      icon: '📦',
+      title: 'E-Commerce & Delivery',
+      desc: 'Order Ceylon tea — local or worldwide',
+      message: "Hi TCTE! I'd like to order Ceylon tea for delivery. Could you share your available products, delivery options, and shipping costs to my location?"
     },
     {
       icon: '👥',
-      title: 'Group / Workshop Booking',
-      desc: 'For 5+ guests, corporate, schools',
-      message: "Hi TCTE! I'd like to inquire about a group booking. Please share custom packages and availability."
-    },
-    {
-      icon: '🌍',
-      title: 'International Shipping',
-      desc: 'Order Ceylon tea worldwide',
-      message: "Hi TCTE! I'd like to order Ceylon tea for delivery to my country. Please share shipping options."
-    },
-    {
-      icon: '💬',
-      title: 'General Inquiry',
-      desc: 'Something else',
-      message: "Hi TCTE! I'd like to know more about the Ceylon Tea Experience."
+      title: 'Workshops & Groups',
+      desc: 'Corporate, schools & private groups',
+      message: "Hi TCTE! I'd like to inquire about a group or workshop booking. Please share available packages, group size options, pricing, and available dates."
     },
   ];
 
@@ -85,7 +85,7 @@ function WhatsAppFloatingButton() {
                 </div>
                 <div>
                   <h3 className="font-serif text-xl font-bold">Hi! Welcome to TCTE 🍃</h3>
-                  <p className="text-white/90 text-xs mt-1">How can we help you today?</p>
+                  <p className="text-white/90 text-xs mt-1">Which experience can we help you with?</p>
                 </div>
               </div>
               <button 
